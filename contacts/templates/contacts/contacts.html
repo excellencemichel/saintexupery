@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+	{% block css %}
+
+
+	{% endblock css %}
+
+
+
+	{% block content %}
+
+
+	<div class="container">
+
+     <h3>Voici tous les contacts qui vous ont été adressés</h3>
+
+
+     <section class="table-responsive">
+          <table class="table table-bordered table-striped table-condensed">
+               <caption>
+                    <h4>Pour bien compredre le message, les informations sont réuni dans ce tableau</h4>
+               </caption>
+
+               <thead>
+                    <tr>
+                         <th>Nom</th>
+                         <th>Prénom</th>
+                         <th>Profession</th>
+                         <th>émail</th>
+                         <th>Object</th>
+                         <th>Message</th>
+                    </tr>
+               </thead>
+                {% for contact in contacts %}
+
+                <a href="{{ contact.get_absolute_url }}">
+
+	               <tbody>
+	                    <tr>
+	                         <td>{{ contact.nom }}</td>
+	                         <td>{{ contact.prenom }}</td>
+	                         <td>{{ contact.profession }}</td>
+	                         <td>{{ contact.email }}</td>
+	                         <td>{{ contact.subject }}</td>
+	                         <td>{{ contact.message|truncatewords:1 }}</td>
+
+	                    </tr>
+	               </tbody>
+         		</a>
+                         {% endfor %}
+          </table>
+     </section>
+It is {% now "jS F Y H:i" %}
+
+
+
+</div>
+
+
+
+	{% endblock content %}
+
+
+

@@ -1,0 +1,78 @@
+{% load static %}
+{% load i18n %}
+
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+
+    <link rel="icon" href="{% static 'images/logos/flaticon.png' %}">
+
+    <title>Saint Exupéry</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <!-- Carousel -->
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/carousel.js' %}" async></script>
+
+
+
+    {% block css %}{% endblock css %}
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="{% static 'css/jumbotron.css' %}" rel="stylesheet"> -->
+  </head>
+
+  <body>
+
+    {% include "nav.html" %}
+
+    <main role="main" class="main">
+
+ 
+                {% block content %}
+                {% endblock content %}
+
+            <hr>
+
+            {% block plan_map %}
+
+            {% endblock plan_map %}
+
+
+            <div class="footer">
+            {% block footer %}
+
+
+              {% include "footer.html" %}
+           {% endblock footer %}
+            </div>
+
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+   
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/holder.js' %}"></script>
+
+
+
+    {% block js %}
+
+    {% endblock js %}
+  </body>
+</html>

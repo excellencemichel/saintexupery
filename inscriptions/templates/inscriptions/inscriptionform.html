@@ -1,0 +1,694 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block menu %}
+{% endblock %}
+
+{% block slider %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="row centered-form">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Dossier d'inscription</h3>
+            </div>
+
+            <div class="panel-body">
+                  <form action="" method="POST" role="form" enctype="multipart/form-data" >
+                    {% csrf_token %}
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nom.label_tag }}
+                          {{ form.nom }}
+
+                          {% if form.nom.errors %}
+                            <small style="color: red">{{ form.nom.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.prenom.label_tag }}
+                          {{ form.prenom }}
+                          
+                          {% if form.prenom.errors %}
+                            <small style="color: red">{{ form.prenom.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.date_naissance.label_tag }}
+                          {{ form.date_naissance }}
+                          
+                          {% if form.date_naissance.errors %}
+                            <small style="color: red">{{ form.date_naissance.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.lieu_naissance.label_tag }}
+                          {{ form.lieu_naissance }}
+                          
+                          {% if form.lieu_naissance.errors %}
+                            <small style="color: red">{{ form.lieu_naissance.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="form-group">
+                          {{ form.niveau.label_tag }}
+                          {{ form.niveau }}
+
+                          {% if form.niveau.errors %}
+                            <small style="color: red">{{ form.niveau.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="form-group">
+                          {{ form.frequence.label_tag }}
+                          {{ form.frequence }}
+
+                            {% if form.frequence.errors %}
+                          <small style="color: red">{{ form.frequence.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-4">
+                        <div class="form-group">
+                          {{ form.sexe.label_tag }}
+                          {{ form.sexe }}
+
+                          {% if form.sexe.errors %}
+                            <small style="color: red">{{ form.sexe.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.email.label_tag }}
+                          {{ form.email }}
+
+                          {% if form.email.errors %}
+                            <small style="color: red">{{ form.email.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone.label_tag }}
+                          {{ form.telephone }}
+
+                          {% if form.telephone.errors %}
+                             <small style="color: red">{{ form.telephone.errors }}</small>
+                          {% endif %}                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nationalite.label_tag }}
+                          {{ form.nationalite }}
+
+                          {% if form.nationalite.errors %}
+                            <small style="color: red">{{ form.nationalite.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- Représentant parent 1 -->
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <h5>Composition du foyer de l'enfant: Personne habitant avec l'enfant</h5>
+                          <h4>Parent ou représentant(e) 1</h4>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                          {{ form.representant_parent_un.label_tag }}
+                          {{ form.representant_parent_un }}
+
+                          {% if form.representant_parent_un.errors %}
+                            <small style="color: red">{{ form.representant_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nom_parent_un.label_tag }}
+                          {{ form.nom_parent_un }}
+
+                          {% if form.nom_parent_un.errors %}
+                            <small style="color: red">{{ form.nom_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.prenom_parent_un.label_tag }}
+                          {{ form.prenom_parent_un }}
+
+                          {% if form.prenom_parent_un.errors %}
+                            <small style="color: red">{{ form.prenom_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.date_naissance_parent_un.label_tag }}
+                          {{ form.date_naissance_parent_un }}
+
+                          {% if form.date_naissance_parent_un.errors %}
+                            <small style="color: red">{{ form.date_naissance_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.lieu_naissance_parent_un.label_tag }}
+                          {{ form.lieu_naissance_parent_un }}
+
+                          {% if form.lieu_naissance_parent_un.errors %}
+                            <small style="color: red">{{ form.lieu_naissance_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nationalite_parent_un.label_tag }}
+                          {{ form.nationalite_parent_un }}
+
+                          {% if form.nationalite_parent_un.errors %}
+                            <small style="color: red">{{ form.nationalite_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.adresse_domicile_parent_un.label_tag }}
+                          {{ form.adresse_domicile_parent_un }}
+
+                          {% if form.adresse_domicile_parent_un.errors %}
+                            <small style="color: red">{{ form.adresse_domicile_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.ville_parent_un.label_tag }}
+                          {{ form.ville_parent_un }}
+
+                          {% if form.ville_parent_un.errors %}
+                            <small style="color: red">{{ form.ville_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{form.code_postal_naissance_parent_un.label_tag}}
+                          {{ form.code_postal_naissance_parent_un }}
+
+                          {% if form.code_postal_naissance_parent_un.errors %}
+                            <small style="color: red">{{ form.code_postal_naissance_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone_domicile_parent_un.label_tag }}
+                          {{ form.telephone_domicile_parent_un }}
+
+                          {% if form.telephone_domicile_parent_un.errors %}
+                            <small style="color: red">{{ form.telephone_domicile_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone_personnel_parent_un.label_tag }}
+                          {{ form.telephone_personnel_parent_un }}
+
+                          {% if form.telephone_personnel_parent_un.errors %}
+                            <small style="color: red">{{ form.telephone_personnel_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+
+
+                    </div>
+
+
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone_professionnel_parent_un.label_tag }}
+                          {{ form.telephone_professionnel_parent_un }}
+
+                          {% if form.telephone_professionnel_parent_un.errors %}
+                            <small style="color: red">{{ form.telephone_professionnel_parent_un.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.email_parent_un.label_tag }}
+                          {{ form.email_parent_un }}
+
+                          {% if form.email_parent_un.errors %}
+                            <small style="color: red">{{ form.email_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                     <div class="row">
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.profession_parent_un.label_tag }}
+                          {{ form.profession_parent_un }}
+
+                          {% if form.profession_parent_un.errors %}
+                            <small style="color: red">{{ form.profession_parent_un.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <!-- Représentant parent 2 -->
+
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <!-- <h5>Composition du foyer de l'enfant: Personne habitant avec l'enfant</h5> -->
+                          <h4>Parent ou représentant(e) 2</h4>
+                      </div>
+                    </div>
+
+
+
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.representant_parent_deux.label_tag }}
+                          {{ form.representant_parent_deux }}
+
+                          {% if form.representant_parent_deux.errors %}
+                            <small style="color: red">{{ form.representant_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nom_jeune_fille_parent_deux.label_tag }}
+                          {{ form.nom_jeune_fille_parent_deux }}
+
+                          {% if form.nom_jeune_fille_parent_deux.errors %}
+                            <small style="color: red">{{ form.nom_jeune_fille_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nom_marial_parent_deux.label_tag }}
+                          {{ form.nom_marial_parent_deux }}
+
+                          {% if form.nom_marial_parent_deux.errors %}
+                            <small style="color: red">{{ form.nom_marial_parent_deux.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.prenom_parent_deux.label_tag }}
+                          {{ form.prenom_parent_deux }}
+
+                          {% if form.prenom_parent_deux.errors %}
+                            <small style="color: red">{{ form.prenom_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.date_naissance_parent_deux.label_tag }}
+                          {{ form.date_naissance_parent_deux }}
+
+                          {% if form.date_naissance_parent_deux.errors %}
+                            <small style="color: red">{{ form.date_naissance_parent_deux.errors }}</small>
+                          {% endif %}
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.lieu_naissance_parent_deux.label_tag }}
+                          {{ form.lieu_naissance_parent_deux }}
+
+                          {% if form.lieu_naissance_parent_deux.errors %}
+                            <small style="color: red">{{ form.lieu_naissance_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nationalite_parent_deux.label_tag }}
+                          {{ form.nationalite_parent_deux }}
+
+                          {% if form.nationalite_parent_deux.errors %}
+                            <small style="color: red">{{ form.nationalite_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.code_postal_naissance_parent_deux.label_tag }}
+                          {{ form.code_postal_naissance_parent_deux }}
+
+                          {% if form.code_postal_naissance_parent_deux.errors %}
+                            <small style="color: red">{{ form.code_postal_naissance_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone_domicile_parent_deux.label_tag }}
+                          {{ form.telephone_domicile_parent_deux }}
+
+                          {% if form.telephone_domicile_parent_deux.errors %}
+                            <small style="color: red">{{ form.telephone_domicile_parent_deux.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.telephone_personnel_parent_deux.label_tag }}
+                          {{ form.telephone_personnel_parent_deux }}
+
+                          {% if form.telephone_personnel_parent_deux.errors %}
+                          <small style="color: red">{{ form.telephone_personnel_parent_deux.errors }}</small>
+                          {% endif %}
+
+
+                        
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+
+
+                     <div class="row">
+
+
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                          <div class="form-group">
+                              {{ form.telephone_professionnel_parent_deux.label_tag }}
+                              {{ form.telephone_professionnel_parent_deux }}
+
+                                {% if form.telephone_professionnel_parent_deux.errors %}
+                                  <small style="color: red">{{ form.telephone_professionnel_parent_deux.errors }}</small>
+                                {% endif %}
+
+
+                        
+                          
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.email_parent_deux.label_tag }}
+                          {{ form.email_parent_deux }}
+
+                           {% if form.email_parent_deux.errors %}
+                              <small style="color: red">{{ form.email_parent_deux.errors }}</small>
+                           {% endif %}
+                          
+                        </div>
+
+                      </div>
+                     
+                    </div>
+
+                    <div class="row">
+                       <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.profession_parent_deux.label_tag }}
+                          {{ form.profession_parent_deux }}
+
+                              {% if form.profession_parent_deux.errors %}
+                                  <small style="color: red">{{ form.profession_parent_deux.errors }}</small>
+                              {% endif %}
+                            
+                          
+                        </div>
+
+                      </div>
+                        <h5>Si adresse différente </h5>
+
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                          <div class="form-group">
+                             {{ form.adresse_domicile_parents.label_tag }}
+                             {{ form.adresse_domicile_parents }}
+
+                               {% if form.adresse_domicile_parents.errors %}
+                                  <small style="color: red">{{ form.adresse_domicile_parents.errors }}</small>
+                               {% endif %}
+                            
+                          </div>
+
+                        </div>
+                    </div>
+
+                     <div class="row">
+
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.situation_familiale.label_tag }}
+                          {{ form.situation_familiale }}
+
+                          {% if form.situation_familiale.errors %}
+                            <small style="color: red">{{ form.situation_familiale.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+             
+                    </div> 
+
+
+
+                    <input type="submit" value="Suivant" name="" class="btn btn-info btn-block">
+
+
+
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     </div>
+     <br>
+     <br>
+  {% endblock %}
+
+
+
+  {% block sidbar %}
+  {% endblock %}

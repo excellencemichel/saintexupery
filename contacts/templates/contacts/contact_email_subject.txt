@@ -1,0 +1,4 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %} Contact du personnel de  {{ site_name }}{% endblocktrans %}
+{% endautoescape %}

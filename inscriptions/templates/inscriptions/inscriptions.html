@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+
+{% block content %}
+<div class="container">
+		<div class="row">
+			<div class="col col-xs-12">
+				<div>
+				<img src="{% static 'images/inscriptions/ministere.png' %}" class="responsive" style="width: 100%">
+					
+				</div>
+
+				<div class="col">
+					<img src="{% static 'images/inscriptions/se.jpeg' %}" style="width: 100%">
+					<h1>INSCRIPTIONS 2018-2019</h1>
+				</div>
+			</div>
+
+
+
+			<div class="col col-xs-12">
+				<h2>Pourquoi Saint-Exupéry ?</h2>
+
+
+				<div class="col">
+					<ul  class="list-group">
+						<li class="list-group-item d-flex justify-content-between align-items-center">Des locaux spacieux et un environnement calme
+							<span class="badge badge-primary badge-pill">1</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Cour de recréation
+							<span class="badge badge-primary badge-pill">2</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Une salle informatique et des sciences
+							<span class="badge badge-primary badge-pill">3</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Séance de sport au programme
+							<span class="badge badge-primary badge-pill">4</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Un effectif reduit par niveau
+							<span class="badge badge-primary badge-pill">5</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Des enseignants francophones expérimentés
+							<span class="badge badge-primary badge-pill">6</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Cerfificat de scolaire, bulletin de notes, avis de passage delivré par le CNED
+							<span class="badge badge-primary badge-pill">7</span>
+						</li>
+						<li class="list-group-item d-flex justify-content-between align-items-center">Participations aux evenements de la ville, actions humanitaires
+							<span class="badge badge-primary badge-pill">8</span>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<div class="col">
+				<p>
+					Créer un dossier d'inscription <a href="{% url 'inscriptions:inscription_with_pdf_model' %}" style="color: blue">en cliquant ici</a>
+				</p>
+			</div>
+			<div class=" col guide_inscription">
+				<p>
+					Pour être à l'aise voici un guide d'inscription pour vous faciliter la vie <a href="{% url 'pdfapp:guide_inscription_pdf' %}" target="_blank" style="color: blue">( Cliquez ici )</a>
+				</p>
+			
+			</div>
+
+
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<h3>Primaire</h3>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<h3>Collège</h3>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col">
+				<h3>Lycée</h3>
+			</div>
+		</div>
+
+
+
+
+{% comment %}
+
+		<div class="row">
+			<div class="col col-4">
+				<h3>Primaire</h3>
+				<p>Guide d'inscription (<a href="{% url 'pdfapp:guide_inscription_pdf' %}" target="_blank">Ici</a>)</p>
+				<p>Lien d'inscription<a href="{% url 'inscriptions:inscpdf' %}">( Cliquez ici ) </a></p>
+			
+				
+		    </div>
+
+			<div class="col col-4">
+				<h1>Collège</h1>
+				<p>Guide d'inscription(<a href="{% url 'pdfapp:guide_inscription_pdf' %}" target="_blank">Ici</a>)</p>
+			  <!-- <h1> ADMISSION AU LYCEE FRANCAIS DE MARRAKECH</h1> -->
+				<p>Lien d'inscription<a href="{% url 'inscriptions:secondaireinscription' %}"> ( Cliquez ici )  </a></p>
+
+				  <p>
+
+					<!-- <ul>
+						<li>
+						Toutes les inscriptions dans un établissement scolaire français au Maroc doivent être faites en ligne sur internet, quel que soit le statut d’admission de l’élève . L’ensemble des opérations de suivi (accusés de réception, informations, réponses,….) se fait par courrier électronique. Assurez-vous de disposer d’une boite mail fonctionnelle !
+						</li>
+						<li>
+						Les inscriptions à une admission pour l’année scolaire 2017-2018 sont ouvertes depuis le 13 mars 2017.
+						</li>
+						<li>
+						Téléchargez avant tout le guide d'inscription (<a href="{% url 'pdfapp:guide_inscription_pdf' %}">Ici</a>)
+						</li>
+						<li>
+						Les inscriptions se font sur le site suivant : cliquez ici
+						</li>
+
+						<li>
+							Pour le primaire cliquez (<a href="{% url 'inscriptions:primaireinscription' %}">Ici</a>)
+						</li>
+
+						<li>
+							Pour le secondaire cliquez (<a href="{% url 'inscriptions:secondaireinscription' %}">Ici</a>)
+						</li>
+					</ul> -->
+
+					</p>
+				
+			</div>
+
+			<div class="col col-4">
+				<h3>Lycée</h3>
+				<p>
+					Des histoires et des histoires
+				</p>
+			</div>
+
+
+		</div>
+
+
+		<div class="row">
+			<h1>infos complémentaires </h1>
+				<p>
+					<ul>
+						<li>
+					 		Pour des informations complémentaires : 
+
+							Tel : +212 (0)524 42 45 00
+						</li>
+						<li>
+
+							Secrétariat du proviseur adjoint : 8h-12h (tous les jours) 14h-17h (Lundi et Jeudi)
+						</li>
+						<li>
+
+							Secrétariat de la Directrice de l’école primaire : 8h-12h (tous les jours) 14h-16h (Lundi-Mardi-Jeudi-Vendredi)
+						</li>
+						<li>
+
+							LE CALENDRIER SCOLAIRE 2017-2018
+							LES FOURNITURES SCOLAIRES
+							REGLEMENT FINANCIER 2017-2018
+							REGLEMENT INTERIEUR
+						</li>
+					</ul>
+				</p>
+		</div>
+
+		<div class="row">
+			<div class="col col-md-12">
+				<p>Lien d'inscription <a href="{% url 'inscriptions:inscriptionform' %}">Cliquez</a> </p>
+			</div>
+		</div>
+
+
+
+
+{% endcomment %}
+
+
+
+</div>
+
+
+
+
+
+{% endblock content %}

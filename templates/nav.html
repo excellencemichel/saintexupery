@@ -1,0 +1,179 @@
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/fonts/css/font-awesome.css' %}">
+
+
+
+{% endblock css %}
+
+
+<div class="ui__haut">
+
+		<div class="ui__haut__logo">
+			<div>
+				<a class="ui__logo__container" href="{% url 'home' %}"><img src="{% static 'images/logos/Logo_ECF1.png' %}" alt="header logo" width="384"></a>
+			</div>
+		</div>
+
+
+		<div class="ui__haut__lien">
+			<div style="margin-right: 60px;">
+		        <i class="fa fa-phone"></i>
+		        <div style="display: inline-block;margin-left: 10px;">
+		            <span style="display:block;">Contacts</span>
+		            <span style="font-size: 15px;color: #e7372c;font-weight: 700;">+212 05 24 30 47 98</span>
+		        </div>
+		    </div>
+			<ul>
+              <li><a href="https://www.facebook.com/ecf.saintexupery/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/ecf.saintex/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+             <!--  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> -->
+		     </ul>	                
+			
+		</div>
+
+</div>
+
+
+
+<header class="ui__header">
+	<div class="ui__header__inner">
+		<div class="ui__header__content">
+
+			<div class="ui__header__menu">
+				<ul class="ui__menu__list">
+					<li class="ui__menu__item">
+						<a href="{% url 'home' %}" class="ui__menu__link">
+							Acceuil
+						</a>
+
+					</li>
+					<li class="ui__menu__item has__child">
+							Ecole
+							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
+								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
+							</svg>
+						<div class="ui__menu__dropdown">
+							<ul>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'presentation:presentation' %}">Présentation</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'presentation:programme' %}">Programme CNED</a>
+
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'presentation:mot_directeur' %}">Mot de la direction</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'presentation:equipe_pedagogique' %}">Equipe pédagogique</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'presentation:partenaires' %}">Partenaires</a>
+								</li>
+
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'fonctionnements:fonctionnement' %}">Fonctionnement</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="ui__menu__item has__child">
+							Cycles
+							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
+								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
+							</svg>
+						<div class="ui__menu__dropdown">
+							<ul> 
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'cycles:presentation_cycles' %}">Présentation des cycles</a>
+								</li>
+
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'cycles:primaire' %}">Primaire</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'cycles:college' %}">Collège</a></li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'cycles:lycee' %}">Lycée</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+					<li class="ui__menu__item has__child">
+							Evenements
+							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
+								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
+							</svg>
+						<div class="ui__menu__dropdown">
+							<ul>
+								<li class="ui__menu__dropdown_item">
+									<a href=""> Galerie photos</a>
+								</li>
+
+								<li class="ui__menu__dropdown_item">
+									<a href="">Liens externes</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+					<li class="ui__menu__item">
+						<a href="{% url 'inscriptions:inscriptions' %}" class="ui__menu__link">
+							Inscription
+						</a>
+
+					</li>
+					<li class="ui__menu__item has__child">
+							Contacts
+							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
+								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
+							</svg>
+						<div class="ui__menu__dropdown">
+							<ul>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'contacts:formulaire' %}">Formulaire</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'contacts:plan' %}">Plan</a>
+								</li>
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'contacts:coordonnees' %}">Lien réseaux sociaux</a>
+								</li>
+
+								<li class="ui__menu__dropdown_item">
+									<a href="{% url 'contacts:contacts' %}">Les contacts</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					{% comment %}
+					<li class="ui__menu__item">
+						<a href="{% url 'espaces:espace_etudiant' %}" class="ui__menu__link">
+							Espace etudiant
+						</a>
+
+					</li>
+					{% endcomment %}
+
+				</ul>
+				<a href="#" id="menu__shower">
+					<svg width='20' height='14' viewBox='0 0 20 14' fill-rule='evenodd' style="fill: #fff"><path d='M0 0h20v2H0zm0 6h20v2H0zm0 6h20v2H0z'></path></svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+
+    {% block js %}
+
+    	<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+    {% endblock js %}

@@ -1,0 +1,132 @@
+ {% load static %}
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+     <head>
+         <meta charset="utf-8">
+         <title>Title</title>
+        
+     </head>
+     <body>
+         <div>
+            <div>
+                    <h3>Informations sur l'eleve</h3>
+                    <p><strong>Matricule</strong>{{ models_instance.matricule }}</p>
+                    <p>
+                        <strong>Nom :</strong> {{ models_instance.nom|upper }},
+                        <strong>Prenom : </strong>{{ models_instance.prenom }}
+                    </p>
+                    <p>
+                       <strong> Date de naissance :</strong> {{ models_instance.date_naissance }},
+                       <strong> Lieu de naissance :</strong> {{ models_instance.lieu_naissance }}
+                    </p>
+  
+                    <p>
+                          <strong>Niveau : </strong>{{ models_instance.niveau }},
+                         <strong> Sexe : </strong>{{ models_instance.sexe }},
+                        <strong>Inscription :</strong> {{ models_instance.frequence }}
+                    </p>
+                    <p>
+                      <strong> Sexe : </strong>{{ models_instance.sexe }}, <strong>Nationalite:</strong>{{ models_instance.nationalite }}
+                    </p>
+                    <p>
+                      <strong>Telephone :</strong> {{ models_instance.telephone }}, <strong>Email :</strong>{{ models_instance.email }}
+                    </p>
+
+                </div>
+
+                <div>
+                  <h3>Information sur le premier parent</h3>
+                  <p>
+                    <strong>Sexe du parent:</strong> {{ models_instance.representant_parent_un }},
+                  </p>
+                  <p>
+                    <strong>Nom:</strong> {{ models_instance.nom_parent_un|upper }},
+                    <strong>Prenom:</strong> {{ models_instance.prenom_parent_un }}
+                  </p>
+                  <p>
+                    <strong>Date de naissance :</strong> {{ models_instance.date_naissance_parent_un }},
+                    <strong>Lieu de naissance :</strong> {{ models_instance.lieu_naissance_parent_un }}
+
+                  </p>
+
+                  <p>
+                    <strong>Nationalite :</strong> {{ models_instance.nationalite_parent_un }},
+                    <strong>Ville de residence :</strong> {{ models_instance.ville_parent_un }}
+
+                  </p>
+
+                  <p>
+                    <strong>Code postal de naissance :</strong> {{ models_instance.code_postal_naissance_parent_un }},
+                    <strong>Adresse de domicile :</strong> {{ models_instance.adresse_domicile_parent_un }}
+
+                  </p>
+
+
+                  <p>
+                    <strong>Telephone de domicile :</strong> {{ models_instance.telephone_domicile_parent_un }},
+                    <strong>Telephone personnel :</strong> {{ models_instance.telephone_personnel_parent_un }}
+
+                  </p>
+
+                  <p>
+                    <strong>Telephone professionel :</strong> {{ models_instance.telephone_professionnel_parent_un }},
+                    <strong>Email :</strong> {{ models_instance.email_parent_un }}
+
+                  </p>
+
+                  <p>
+                    <strong>Profession :</strong> {{ models_instance.profession_parent_un }}
+                  </p>
+                </div>
+
+                <div>
+                  <h3>Information sur le second parent</h3>
+
+                  <p>
+                    <strong>Sexe :</strong> {{ models_instance.representant_parent_deux }},
+                    <strong>Nom de jeune fille</strong> {{ models_instance.nom_jeune_fille_parent_deux }}
+
+                  </p>
+
+                  <p>
+                    <strong>Nom :</strong> {{ models_instance.nom_marial_parent_deux|upper }},
+                    <strong>Prénom :</strong> {{ models_instance.prenom_parent_deux }}
+
+                  </p>
+
+                  <p>
+                    <strong>Date de naissance :</strong> {{ models_instance.date_naissance_parent_deux }},
+                    <strong>Lieu de naissance :</strong> {{ models_instance.lieu_naissance_parent_deux }}
+
+                  </p>
+
+                  <p>
+                    <strong>Nationalite :</strong> {{ models_instance.nationalite_parent_deux }},
+                    <strong>Code postal :</strong> {{ models_instance.email_parent_un }}
+                  </p>
+
+
+                  <p>
+                    <strong>Telephone de domicile :</strong> {{ models_instance.telephone_domicile_parent_deux }},
+                    <strong>Téléphone personnel :</strong> {{ models_instance.telephone_personnel_parent_deux }}
+                  </p>
+
+
+                  <p>
+                    <strong>Telephone professionel :</strong> {{ models_instance.telephone_professionnel_parent_deux }},
+                    <strong>Email :</strong> {{ models_instance.email_parent_deux }}
+                  </p>
+
+
+                  <p>
+                    <strong>Profession :</strong> {{ models_instance.profession_parent_deux }},
+                    <strong>Adresse de domicile :</strong> {{ models_instance.adresse_domicile_parent_deux }}
+                  </p>
+                </div>
+                <div>
+                  <h3>Situation familiale</h3>
+                  <strong>Situation familiale : </strong>{{ models_instance.situation_familiale }}
+                </div>
+             </div>
+     </body>
+ </html>

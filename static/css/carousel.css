@@ -1,0 +1,233 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
+
+
+/*Carousel fait maison*/
+
+
+.item{
+  margin: 40px 10px;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  transform: translate3d(0, -1px, 0);
+}
+
+.item:hover{
+  transform: translate3d(0, -10px, 0);
+}
+
+
+.item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.item__body{
+  padding: 25px;
+}
+
+
+.item__title{
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #232323;
+}
+
+
+.items{
+  position: relative;
+}
+
+
+/*Carousel*/
+
+.carousel{
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__container{
+  transition: transform 0.3s;
+  transform: translate3d(0,0,0);
+}
+
+.carousel__container::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.carousel__item{
+  float: left;
+}
+
+
+
+.carousel__next, .carousel__prev{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fff url(next.svg) center center no-repeat;
+  background-size: 20px 20px;
+  border-radius: 50%
+  top: 50%;
+  bottom: 50%;
+  margin-top: -20px;
+  right: -3px;
+  box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform 0.3s opacity 0.3s;
+
+}
+
+.carousel__next:hover, .carousel__prev:hover{
+  transform: scale(1.2);
+
+
+
+  }
+
+
+.carousel__prev{
+  right: auto;
+  left: -3px;
+  background-image: url(prev.svg);
+}
+
+.carousel__prev__hidden, .carousel__next__hidden{
+  opacity: 0;
+  display: none;
+}
+
+.carousel__pagination{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+  margin: 10px 0;
+
+
+}
+
+
+.carousel__pagination__button{
+  background-color: grey;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 3px;
+  box-shadow: 0 2px 5px #3232321a;
+  transition: transform 0.3s;
+  cursor: pointer;
+
+}
+
+
+.carousel__pagination__button__active, .carousel__pagination__button:hover{
+  transform: scale(1.5);
+}
+
+@media screen and (min-width: 800px){
+  .carousel__pagination{
+    display: block;
+  }
+}

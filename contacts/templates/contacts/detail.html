@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static }
+{% load i18n %}
+
+
+
+{% block css %}
+
+{% endblock css %}
+
+
+
+
+{% block content %}
+
+
+<div class="container">
+
+<br>
+	
+	<div class="row">
+		<div>
+			<p>
+				Nom : {{ contact.nom}}
+
+			</p>
+			<p>
+				Prénom : {{ contact.prenom }}
+			</p>
+			<p>
+				Profession : {{ contact.profession }}
+
+			</p>
+			<p>
+				Adresse mail : {{ contact.email }}
+			</p>
+
+
+		</div>
+<br>
+		<div>
+			<p>
+				<strong>Object : {{ contact.subject }} </strong>
+
+			</p>
+			<p>
+				{{ contact.message }}
+
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
