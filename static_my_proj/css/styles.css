@@ -187,3 +187,15 @@ html body ul {
   display: flex;
   justify-content: space-between;
 }
+
+/* line 271, _styles_.scss */
+.hide {
+  display: none;
+}
+
+/* line 281, _styles_.scss */
+.valeur .valeur__item {
+  background-color: #46acb8;
+  padding: 70px;
+  border-radius: 50%;
+}

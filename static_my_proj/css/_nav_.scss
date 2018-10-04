@@ -17,8 +17,18 @@ ul {
 	list-style: none ;
 }
 
+
 .fa {
     font-size: 30px !important ;
+}
+
+.ui__logo__container {
+    display: block ;
+    width: 100% ;
+
+    img {
+        width: inherit ;
+    }
 }
 
 .ui__haut{ 
@@ -32,13 +42,15 @@ ul {
     }
 
     .ui__haut__logo{
-        margin-left: 70px;
+        width: 30% ;
+        min-width: 160px ;
+        margin-left: 5% ;
     }
 
     .ui__haut__lien {
         display: flex;
         align-items: center;
-
+        padding: 7px 15px ;
         li {
             border: 1px solid #068fec;
             padding: 7px;
@@ -89,7 +101,7 @@ ul {
     		justify-content: space-between ;
 
     		.ui__header__logo , .ui__header__menu {
-    			height :100% ;
+    			height:100% ;
     		}
     		.ui__header__logo {
 
@@ -102,16 +114,25 @@ ul {
 
     			.ui__menu__list {
     				// min-width: 660px ;
-    			}
+                    // display
+    			
                 .ui__menu__item {
-                    a:hover {
-                        color: inherit ;
+
+                    .ui__menu__item_svg {
+                    margin-left: 8px;
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg);
+
+
+                    .ui__menu__item_svg__path {
+                           fill: #fff;
+                            opacity: 1;
+
+                         }
+
                     }
 
-                    &:hover {
-                        box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.5) ;
-                    }
-                }
+                
 
     			.ui__menu__dropdown {
     				display: none ;
@@ -132,14 +153,16 @@ ul {
     					line-height: initial ;
     					padding: 10px 20px ;
     				
-    				}
 
-                    .ui__menu__dropdown_item:hover{
+                    &:hover{
                         color: #fff;
                         background:  #0d4870;
+                        }
                     }
-    			}
-    		}
+    			 }
+                }
+            }
+    	   }
     	}
     } 
 }
@@ -149,12 +172,20 @@ ul {
 	position: relative ;
 	display: inline-block;
     vertical-align: top;
-    padding: 0 20px;
+    padding: 0 63px;
+    font-weight: bold;
     text-align: center;
     cursor: pointer;
 
+    &:hover {
+        box-shadow: inset 0 0 2px 2px rgba(0,0,0,0.5) ;
+        }
+
     a{
         text-decoration:none;
+        &:hover {
+        color: inherit ;
+            }
 
 
      .ui__menu__link {
@@ -177,28 +208,45 @@ ul {
 }
 
 @media screen and (max-width: 960px) {
+
+        .ui__haut{
+            display: block;
+            margin-right: 0 ;
+        }
+        .ui__menu__item_svg{
+            display: none;
+        }
+
 		#menu__shower {
 			display: block ;
+            position: absolute;
+            top: 17px;
+            left: 10px;
 		}
     	.ui__header {
 
     		.ui__header__content {
 
+                .ui__header__menu {
+                    position: relative ;
+                    margin: initial !important ;
+                }
+
 
     			.ui__menu__list {
-    				position: fixed;
-    				top: 0 ;
-    				right: 0 ;
+    				position: absolute;
+    				top: $header_height;
                     left: 0 ;
-                    bottom: 0 ;
-    				transform: translateX(100%) ;
+                    margin-right: 0 ;
+                    padding-left: 0 ;
+    				transform: translateX(-100%) ;
     				display: block ;
-    				width: 250px ;
+    				width: 200px ;
 					z-index: 2000 ;
 					background-color: #0d4870 ;
 					padding-right: 0 !important ;
 					box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-					transition: all 1s ;
+					transition: all 0.2s ;
 
 					&.show__menu__list {
 						transform: translateX(0) ;
@@ -207,7 +255,8 @@ ul {
 						display: block ;
 						text-align: left ;
 						&.has__child::before {
-							content: ">" ;
+							content: "+" ;
+                            font-size: 0.8rem ;
 							margin-right: 2px ;
 						}
 						&.has__child .ui__menu__dropdown {
@@ -218,7 +267,7 @@ ul {
 							z-index:3;
 							text-align: left;
 						}
-						&.has__child.ui__menu__active__item .ui__menu__dropdown {
+						&.has__child .ui__menu__dropdown {
 							display: block ;
 							animate: showDropdownMenu 5s ;
 
@@ -231,9 +280,21 @@ ul {
 
 }
 
+@media screen and (max-width: 567px) {
+    .ui__haut {
+        .ui__haut__lien {
+            display: block ;
+        }
+
+        .ui__haut__logo {
+            margin: 0 auto ;
+        }
+    }
+}
 
 
-@keyframes showDropdownMenu {
+
+scre@keyframes showDropdownMenu {
 	0% {
 		height: 0 ;
 	} 100% {
