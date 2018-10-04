@@ -208,20 +208,20 @@ STATIC_URL = '/static/'
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles","static_root" )
-
 STATICFILES_DIRS = [
-             os.path.join(BASE_DIR, 'static'),
+             os.path.join(BASE_DIR, 'static_my_proj'),
                     
                     ]
+STATIC_ROOT = os.path.join(BASE_DIR,"static_cdn", "static_root" )
+
 
 
 MEDIA_URL = "/media/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "staticfiles", "media_root")
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
 
-PROTECTED_ROOT = os.path.join(BASE_DIR, "staticfiles", "protected")
+PROTECTED_ROOT = os.path.join(BASE_DIR, "static_cdn", "protected_root")
 
 
 
@@ -237,4 +237,4 @@ LOGIN_REDIRECT_URL = 'home'
 from .production import *
 
 if os.environ.get("ENV") =="PRODUCTION":
-    from ecommerce.aws.conf import *
+    from saintexupery.aws.conf import *

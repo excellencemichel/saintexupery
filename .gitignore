@@ -12,3 +12,6 @@ saintexupery/production.py
 
 logs
 logs/
+
+static_cdn
+static_cdn/
