@@ -1,4 +1,4 @@
 {% load i18n %}
 {% autoescape off %}
-{% blocktrans %} Contact du personnel de  {{ site_name }}{% endblocktrans %}
+{% blocktrans %} Contact du personnel du centre d'acconpagnement Saint Exupéry de Marrakech, vous pouvez visiter le site internet sur :{{ site_name }}{% endblocktrans %}
 {% endautoescape %}

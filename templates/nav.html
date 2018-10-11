@@ -146,10 +146,11 @@
 								<li class="ui__menu__dropdown_item">
 									<a href="{% url 'contacts:coordonnees' %}">Lien réseaux sociaux</a>
 								</li>
-
+								{% if request.user.is_authenticated %}
 								<li class="ui__menu__dropdown_item">
 									<a href="{% url 'contacts:contacts' %}">Les contacts</a>
 								</li>
+								{% endif %}
 							</ul>
 						</div>
 					</li>
