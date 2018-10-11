@@ -4,9 +4,16 @@ from .models import Activite, ActiviteMedia
 # Register your models here.
 
 
+
+class ActiviteMediaInline(admin.TabularInline):
+	model = ActiviteMedia
+	extra = 1
+
+
 class ActiviteAdmin(admin.ModelAdmin):
-	# inlines = [ThumbnailInline]
 	prepopulated_fields = {"slug":("title",),}
+
+	inlines = [ActiviteMediaInline]
 
 
 
@@ -15,5 +22,5 @@ class ActiviteAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Activite, ActiviteAdmin)
-admin.site.register(ActiviteMedia)
+# admin.site.register(ActiviteMedia)
 
