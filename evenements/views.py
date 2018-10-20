@@ -169,8 +169,11 @@ def delete(request, id, slug):
 
     return render(request, "evenements/confirme_delete.html", context)
 
+def galerie_photo(request):
 
+    context = {}
 
+    return render(request, "evenements/galeries_photo.html", context)
 
 
 def lesliens(request):

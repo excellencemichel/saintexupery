@@ -13,12 +13,20 @@ from django.urls import reverse
 from  django.conf import settings
 
 from django.utils.translation import ugettext as _
+from django.utils.http import is_safe_url
 
 
 from django.contrib.auth import  get_user_model
 from django.contrib import messages
 from django.contrib import auth as auth_c
 
+from django.views.generic import  FormView
+
+
+
+
+#Locales import
+from saintexupery.mixins import NextUrlMixin, RequestFormAttachMixin
 
 from .forms import ConnexionForm
 
@@ -31,18 +39,6 @@ User = get_user_model()
 
 def login(request):
 	error = False
-
-	# if request.method=="POST":
-	# 	username = request.POST["username"]
-	# 	password = request.POST["password"]
-
-	# 	user = auth_c.authenticate(username=username,password=password)
-	# 	if user:
-	# 		auth_c.login(request, user)
-	# 		return redirect(reverse("home"))
-
-	# 	else:
-	# 		error = True
 	form = ConnexionForm(request.POST or None)
 	if form.is_valid():
 		username = form.cleaned_data["username"]
@@ -54,7 +50,16 @@ def login(request):
 		if user:
 			auth_c.login(request, user)
 			messages.success(request, _("Bienvenu  {}".format(username)))
-			return redirect(reverse("home"))
+			default_url ="/"
+			request =request
+			print("Voici",request.POST.get("next"))
+			next_ = request.GET.get("next")
+			next_post = request.POST.get("next")
+			redirect_path = next_ or next_post or None
+			if is_safe_url(redirect_path, request.get_host()):
+				# return redirect(reverse("home"))
+				return redirect(redirect_path)
+			return redirect(default_url)
 
 
 		else:
@@ -146,3 +151,14 @@ def facebook_login(request):
 
 	url += "?" + urlencode(params)
 	return redirect(url)
+
+
+
+class LoginView(NextUrlMixin, RequestFormAttachMixin, FormView):
+    form_class = ConnexionForm
+    success_url = "/"
+    template_name = "accounts/login.html"
+
+    def form_valid(self, form):
+        next_path = self.get_next_url()
+        return redirect(next_path)     

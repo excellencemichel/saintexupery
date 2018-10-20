@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
+
 from django.http import HttpResponseRedirect, QueryDict
 
 from django.core.mail import send_mail, EmailMultiAlternatives
@@ -13,6 +14,7 @@ from django.views.generic import View
 
 
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.tokens import default_token_generator
 from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_protect
@@ -113,7 +115,7 @@ def lien_reseaux_sociaux(request):
 
 
 
-
+@login_required
 def contacts(request):
 
 	contacts = Contact.objects.all()

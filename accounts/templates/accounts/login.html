@@ -4,7 +4,7 @@
 
 {% block css %}
     
-    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/login.css' %}" rel="stylesheet">
 
 {% endblock %}
 
@@ -14,7 +14,7 @@
 {% block content %}
    <div class="loginBox">
    		<div class="glass">
-            <img src="{% static 'images/man.png' %}" class="user">
+            <img src="{% static 'images/icons/man.png' %}" class="user">
    		<h3>Connectez-vous ici</h3>
    	  <form method="POST" action="{% url 'accounts:login' %}">
    	  	{% csrf_token %}
