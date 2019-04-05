@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 BASE_URL ="www.centrecnedsaintexupery.com"
 
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
 
 
 # Application definition
