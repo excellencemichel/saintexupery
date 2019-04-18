@@ -113,7 +113,7 @@ def detail(request, id=None, slug=None):
         "share_string": share_string,
     }
 
-    return render(request, "evenements/article_detail.html", context)
+    return render(request, "evenements/detail.html", context)
 
 
 

@@ -34,7 +34,7 @@ def inscriptions(request):
 
 
 
-def inscription_with_pdf_model(request):
+def inscription(request):
 
 	form = InscriptionModelForm(request.POST or None, request.FILES or None)
 

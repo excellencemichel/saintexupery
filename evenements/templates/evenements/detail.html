@@ -28,6 +28,14 @@
 	<div class="container">
 
 		<br><br>
+		<h3 class="text-center lead">{{ instance.title }}</h3>
+		<hr>
+		<div class="row">
+			<div class="col-10 col-md-10 col-sm-12 col-xs-12">
+				{{ instance.content }}
+			</div>
+		</div>
+		<hr>
 
 
 
@@ -41,11 +49,7 @@
 			{% endfor %}
 		</div>
 
-		<div class="row">
-			<div class="col-10 col-md-10 col-sm-12 col-xs-12">
-				{{ instance.content }}
-			</div>
-		</div>
+
 
 		<br><br>
 
@@ -53,7 +57,7 @@
 
 		<div class="row">
 			<!-- <div class="col-offset-3 col-sm-offset-1 col-md-offset-3 col-lg-offset-3"></div> -->
-			<div class="col-6 col-md-6 col-lg-6 col-sm-10 col-xs-12 col-offset-3 col-sm-offset-1 col-md-offset-3 	col-lg-offset-3">			
+			<div class="col text-center">			
 				{% if request.user.is_authenticated %}
 					<div class="row">
 						  <div class="col-sm-8 col-sm-offset-2">
@@ -61,8 +65,8 @@
 							  <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" 	data-numposts="5">
 						  	
 							  </div>
-								<a href="" class="toggle"  style="color: blue"><span class="glyphicon glyphicon-comment"></span>Commenter</a>
-								<form method="POST" action="{% url 'evenements:detail' id=instance.id slug=instance.slug %}" class="form hide">
+								<a href="" class="toggle text-center"  style="color: blue"><span class="glyphicon glyphicon-comment" ></span>Commenter</a>
+								<form method="POST" action="{% url 'evenements:detail' id=instance.id slug=instance.slug %}" class="form hide" >
 									{% csrf_token %}
 
 									{{ form|crispy }}

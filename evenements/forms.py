@@ -15,7 +15,7 @@ class ArticleForm(forms.Form):
 
                               help_text=_("Vous pouvez agrandir le la fenêtre"),
                               widget=forms.Textarea(attrs={"class": "form-control",
-                                                           "rows": "7",
+                                                           "rows": "3", "cols": "3" 
                                                            }
                                                     )
                               )

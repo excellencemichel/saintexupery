@@ -52,8 +52,6 @@ INSTALLED_APPS = [
     'profile',
     'accounts',
 
-    'activites',
-
     'comments',
 
     'contacts',

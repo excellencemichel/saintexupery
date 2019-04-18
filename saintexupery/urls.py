@@ -33,6 +33,9 @@ from django.urls import include, path, re_path
 from .views import home, navs
 
 
+from inscriptions.views import inscription
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -44,9 +47,6 @@ urlpatterns = [
 
     path('profile/', include("profile.urls", namespace="profile")),
     path('account/', include("accounts.urls", namespace="accounts")),
-
-
-    path('activites/', include("activites.urls", namespace="activites")),
 
     path('contacts/', include("contacts.urls", namespace="contacts")),
 
@@ -82,6 +82,10 @@ urlpatterns = [
       path('reset-password/done', password_reset_done, name="password_reset_done"),
       re_path(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, name="password_reset_confirm"),
       path('reset-password/complete', password_reset_complete, name="password_reset_complete"), 
+
+
+      path("inscription", inscription, name="inscription"),
+
 
 
 

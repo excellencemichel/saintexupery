@@ -1,25 +1,49 @@
-from time import strftime
-from random import randrange
+from os import path
+
+
+
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
-from django.utils.text import slugify
+
+from saintexupery.utils import unique_slug_generator
+
 
 from comments.models import Comment
 
 
+
+
 # Create your models here.
 
-def upload_location(instance, filename):
-    extension = filename.split(".")[-1]
-    jour = strftime("%a")
-    temps = strftime("%d-%m-%Y-%H-%M-%S")
-    pseudo = randrange(-1000000, 1000000)
-    print(extension)
-    return "{}/{}_{}.{}".format(jour, temps, pseudo, extension)
+
+def get_filename(filepath):
+    base_name = path.basename(filepath)
+    name_file, extension_file = path.splitext(base_name)
+    return name_file, extension_file
+
+
+
+def upload_file_location(instance, filename):
+    id_ = instance.id
+    if id_ is None:
+        Klass = instance.__class__
+        qs = Klass.objects.all().order_by("-pk")
+        if qs.exists():
+            id_ = qs.first().id + 1
+        else:
+            id_ = 0
+    name_file, extension_file =get_filename(filename)
+
+    final_filename = "{name_file}_{id_}{extension_file}".format(name_file=name_file, id_=id_, extension_file=extension_file)
+    
+
+    return "evenements/{final_filename}".format(final_filename=final_filename)
+
+
 
 
 class Article(models.Model):
@@ -28,7 +52,7 @@ class Article(models.Model):
     slug = models.SlugField()
 
 
-    image = models.FileField(upload_to=upload_location)
+    image = models.FileField(upload_to=upload_file_location)
     content = models.TextField()
 
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -62,30 +86,19 @@ class Article(models.Model):
         ordering = ["-created", "-updated"]
 
 
-def create_slug(instance, new_slug=None):
-    slug = slugify(instance.title)
-    if new_slug is not None:
-        slug = new_slug
-
-    qs = Article.objects.filter(slug=slug).order_by("-id")
-    exists = qs.exists()
-
-    if exists:
-        new_slug = "%s-%s" % (slug, qs.first().id)
-        return create_slug(instance, new_slug=new_slug)
-    return slug
+def article_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
 
 
-def pre_save_post_receiver(sender, instance, *args, **kwargs):
-    if not instance.slug or instance.slug != instance.title:
-        instance.slug = create_slug(instance)
+
+pre_save.connect(article_pre_save_receiver, sender=Article)
 
 
 class ArticleMedia(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    photos = models.FileField(upload_to=upload_location)
+    photos = models.FileField(upload_to=upload_file_location)
 
 
-pre_save.connect(pre_save_post_receiver, sender=Article)
 
 

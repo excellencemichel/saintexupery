@@ -18,7 +18,7 @@
         </ol>
         <div class="carousel-inner">
 
-          {% for instance_activite in instance_activites %}
+          {% for instance_evenement in instance_evenements %}
             {% if forloop.first %}
                 <div class="carousel-item active">
             {% else %}
@@ -26,16 +26,16 @@
             {% endif %}
             
 
-             <img class="d-block w-100" src="{{ instance_activite.media.url }}">
+             <img class="d-block w-100" src="{{ instance_evenement.image.url }}">
 
 
 
 
             <div class="container">
-              <a href="{{ instance_activite.get_absolute_url }}">
+              <a href="{{ instance_evenement.get_absolute_url }}">
               <div class="carousel-caption text-right">
-                <h1>{{ instance_activite.title }} </h1>
-                <p>{{ instance_activite.content }}</p>
+                <h1>{{ instance_evenement.title }} </h1>
+                <p>{{ instance_evenement.content|truncatewords:33 }}</p>
               </div>
             </a>
             </div>
@@ -71,12 +71,7 @@
       </div>
       <div class="row">
           <div class="col">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p> {{ presentation.content|truncatewords:77 }}
             </p>
           </div>
       </div>
@@ -129,7 +124,7 @@
         <h3>Galérie images</h3>
     </div>
 
-    {% include "base/carousel.html" %}
+    {% include "base/carousel.html" with instances=instance_evenements %}
 
 
   
@@ -137,201 +132,26 @@
 
 
 
-
-{% comment %}
-    <div class="actu_">
-      <div class="card" style="width: 20rem;">
-
-         <a href="{% url 'presentation:presentation' %}">
-           <img class="card-img-top fluid" src="{% static 'images/actu/pan_photo_immeuble.jpg' %}" alt="{{ instance.title }} logo">
-        </a>
-
-        <div class="card-body">
-          <h5 class="card-title">Presentation</h5>
-          <p class="card-text">Quelque part</p>
-          <a href="{% url 'presentation:presentation' %}" class="btn btn-primary"> View </a>
-
-
-        </div>
-       </div>
-
-
-       <div class="card" style="width: 20rem;">
-
-         <a href="{% url 'presentation:mot_directeur' %}">
-           <img class="card-img-top fluid" src="{% static 'images/actu/pan_photo_immeuble.jpg' %}" alt="{{ instance.title }} logo">
-        </a>
-
-        <div class="card-body">
-          <h5 class="card-title">Mot de la directrice</h5>
-          <p class="card-text">Mme Alexandra</p>
-          <a href="{% url 'presentation:mot_directeur' %}" class="btn btn-primary"> View </a>
-
-
-        </div>
-       </div>
-
-
-        <div class="card" style="width: 20rem;">
-
-             <a href="{% url 'presentation:equipe_pedagogique' %}">
-             <img class="card-img-top fluid" src="{% static 'images/actu/pan_photo_immeuble.jpg' %}" alt="{{ instance.title }} logo">
-             </a>
-
-          <div class="card-body">
-            <h5 class="card-title">Eqipe pédagogique</h5>
-            <p class="card-text">Tout le staff</p>
-            <a href="presentation:equipe_pedagogique" class="btn btn-primary"> View </a>
-
-
-           </div>
-       </div>
-
-
-     </div>
-
-
-
-
-
-
-
-    <div class="galerie">
-
-      <div>
-        
-        <h3>Galérie</h3>
-      </div>
-
-
-      <div class="galerie__slid">
-
- 
-      <div class="ui__slider__1">
-
-            <div class="ui__slider__1__slider__text">
-              <h6>Primaire</h6>
-              
-            </div>
-        <div class="ui__slider__1__slides">
-            <a href="{% url 'cycles:primaire' %}">
-               <img class=" ui__slider__1__slides__slide fluid" src="{% static 'images/galerie/prim_photo/p1p.jpg' %}">
-            </a>
-
-            <a href="{% url 'cycles:primaire' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/prim_photo/p1p.jpg' %}">
-            </a>
-
-            <a href="{% url 'cycles:primaire' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/prim_photo/p1p.jpg' %}">
-            </a>
-        </div>
-      </div>
-
- 
-      <div class="ui__slider__2">
-            <div class="ui__slider__2__slider__text">
-              <h6>college</h6>
-              
-            </div>
-        <div class="ui__slider__2__slides">
-            <a href="{% url 'cycles:college' %}">
-               <img class=" ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/college/p1.jpg' %}">
-            </a>
-
-            <a href="{% url 'cycles:college' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/college/p2.jpg' %}">
-            </a>
-
-            <a href="{% url 'cycles:college' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/college/p3.jpg' %}">
-            </a>
-        </div>
-      </div>
-
-
-
-      <div class="ui__slider__3">
-            <div class="ui__slider__3__slider__text">
-              <h6>Lycée</h6>
-              
-            </div>
-        <div class="ui__slider__3__slides">
-            <a href="{% url 'cycles:lycee' %}">
-               <img class=" ui__slider__3__slides__slide fluid" src="{% static 'images/galerie/lycee/p1.jpg' %}">
-            </a>
-
-
-
-            <a href="{% url 'cycles:lycee' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/lycee/p1c.jpg' %}">
-            </a>
-
-            <a href="{% url 'cycles:lycee' %}">
-               <img class="ui__slider__2__slides__slide fluid" src="{% static 'images/galerie/lycee/p1c.jpg' %}">
-            </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-{% endcomment %}
-
-    <hr>
-
-
-
-    <div class="lead text-center">
-        
-        <h3>Evènements à venir </h3>
-    </div>
-
-    <hr>
-
-
-
-
   <div class="ui__partenaire">
 
-    <h2>Les partenariats</h2>
+    <h2>Nos partenariats</h2>
+    <hr>
     <div class="row ui__partenaire__cned">
+      {% for partenaire in partenaires %}
       <div class="col-md-4">
-       <!--  <div class="ui__partenaire__cned__text">
-            <h4>CNED</h4>
-        </div> -->
         <div>
-          <img src="{% static 'images/partenaires/cned.png' %}" width="150">
+          <h3> {{ partenaire.title }}</h3>
+          <img src="{{ partenaire.logo.url }}" width="150">
           
         </div>
       </div>
+
+      {% endfor %}
       
 
 
-
-      <div class="col-md-4">
-        <!-- <h4>HEEC</h4> -->
-        <div>
-          <img src="{% static 'images/partenaires/logo_heec.jpg' %}">
-        </div>
-      </div>
-
-
-
-      <div class="col-md-4">
-        <!-- <h4>Lamrani</h4> -->
-
-        <div>
-          <img src="{% static 'images/partenaires/logo_lamrani.jpg' %}">
-        </div>
-      </div>
-
-
     </div>
-
-
-
-
+    <br>
 
   </div>
 
