@@ -1,0 +1,90 @@
+[
+{
+    "model": "presentation.generale",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "title": "Pr\u00e9sentation de l'\u00e9cole",
+        "content": "L'\u00e9cole ECF Saint-Exup\u00e9ry  de  Marrakech est un centre d\u2019accompagnement pour les cours \u00e0 distance dans le syst\u00e8me \u00e9ducatif fran\u00e7ais",
+        "image": "evenements/Pr\u00e9sentation de l'\u00e9cole/pan_photo_immeuble_0.jpg",
+        "presentation_type": "presentation",
+        "created": "2019-04-13T01:09:28.847Z",
+        "updated": "2019-04-13T01:09:28.847Z"
+    }
+},
+{
+    "model": "presentation.generale",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "title": "Programme du CNED",
+        "content": "Le programme est ...",
+        "image": "evenements/Programme du CNED/p1_2.jpg",
+        "presentation_type": "programme",
+        "created": "2019-04-13T01:12:55.962Z",
+        "updated": "2019-04-13T01:12:55.962Z"
+    }
+},
+{
+    "model": "presentation.generale",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "title": "Mot de la directrice",
+        "content": "En tant que directrice de cette \u00e9cole ...",
+        "image": "evenements/Mot de la directrice/directrice_3.jpg",
+        "presentation_type": "mot_directrice",
+        "created": "2019-04-13T01:13:59.835Z",
+        "updated": "2019-04-13T01:13:59.835Z"
+    }
+},
+{
+    "model": "presentation.generale",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "title": "Equipe p\u00e9dagogique",
+        "content": "Notre \u00e9quipe p\u00e9dagogique est compos\u00e9e de ...",
+        "image": "evenements/Equipe p\u00e9dagogique/imagegroupe_4.jpg",
+        "presentation_type": "equipe_pedagogique",
+        "created": "2019-04-13T01:15:01.952Z",
+        "updated": "2019-04-13T01:15:01.952Z"
+    }
+},
+{
+    "model": "presentation.partenaire",
+    "pk": 2,
+    "fields": {
+        "title": "Le CNED",
+        "slug": "le-cned-est-un-partenaire",
+        "contenu": "Notre partenariat avec le CNED est un atout pour nous et surtout nos \u00e9l\u00e8ves car ...",
+        "logo": "presentations/Le CNED est un partenaire/cned_0_Moe85rC.png",
+        "created": "2019-04-13T02:03:54.137Z",
+        "updated": "2019-04-13T10:36:37.769Z"
+    }
+},
+{
+    "model": "presentation.partenaire",
+    "pk": 3,
+    "fields": {
+        "title": "La HEEC",
+        "slug": "heec-est-un-partenaire",
+        "contenu": "Notre partenariat avec la HEEC est un atout pour nous et surtout nos \u00e9l\u00e8ves car ...",
+        "logo": "presentations/HEEC est un partenaire ..../logo_heec_3.jpg",
+        "created": "2019-04-13T02:04:47.685Z",
+        "updated": "2019-04-13T10:36:26.624Z"
+    }
+},
+{
+    "model": "presentation.partenaire",
+    "pk": 4,
+    "fields": {
+        "title": "Institut Lamarani",
+        "slug": "linstitut-lamarani-est-un-partenaire",
+        "contenu": "Notre partenariat avec Institut Lamarani est un atout pour nous et surtout nos \u00e9l\u00e8ves car ...",
+        "logo": "presentations/L'Institut Lamarani est un partenaire ..../logo_lamrani_4.jpg",
+        "created": "2019-04-13T02:05:23.822Z",
+        "updated": "2019-04-13T10:36:13.492Z"
+    }
+}
+]
