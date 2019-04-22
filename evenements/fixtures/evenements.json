@@ -1,0 +1,122 @@
+[
+{
+    "model": "evenements.article",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "title": "La rentr\u00e9e des classes",
+        "slug": "la-rentree-des-classes",
+        "image": "evenements/p5_0.jpg",
+        "content": "Cette ann\u00e9e notre rentr\u00e9 des classe est pr\u00e9vue pour",
+        "created": "2019-04-13T02:29:55.641Z",
+        "publish": "2019-04-13T02:29:52Z",
+        "updated": "2019-04-13T02:29:55.641Z"
+    }
+},
+{
+    "model": "evenements.article",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "title": "Vide grenier",
+        "slug": "vide-grenier",
+        "image": "evenements/imagegroupe_4.jpg",
+        "content": "Notre vide grenier",
+        "created": "2019-04-13T02:32:38.033Z",
+        "publish": "2019-04-13T02:31:03Z",
+        "updated": "2019-04-13T02:32:38.033Z"
+    }
+},
+{
+    "model": "evenements.article",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "title": "Notre \u00e9cole se demarque",
+        "slug": "notre-ecole-se-demarque",
+        "image": "evenements/se_5.jpeg",
+        "content": "Antoine de Saint-Exup\u00e9ry",
+        "created": "2019-04-13T02:34:02.427Z",
+        "publish": "2019-04-13T02:32:53Z",
+        "updated": "2019-04-13T02:34:02.427Z"
+    }
+},
+{
+    "model": "evenements.article",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "title": "Les f\u00eates de fin d'ann\u00e9e",
+        "slug": "les-fetes-de-fin-dannee",
+        "image": "evenements/p4_6.jpg",
+        "content": "Antoine de Saint-Exup\u00e9ry",
+        "created": "2019-04-13T02:35:30.512Z",
+        "publish": "2019-04-13T02:34:26Z",
+        "updated": "2019-04-13T02:35:30.512Z"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 1,
+    "fields": {
+        "article": 3,
+        "photos": "evenements/p6_0.jpg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 2,
+    "fields": {
+        "article": 4,
+        "photos": "evenements/p6_2.jpg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 3,
+    "fields": {
+        "article": 4,
+        "photos": "evenements/imagegroupe_3.jpg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 4,
+    "fields": {
+        "article": 4,
+        "photos": "evenements/pan_photo_immeuble_4.jpg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 5,
+    "fields": {
+        "article": 5,
+        "photos": "evenements/ministere_5.png"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 6,
+    "fields": {
+        "article": 5,
+        "photos": "evenements/se_6.jpeg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 7,
+    "fields": {
+        "article": 6,
+        "photos": "evenements/p1_7.jpg"
+    }
+},
+{
+    "model": "evenements.articlemedia",
+    "pk": 8,
+    "fields": {
+        "article": 6,
+        "photos": "evenements/p2_8.jpg"
+    }
+}
+]
