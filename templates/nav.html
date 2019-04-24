@@ -49,12 +49,12 @@
 				<ul class="ui__menu__list">
 					<li class="ui__menu__item">
 						<a href="{% url 'home' %}" class="ui__menu__link">
-							Acceuil
+							Accueil
 						</a>
 
 					</li>
 					<li class="ui__menu__item has__child">
-							Ecole
+							Centre
 							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
 								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
 							</svg>
@@ -107,7 +107,7 @@
 						</div>
 					</li>
 					<li class="ui__menu__item has__child">
-							Evenements
+							Évènements
 							<svg width="4.7" height="8" viewBox="0 0 16 27" xmlns="http://www.w3.org/2000/svg" class="ui__menu__item_svg">
 								<path d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z" fill="#fff" class="ui__menu__item_svg__path"></path>
 							</svg>
@@ -144,7 +144,7 @@
 									<a href="{% url 'contacts:plan' %}">Plan</a>
 								</li>
 								<li class="ui__menu__dropdown_item">
-									<a href="{% url 'contacts:coordonnees' %}">Lien réseaux sociaux</a>
+									<a href="{% url 'contacts:coordonnees' %}">Liens de réseaux sociaux</a>
 								</li>
 								{% if request.user.is_authenticated %}
 								<li class="ui__menu__dropdown_item">
