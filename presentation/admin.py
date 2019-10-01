@@ -4,6 +4,9 @@ from .models import Generale, Partenaire
 from django.utils.safestring import mark_safe
 
 # Register your models here.
+MAX_PARTENAIRES = 3
+
+MAX_GENERALE = 4
 
 
 @admin.register(Generale)
@@ -31,10 +34,11 @@ class GeneraleAdmn(admin.ModelAdmin):
             )
     )
 
-
 	def has_add_permission(self, request):
-		return False
+		if self.model.objects.count() >= MAX_GENERALE:
+			return False
 
+		return super().has_add_permission(request)
 
 	def has_delete_permission(self, request, obj=None):
 		return False
@@ -43,6 +47,12 @@ class GeneraleAdmn(admin.ModelAdmin):
 @admin.register(Partenaire)
 class PartenaireAdmin(admin.ModelAdmin):
 	exclude = ["slug"]
+
+	def has_add_permission(self, request):
+		if self.model.objects.count() >= MAX_PARTENAIRES:
+			return False
+
+		return super().has_add_permission(request)
 
 
 
