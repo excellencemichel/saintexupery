@@ -5,7 +5,7 @@ from django.db import models
 from django.db.models.signals import pre_save, post_save
 
 
-from saintexupery.utils import unique_slug_generator, upload_file_location
+from saintexupery.utils import unique_slug_generator
 
 
 
@@ -20,7 +20,7 @@ def get_filename(filepath):
 
 
 
-def upload_file_location(instance, filename):
+def upload_file_location_with(instance, filename):
     instance_name = instance.title
     id_ = instance.id
     if id_ is None:
@@ -59,7 +59,7 @@ class Generale(models.Model):
 
 
     content = models.TextField()
-    image = models.FileField(upload_to=upload_file_location, null=True, blank=True)
+    image = models.FileField(upload_to=upload_file_location_with, null=True, blank=True)
     presentation_type = models.CharField(max_length=250, choices=TYPE_PRESENTATION)
 
 
@@ -87,7 +87,7 @@ class Partenaire(models.Model):
     title         = models.CharField(max_length=250)
     slug        = models.SlugField()
     contenu     = models.TextField()
-    logo        = models.ImageField(upload_to=upload_file_location, null=True, blank=True)
+    logo        = models.ImageField(upload_to=upload_file_location_with, null=True, blank=True)
     created     = models.DateTimeField(auto_now=False, auto_now_add=True)
     updated     = models.DateTimeField(auto_now=True, auto_now_add=False)
 

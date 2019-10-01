@@ -86,11 +86,6 @@ urlpatterns = [
 
       path("inscription", inscription, name="inscription"),
 
-
-
-
-
-
 ]
 
 

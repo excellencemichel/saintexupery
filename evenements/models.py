@@ -27,7 +27,7 @@ def get_filename(filepath):
 
 
 
-def upload_file_location(instance, filename):
+def upload_file_location_with(instance, filename):
     id_ = instance.id
     if id_ is None:
         Klass = instance.__class__
@@ -52,7 +52,7 @@ class Article(models.Model):
     slug = models.SlugField()
 
 
-    image = models.FileField(upload_to=upload_file_location)
+    image = models.FileField(upload_to=upload_file_location_with)
     content = models.TextField()
 
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -97,7 +97,7 @@ pre_save.connect(article_pre_save_receiver, sender=Article)
 
 class ArticleMedia(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    photos = models.FileField(upload_to=upload_file_location)
+    photos = models.FileField(upload_to=upload_file_location_with)
 
 
 
