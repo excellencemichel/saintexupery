@@ -5,7 +5,7 @@ from django.db import models
 from django.db.models.signals import pre_save, post_save
 
 
-from saintexupery.utils import unique_slug_generator
+from saintexupery.utils import unique_slug_generator, upload_file_location
 
 
 
@@ -35,7 +35,7 @@ def upload_file_location(instance, filename):
     final_filename = "{name_file}_{id_}{extension_file}".format(name_file=name_file, id_=id_, extension_file=extension_file)
     
 
-    return "presentations/{instance_name}/{final_filename}".format(instance_name=instance_name, final_filename=final_filename)
+    return "presentations/{final_filename}".format(final_filename=final_filename)
 
 
 

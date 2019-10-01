@@ -17,7 +17,6 @@ def get_filename(filepath):
 
 
 def upload_file_location(instance, filename):
-	name_product = instance.name
 	id_ = instance.id
 	if id_ is None:
 		Klass = instance.__class__
@@ -29,9 +28,11 @@ def upload_file_location(instance, filename):
 	name_file, extension_file =get_filename(filename)
 
 	final_filename = "{name_file}_{id_}{extension_file}".format(name_file=name_file, id_=id_, extension_file=extension_file)
+
+	return "{instance_class}/{final_filename}".format(instance_class=instance.__class__, final_filename=final_filename)
+
 	
 
-	return "images/{name_product}/{final_filename}".format(name_product=name_product, final_filename=final_filename)
 
 
 
