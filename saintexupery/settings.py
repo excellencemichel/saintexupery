@@ -196,3 +196,6 @@ from .production import *
 
 if os.environ.get("ENV") =="PRODUCTION":
     DEBUG = False
+    from saintexupery.aws.conf import *
+
+

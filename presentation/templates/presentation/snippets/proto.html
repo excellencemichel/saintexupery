@@ -11,7 +11,12 @@
 		<div class="col col-7 col-xs-7 col-sm-7 col-md-7 col-lg-7">
 			<div>
 				<p>
+					{% autoescape on %}
+    				{{ instance.content }}
+					{% endautoescape %}
 					{{ instance.content|safe }}
+					{{ instance.content|escape }}
+
 				</p>
 			</div>
 		</div>
