@@ -27,7 +27,9 @@ ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
 
 
 DEFAULT_FILE_STORAGE = 'saintexupery.aws.utils.MediaRootS3BotoStorage'
-STATICFILES_STORAGE = 'saintexupery.aws.utils.StaticRootS3BotoStorage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'saintexupery.aws.utils.StaticRootS3BotoStorage'
 
 
 
