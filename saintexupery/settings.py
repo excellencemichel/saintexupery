@@ -43,10 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 
+    #Third party
+    'storages',
     'crispy_forms',
 
+    #Local
     'profile',
     'accounts',
 
@@ -168,7 +170,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr-fr'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = "Africa/Casablanca"
+
 
 USE_I18N = True
 
