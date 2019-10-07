@@ -207,8 +207,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
 from .production import *
 
-if os.environ.get("ENV") =="PRODUCTION":
-    DEBUG = False
-    from saintexupery.aws.conf import *
+# if os.environ.get("ENV") =="PRODUCTION":
+#     DEBUG = False
+#     # from saintexupery.aws.conf import *
 
 
