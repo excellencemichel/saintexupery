@@ -1,0 +1,137 @@
+:root {
+   --accordion-bg: #ddd;
+   --accordion-active-bg: #ddd;
+}
+
+.jd-accordion {
+   position: relative;
+}
+
+.jd-accordion__item {
+   border: 1px solid #ddd;
+}
+
+.jd-accordion__item:not(:last-child) {
+   margin-bottom: 15px;
+}
+
+.jd-accordion__header {
+   background-color: var(--accordion-bg);
+   padding: 10px 20px;
+   border-bottom: 1px solid var(--accordion-bg);
+}
+
+.jd-accordion__header.open {
+   background-color: var(-accordion-active-bg);
+}
+
+.jd-accordion__icons-left .jd-accordion__title{
+   flex-direction: row-reverse;
+}
+
+.jd-accordion__title {
+   margin: 0;
+   cursor: pointer;
+   width: 100%;
+   text-align: left;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   padding: 0;
+}
+
+.jd-accordion__title-text {
+   color: #333;
+   flex-grow: 1;
+   font-size: 20px;
+   line-height: 1.5;
+}
+
+.jd-accordion__icon {
+   font-size: 16px;
+   line-height: 1.5;
+   color: #333;
+}
+
+.jd-accordion__icons-right {
+   margin-left: 10px;
+
+}
+
+.jd-accordion__icons-left {
+   margin-right: 10px;
+   float: left;
+}
+
+.jd-accordion .open .jd-accordion__icon {
+   color: #ddd;
+}
+
+.jd-accordion .open .jd-accordion__plus-icon {
+   display: block;
+}
+
+.jd-accordion .jd-accordion__plus-icon {
+   display: none;
+}
+
+.jd-accordion .open .jd-accordion__minus-icon {
+   display: none;
+}
+
+.jd-accordion__description {
+   padding: 10px 20px;
+   font-family: arial;
+   font-size: 16px;
+   line-height: 1.5;
+   display: none;
+}
+
+/* Css style */
+.jdb-accordion {
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
+}
+.jdb-accordion .jdb-accordion-title {
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   border-width: 0;
+}
+.jdb-accordion .jdb-accordion-title .jdb-accordion-text {
+   flex-basis: 100%;
+}
+.jdb-accordion .jdb-accordion-title .jdb-caret {
+   font-size: 60%;
+   margin-left: 10px;
+}
+.jdb-accordion .jdb-accordion-title .jdb-caret .jdb-caret-on {
+   display: none;
+}
+.jdb-accordion .jdb-accordion-title.jdb-caret-left {
+   flex-direction: row-reverse;
+}
+.jdb-accordion .jdb-accordion-title.jdb-caret-left .jdb-caret {
+   margin-left: 0px;
+   margin-right: 10px;
+}
+.jdb-accordion .jdb-accordion-content {
+   border-width: 0;
+}
+.jdb-accordion .jdb-accordion-icon {
+   margin-right: 5px;
+}
+.jdb-accordion > li {
+   border-width: 0;
+}
+.jdb-accordion > li:last-child {
+   margin-bottom: 0px !important;
+}
+.jdb-accordion > li.jdb-open .jdb-accordion-title .jdb-caret .jdb-caret-off {
+   display: none;
+}
+.jdb-accordion > li.jdb-open .jdb-accordion-title .jdb-caret .jdb-caret-on {
+   display: block;
+}
