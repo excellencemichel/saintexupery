@@ -182,4 +182,4 @@ def lesliens(request):
 
 
 
-    return render(request, "evenements/lesliens.html", context)
+    return render(request, "evenements/lesliens_.html", context)
