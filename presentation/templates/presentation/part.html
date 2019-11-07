@@ -1,0 +1,73 @@
+
+{% extends "base_.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% static 'images/images/slider/img-3.jpg' as image_url %}
+
+{% include "base/entete.html" with title="Nos partenaires" lien="Partenaires" image=image_url %}
+
+<section id='section-2-1529739392758' class='astroid-section section' style='' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1529739392758" class="row astroid-row">
+			<div id="astroid-column-1529739392758" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
+				<div class="astroid-module-position" id="position-2-1529739392758" style="" data-animation="" data-animation-delay="500"> 
+					<div class="moduletable ">
+						<div class="custom">
+							<div class="row align-items-center">
+								<div class="col-lg-5">
+									<img src="{% static 'images/logos/Logo_ECF_1.png' %}" alt="img-1">
+								</div>
+								<div class="col-lg-7">
+									<div class="description">
+										<h3 class="mb-4">Nos relations avec les partenaires</h3>
+										Nous avons un partenariat
+									</div>
+								</div>
+							</div>
+						</div> 
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% for instance in instances %}
+	<section id='section-3-1529739392463' class='astroid-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+		<div class='container'>
+			<div id="astroid-row-1529739392463" class="row astroid-row">
+				<div id="astroid-column-1529739392463" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
+					<div class="astroid-module-position" id="position-3-1529739392463" style="" data-animation="" data-animation-delay=""> 
+						<div class="moduletable ">
+							<div class="custom">
+								<div class="row align-items-center">
+									<div class="col-lg-5 order-lg-1">
+										<img src="{{ instance.logo.url }}" alt="img-2">
+									</div>
+									<div class="col-lg-7 order-lg-0">
+										<div class="description">
+											<h3 class="mb-4">{{ instance.title }}</h3>
+											{{ instance.contenu }}
+										</div>
+									</div>
+								</div>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{% endfor %}
+
+
+
+
+
+{% endblock content %}

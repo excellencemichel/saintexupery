@@ -1,0 +1,391 @@
+
+{% extends "base_.html" %}
+{% load static %} 
+{% block content %}
+
+
+<link href="http://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/components/rating.min.css" rel="stylesheet" />
+<link href="{% static 'css/templates/system/css/systemf6ea.css' %}" rel="stylesheet" />
+<link href="{% static 'css/templates/jd_gurukul/css/style-76772b19543e185cb8c9dd28168666f7f6ea.css' %}" rel="stylesheet" />
+<link href="{% static 'css/media/astroid/assets/css/animate.minf6ea.css' %}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i|Supermercado+One" rel="stylesheet" />
+<link href="{% static 'css/templates/jd_gurukul/css/astroid-85ec7770fd6cb519e54b998a3c36501b.css' %}" rel="stylesheet" />
+<link href="{% static 'css/media/com_acym/css/module.min0758.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/addons/content/vote/css/votef6ea.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/css/ns-default.mine209.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/css/ns-style-growl.mine209.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/templates/besley/css/templatef6ea.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/css/isotope.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/css/tzportfolioplus.min.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/templates/besley/css/photoswipe/photoswipe.css' %}" rel="stylesheet" />
+<link href="{% static 'css/components/com_tz_portfolio_plus/templates/besley/css/photoswipe/default-skin/default-skin.css' %}" rel="stylesheet" />
+<link href="{% static 'css/modules/mod_tz_portfolio_plus_portfolio/css/basic.css' %}" rel="stylesheet" />
+<link href="{% static 'css/media/mod_jdnewsticker/css/mod_jdnewsticker.css' %}" rel="stylesheet" />
+<style>
+#topbar-section-1101543823753523{color:rgb(255, 255, 255) !important; }#topbar-section-1101543823753523 a{color:rgb(255, 255, 255) !important; }#topbar-section-1101543823753523 a:hover{color:rgb(255, 255, 255) !important; }
+#banner-section-1532936603488{color:rgb(255, 255, 255) !important; }#banner-section-1532936603488 a{color:rgb(255, 255, 255) !important; }
+#breadcrumbs-section-1031544185584130{color:rgb(255, 255, 255) !important; }#breadcrumbs-section-1031544185584130 a{color:rgb(255, 255, 255) !important; }#breadcrumbs-section-1031544185584130 a:hover{color:rgb(255, 255, 255) !important; }
+#section-8-551544631049615{color:rgb(255, 255, 255) !important; }
+#bottom-section-1529739293881{color:rgb(255, 255, 255) !important; }#bottom-section-1529739293881 a{color:rgb(255, 255, 255) !important; }#bottom-section-1529739293881 a:hover{color:rgb(255, 255, 255) !important; }
+#footer-section-1528971627712{color:rgb(255, 255, 255) !important; }#footer-section-1528971627712 a{color:rgb(255, 255, 255) !important; }#footer-section-1528971627712 a:hover{color:rgb(245, 130, 32) !important; }
+	</style>
+
+<script src="{% static 'js/media/jui/js/jquery.minf6ea.js' %}"></script>
+<script src="{% static 'js/media/jui/js/jquery-noconflictf6ea.js' %}"></script>
+<script src="{% static 'js/media/jui/js/jquery-migrate.minf6ea.js' %}"></script>
+<script src="{% static 'js/media/system/js/captionf6ea.js' %}"></script>
+<script src="{% static 'js/media/system/js/mootools-coref6ea.js' %}"></script>
+<script src="{% static 'js/media/system/js/coref6ea.js' %}"></script>
+<script src="{% static 'js/media/system/js/mootools-moref6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/jquery.easing.minf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/bootstrap/popper.minf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/bootstrap/bootstrap.minf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/jquery.astroidmobilemenuf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/jquery.jdmegamenuf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/vendor/jquery.offcanvasf6ea.js' %}"></script>
+<script src="{% static 'js/templates/jd_gurukul/js/scriptf6ea.js' %}"></script>
+<script src="{% static 'js/media/com_acym/js/module.min0758.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/core.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/modernizr.custom4a89.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/classie.minf6ea.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/notificationfx.mine209.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/addons/content/vote/js/vote.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/tz_portfolio_plus.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/js/jquery.isotope.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/templates/besley/js/photoswipe.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/templates/besley/js/photoswipe-ui-default.min.js' %}"></script>
+<script src="{% static 'js/components/com_tz_portfolio_plus/templates/besley/js/lightbox.min.js' %}"></script>
+<script src="{% static 'js/modules/mod_tz_portfolio_plus_portfolio/js/resize.js' %}"></script>
+<script>
+jQuery(window).on('load',  function() {
+				new JCaption('img.caption');
+			});
+ var acymModule = [];
+			acymModule['emailRegex'] = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*\@([a-z0-9-]+\.)+[a-z0-9]{2,20}$/i;
+			acymModule['NAMECAPTION'] = 'Name';
+			acymModule['NAME_MISSING'] = 'Please enter your name';
+			acymModule['EMAILCAPTION'] = 'Email';
+			acymModule['VALID_EMAIL'] = 'Please enter a valid e-mail address';
+			acymModule['CAPTCHA_MISSING'] = 'The captcha is invalid, please try again';
+			acymModule['NO_LIST_SELECTED'] = 'Please select the lists you want to subscribe to';
+			acymModule['ACCEPT_TERMS'] = 'Please check the Terms and Conditions / Privacy policy';
+jQuery(function($){
+    $(document).ready(function(){
+        $("#portfolio166").tzPortfolioPlusIsotope({
+            "mainElementSelector"       : "#TzContent166",
+            "containerElementSelector"  : "#portfolio166",
+            "sortParentTag"             : "filter166",
+            isotope_options             : {
+                "filterSelector"            : "#tz_options166 .option-set"
+            },
+            "params"                    : {
+                "orderby_sec"           : "rdate",
+                "tz_column_width"       : 400,
+                "tz_show_filter"        : 1,
+                "tz_filter_type"        : "categories"
+            },
+            "afterColumnWidth" : function(newColCount,newColWidth){
+                jQuery('#portfolio166 .element').map(function () {
+                    var colHeight = (newColWidth * 3)/5;
+                    jQuery(this).find('.TzArticleMedia').height(colHeight);
+                    if (jQuery(this).hasClass('tz_feature_item')) {
+                        jQuery(this).width(newColWidth * 2).find('.TzArticleMedia').height(colHeight * 2 + 40);
+                    } 
+                });
+                TzPortfolioPlusArticlesResizeImage($("#portfolio166 > .element .tzpp_media"));
+            },
+            afterImagesLoaded       : function(){
+                jQuery('.besleylightbox').remove();
+                besley_lightbox();
+            } 
+        });
+    });
+    $(window).load(function(){
+        var $tzppisotope    = $("#portfolio166").data("tzPortfolioPlusIsotope");
+        if(typeof $tzppisotope === "object"){
+            $tzppisotope.imagesLoaded(function(){
+                $tzppisotope.tz_init();
+            });
+        }
+    });
+});
+
+	</script>
+<script src="http://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/components/rating.min.js"></script>
+
+
+
+<div class="astroid-container">
+<div class="astroid-content"><div style="" class="astroid-layout astroid-layout-wide"><div class="astroid-wrapper"><section id='banner-section-1532936603488' class='astroid-section banner-section' style='' data-animation='' data-animation-delay=''><div id="astroid-row-1532936603488" class="row no-gutters astroid-row"><div id="astroid-column-1532936603488" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-banner text-center text-white" id="banner-1532936878566" style="" data-animation="" data-animation-delay="500"> <div style="background-image: url({% static 'images/images/slider/img-2.jpg' %})" class="astroid-banner-inner ">
+<h2 class="astroid-banner-title" style="color:">Actualités & Blogs</h2> </div>
+</div></div></div></section><section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''><div class='container'><div id="astroid-row-1061544185584130" class="row astroid-row"><div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> <div class="moduletable ">
+<div class="breadcrumb-wraper">
+<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+<li class="active">
+<span class="divider icon-location"></span>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
+<span class="divider">
+&gt; </span>
+<meta itemprop="position" content="1">
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
+<span itemprop="name">
+Galérie </span>
+<meta itemprop="position" content="3">
+</li>
+</ul>
+</div> </div>
+</div></div></div></div></section><section id='section-3-1529739392463' class='astroid-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''><div class='container'><div id="astroid-row-1529739392463" class="row astroid-row"><div id="astroid-column-1529739392463" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="position-3-1529739392463" style="" data-animation="" data-animation-delay=""> <div class="moduletable ">
+<div id="TzContent166" class="tz_portfolio_plus_portfolio tplBesley TzContent">
+<div id="tz_options166" class="clearfix">
+<div class="option-combo">
+<div id="filter166" class="option-set clearfix" data-option-key="filter">
+<a href="#show-all" data-option-value="*" class="btn btn-default btn-small selected">Afficher tout</a>
+<a href="#sport" class="btn btn-default btn-small" data-option-value=".sport">
+Sport </a>
+<a href="#tours" class="btn btn-default btn-small" data-option-value=".tours">
+Tours </a>
+<a href="#events" class="btn btn-default btn-small" data-option-value=".events">
+Events </a>
+</div>
+</div>
+</div>
+<div id="portfolio166" class="masonry row ">
+<div class="element events" data-date="1547553437" data-title="Dancing" data-hits="57">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/dancing-14_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Dancing </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/dancing-14_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+ </div>
+<div class="element events" data-date="1547550151" data-title="Singing Competetion" data-hits="45">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/singing-competetion-13_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Singing Competetion </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/singing-competetion-13_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element events" data-date="1547550099" data-title="Yoga" data-hits="40">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/yoga-12_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Yoga </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/yoga-12_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element tours" data-date="1547550048" data-title="World Tour" data-hits="41">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/world-tour-11_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+World Tour </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static '/media/tz_portfolio_plus/article/cache/world-tour-11_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element tours" data-date="1547549764" data-title="City Tour" data-hits="47">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/city-tour-10_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+City Tour </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/city-tour-10_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element tours" data-date="1547549705" data-title="Atlanta" data-hits="41">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/atlanta-9_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Atlanta </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/atlanta-9_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element tours" data-date="1547549647" data-title="Hill Station" data-hits="34">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/hill-station-8_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Hill Station </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/hill-station-8_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element tours" data-date="1547549597" data-title="Newyork Tour" data-hits="39">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/newyork-tour-7_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Newyork Tour </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/newyork-tour-7_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element sport" data-date="1547549526" data-title="Kids Play" data-hits="44">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/kids-play-6_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Kids Play </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/kids-play-6_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href=".#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element sport" data-date="1547549198" data-title="Swimming" data-hits="34">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/swimming-5_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Swimming </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/swimming-5_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element sport" data-date="1547533619" data-title="Football Match" data-hits="42">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/jd-skillset-4-4_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Football Match </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/jd-skillset-4-4_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="element sport" data-date="1547533619" data-title="Basketball" data-hits="55">
+<div class="TzInner">
+<div class="TzArticleMedia">
+<div class="tz_portfolio_plus_image" style="background-image: url({% static 'images/media/tz_portfolio_plus/article/cache/basketball-1_o.jpg' %});">
+<div class="ImageOverlayMg">
+<div class="besley-title">
+<h3 class="TzPortfolioTitle name" itemprop="name">
+<a href="#" itemprop="url">
+Basketball </a>
+</h3>
+<div class="iconhover">
+<span class="white-rounded"><a class="popup-item" href="{% static 'images/media/tz_portfolio_plus/article/cache/basketball-1_o.jpg' %}" data-size="600x400"><i class="fa fa-search"></i></a></span>
+<span class="white-rounded"><a href="#"><i class="fa fa-link"></i></a></span>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div> </div>
+</div></div></div></div></section></div></div></div></div>
+
+
+
+{% endblock content %}

@@ -7,14 +7,22 @@ from django.shortcuts import render
 def presentation_cycles(request):
 	context = {}
 
-	return render(request, "cycles/presentation_cycles.html", context)
+	return render(request, "cycles/pres.html", context)
+
+
+
+def maternelle(request):
+
+    context = {}
+
+    return render(request, "cycles/maternelle_.html", context)
 
 
 def primaire(request):
 
     context = {}
 
-    return render(request, "cycles/primaire.html", context)
+    return render(request, "cycles/primaire_.html", context)
 
 
 
@@ -22,11 +30,11 @@ def college(request):
 
     context = {}
 
-    return  render(request, "cycles/college.html", context)
+    return  render(request, "cycles/college_.html", context)
 
 
 def lycee(request):
 
     context = {}
 
-    return  render(request, "cycles/lycee.html", context)
+    return  render(request, "cycles/lycee_.html", context)

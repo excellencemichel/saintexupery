@@ -20,7 +20,7 @@ def home(request):
 		"partenaires":partenaires,
 		"presentation": presentation,
 	}
-	return render(request, "home.html", context)
+	return render(request, "home_.html", context)
 
 
 

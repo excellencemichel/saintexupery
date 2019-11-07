@@ -59,7 +59,7 @@ def articles(request):
         "instances": instances,
     }
 
-    return render(request, "evenements/articles.html", context)
+    return render(request, "evenements/articles_.html", context)
 
 
 def detail(request, id=None, slug=None):
@@ -173,7 +173,7 @@ def galerie_photo(request):
 
     context = {}
 
-    return render(request, "evenements/galeries_photo.html", context)
+    return render(request, "evenements/gallery.html", context)
 
 
 def lesliens(request):

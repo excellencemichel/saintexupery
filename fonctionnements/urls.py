@@ -16,7 +16,7 @@ app_name = "fonctionnements"
 urlpatterns = [
 
 
-				path("fonctionnement", horaires, name="fonctionnement"),
+				path("fonctionnement", fonctionnement, name="fonctionnement"),
 				
 				path("horaires", horaires, name="horaires"),
 

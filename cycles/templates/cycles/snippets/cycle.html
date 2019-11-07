@@ -1,0 +1,70 @@
+{% load static %}
+
+
+<section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1061544185584130" class="row astroid-row">
+			<div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
+				<div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> 
+					<div class="moduletable ">
+						<div class="breadcrumb-wraper">
+							<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+								<li class="active">
+									<span class="divider icon-location"></span>
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+									<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
+									<span class="divider">
+									&gt; </span>
+									<meta itemprop="position" content="1">
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+									<a itemprop="item" href="{% url 'cycles:presentation_cycles' %}" class="pathway"><span itemprop="name">Cycles</span></a>
+									<span class="divider">
+									&gt; </span>
+									<meta itemprop="position" content="2">
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
+									<span itemprop="name"> {{ cycle }} </span>
+									<meta itemprop="position" content="3">
+								</li>
+							</ul>
+						</div> 
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1528971561366" class="row astroid-row">
+			<div id="astroid-column-1528971561366" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="">
+				<div class="astroid-message" id="messages-1528971711775" style="" data-animation="" data-animation-delay="">
+					<div id="system-message-container">
+					</div>
+				</div>
+				<div class="astroid-component" id="component-area-1529739248826" style="" data-animation="" data-animation-delay="">
+					<div class="astroid-component-area">
+						<div class="item-page services-view blog-view" itemscope itemtype="https://schema.org/Article">
+							<meta itemprop="inLanguage" content="en-GB" />
+								<div class="item-title">
+								<h2 itemprop="headline">
+								{{ cycle }} </h2>
+							</div>
+							<div class="entry-image full-image mb-3"> 
+								<img src="{% static 'images/images/academics/elementory-school.jpg' %}" alt="" itemprop="image" class="img-fluid" /> 
+							</div>
+							<div itemprop="articleBody">
+								<p>Lorem ipsum dolor</p> <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+								<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
