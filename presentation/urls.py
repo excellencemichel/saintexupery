@@ -20,9 +20,9 @@ urlpatterns = [
 
 			path("presentation", presentation, name="presentation"),
 			path("partenaires", partenaires, name="partenaires"),
-			path("mot_directeur", mot_directeur, name="mot_directeur"),
+			path("mot-directeur", mot_directeur, name="mot_directeur"),
 			path("programme", programme, name="programme"),
-			path("equipe_pedagogique", equipe_pedagogique, name="equipe_pedagogique"),
+			path("equipe-pedagogique", equipe_pedagogique, name="equipe_pedagogique"),
 
 
 
