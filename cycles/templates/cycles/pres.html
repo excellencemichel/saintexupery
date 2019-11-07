@@ -2,48 +2,13 @@
 {% load static %}
 
 {% block content %}
-<section id='banner-section-1532936603488' class='astroid-section banner-section' style='' data-animation='' data-animation-delay=''>
-	<div id="astroid-row-1532936603488" class="row no-gutters astroid-row">
-		<div id="astroid-column-1532936603488" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
-			<div class="astroid-banner text-center text-white" id="banner-1532936878566" style="" data-animation="" data-animation-delay="500"> 
-				<div style="background-image: url({% static 'images/images/slider/img-3.jpg' %})" class="astroid-banner-inner ">
-					<h2 class="astroid-banner-title" style="color:">Houses</h2> 
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
 
-<section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''>
-	<div class='container'>
-		<div id="astroid-row-1061544185584130" class="row astroid-row">
-			<div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
-				<div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> 
-					<div class="moduletable ">
-						<div class="breadcrumb-wraper">
-							<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
-								<li class="active">
-									<span class="divider icon-location"></span>
-								</li>
-								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-									<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
-									<span class="divider">
-									&gt; </span>
-									<meta itemprop="position" content="1">
-								</li>
-								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
-									<span itemprop="name">
-									Houses &gt;</span>
-									<meta itemprop="position" content="3">
-								</li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+
+
+{% static 'images/images/slider/img-3.jpg' as image_url %}
+
+{% include "base/entete.html" with title="La présentation" lien="Présentation" image=image_url %}
+
 
 <section id='section-2-1529739392758' class='astroid-section section' style='' data-animation='' data-animation-delay=''>
 	<div class='container'>
