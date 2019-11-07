@@ -208,7 +208,7 @@
         <div class="row">
         <div class="col-md-4 d-md-flex">
         <div class="box box-1 w-100">
-        <a href="index.php/events.html">
+        <a href="{% url 'cycles:presentation_cycles' %}">
         <img src="{% static 'images/images/icons/students-events.svg' %}" alt="students-events" />
         <h4 class="name">Nos<span>élèves</span></h4>
         </a>
@@ -216,7 +216,7 @@
         </div>
         <div class="col-md-4 d-md-flex">
         <div class="box box-2 w-100">
-        <a href="index.php/about/faculties.html">
+        <a href="{% url 'presentation:equipe_pedagogique' %}">
         <img src="{% static 'images/images/icons/teachers-profile.svg' %}" alt="teachers-profile" />
         <h4 class="name">Le corps<span>Professoral</span></h4>
         </a>
@@ -224,7 +224,7 @@
         </div>
         <div class="col-md-4 d-md-flex">
         <div class="box box-3 w-100">
-        <a href="index.php/admissions.html">
+        <a href="{% url 'presentation:equipe_pedagogique' %}">
         <img src="{% static 'images/images/icons/admission-open.svg' %}" alt="admission-open" />
         <h4 class="name">L'administration<span>du centre</span></h4>
         </a>
@@ -560,9 +560,9 @@
         </div>
         <div class="content-only">
         <div class="djev_info djev_clearfix">
-        <a href="index.php/events5651.html?city=1" class="djev_city">
+        <a href="#" class="djev_city">
         <i class="fa fa-map-marker"></i> Casa </a>
-        <a href="index.php/events10ec.html?cid=4" class="djev_category" style="">
+        <a href="#" class="djev_category" style="">
         <span class="fas fa-users" aria-hidden="true"></span>
         <span>Culture</span>
         </a>
@@ -629,7 +629,7 @@
         </div>
         </div>
         <div class="djev_items_more">
-        <a class="btn btn-primary btn-lg" href="index.php/events.html">Voir tout</a>
+        <a class="btn btn-primary btn-lg" href="#">Voir tout</a>
         </div>
         </div>
         </div> </div>
