@@ -33,9 +33,6 @@ from django.urls import include, path, re_path
 from .views import home, navs
 
 
-from inscriptions.views import inscription
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -84,7 +81,6 @@ urlpatterns = [
       path('reset-password/complete', password_reset_complete, name="password_reset_complete"), 
 
 
-      path("inscription", inscription, name="inscription"),
 
 
 

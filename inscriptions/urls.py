@@ -2,7 +2,7 @@ from django.urls import path, re_path
 
 
 from .views import (
-			inscriptions,
+			inscriptions, inscription
 	)
 
 
@@ -17,6 +17,9 @@ urlpatterns = [
 
 		
 		path("", inscriptions, name="inscriptions"),
+
+      	path("inscription", inscription, name="inscription"),
+
 		
 
 

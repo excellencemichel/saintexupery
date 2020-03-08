@@ -244,13 +244,14 @@
         <div class="row align-items-center">
         <div class="col-lg-5 d-lg-flex">
         <div>
-        <h5 class="pre-title">Qui sommes nous ?</h5>
-        <h2 class="module-title">Bienvenue au centre Saint-Exupéry</h2>
+        <h5 class="pre-title"><a href="{% url 'presentation:presentation' %}">Qui sommes nous ?</a></h5>
         <p>{{ presentation.content|truncatewords:100 }}</p>
+
+        <h6>Nos cycles</h6>
         <ul class="fa-ul">
-        <li><i class="fas fa-circle"></i>Maternelle et primaire</li>
-        <li><i class="fas fa-circle"></i>Collège</li>
-        <li><i class="fas fa-circle"></i>Lycée</li>
+        <li><a href="{% url 'cycles:primaire' %}"><i class="fas fa-circle"></i>Maternelle et primaire</a></li>
+        <li><a href="{% url 'cycles:college' %}"><i class="fas fa-circle"></i>Collège</a></li>
+        <li><a href="{% url 'cycles:lycee' %}"><i class="fas fa-circle"></i>Lycée</a></li>
         </ul>
         <a href="i{% url 'contacts:contacts' %}" class="btn btn-primary btn-lg mr-4 mt-4">Nous contacter</a>
         <a href="{% url 'contacts:plan' %}" class="btn btn-secondary btn-lg mt-4">Visiter le centre</a>
@@ -287,7 +288,11 @@
 
 <section id='section-3-1529739392463' class='astroid-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
     <div class='container'>
-        <div id="astroid-row-1529739392463" class="row astroid-row"><div id="astroid-column-1529739392463" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="position-3-1529739392463" style="" data-animation="" data-animation-delay=""><div class="moduletable split-title-module text-center"><h2 class="module-title split-title page-header"><span class="split-1">Le centre </span><span class="split-2">Qu'est-ce que nous faisons ?</span></h2> 
+        <div id="astroid-row-1529739392463" class="row astroid-row"><div id="astroid-column-1529739392463" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="position-3-1529739392463" style="" data-animation="" data-animation-delay=""><div class="moduletable split-title-module text-center"><h2 class="module-title split-title page-header"><span class="split-1">Le centre </span><span class="split-2"> 
+            <strong> 
+                Qu'est-ce que nous faisons ?
+            </strong> 
+        </span></h2> 
         <section class="jd-services-showcase">
             <div class="jd-container px-0">
             <div class="jd-row">

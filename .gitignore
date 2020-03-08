@@ -2,6 +2,7 @@
 *.pyc
 env
 env/
+.vscode
 
 saintexupery.sublime-workspace
 staticfiles

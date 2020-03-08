@@ -7,7 +7,7 @@
 
 {% static 'images/images/slider/img-3.jpg' as image_url %}
 
-{% include "base/entete.html" with title="La présentation" lien="Présentation" image=image_url %}
+{% include "base/entete.html" with title="La présentation des cycles" lien="Présentation" image=image_url %}
 
 
 <section id='section-2-1529739392758' class='astroid-section section' style='' data-animation='' data-animation-delay=''>
@@ -22,6 +22,17 @@
 									<div class="description">
 										<h3 class="mb-4">Présentation des cycles</h3>
 										<h6>Nos cycles</h6>
+										<p>
+											En France, l'enseignement primaire est découpé en quatre cycles pluri-annuels. Ces cycles couvrent à la fois l'école maternelle, l'école élémentaire et le collège. Cette forme de pédagogie prend en considération les décalages d'apprentissage entre les enfants dus aux différences de maturité.
+
+											La notion de cycle a été définie dans la loi d'orientation sur l'éducation de 1989, puis un nouveau décret de 2013 (mise en application intégrale en 2017). Ce découpage des apprentissages, en 4 cycles distincts, vise notamment à reconnaître et à respecter les différences entre les élèves sur le plan de leurs capacités d'apprentissage.
+											Depuis 2019 (réforme Blanquer), l'école est obligatoire de 3 à 16 ans
+
+											<h6>Cycle 1 : école maternelle : PS – MS – GS</h6>
+											<h6>Cycle 2 : CP – CE1 – CE2</h6>
+											<h6>Cycle 3 : CM1 – CM2 – 6ème</h6>
+											<h6>Cycle 4 : 5ème – 4ème – 3èm</h6>
+										</p>
 									</div>
 								</div>
 							</div>
@@ -43,13 +54,21 @@
 						<div class="custom">
 							<div class="row align-items-center">
 								<div class="col-lg-5 order-lg-1">
+									<a href="{% url 'cycles:primaire' %}">
 									<img src="{% static 'images/images/houses/img-2.png' %}" alt="img-2">
+									</a>
 								</div>
 								<div class="col-lg-7 order-lg-0">
 									<div class="description">
-										<h3 class="mb-4">Maternelle</h3>
-										<h6>La maternelle</h6>
-										<p>Partant de la ...</p>
+										<h3 class="mb-4"><a href="{% url 'cycles:primaire' %}"> Primaire</a></h3>
+
+										<p>
+											Du CP au CM2, nous accompagnons votre enfant tout au long de son parcours. 
+											<strong>
+											 Cycle 2 : le cycle des apprentissages fondamentaux...
+												
+											</strong>
+										</p>
 									</div>
 								</div>
 							</div>
@@ -72,7 +91,7 @@
 
 				<div class="astroid-component" id="component-area-1529739248826" style="" data-animation="" data-animation-delay="">
 					<div class="astroid-component-area">
-						<div class="item-pagehide-component-area-spacing" itemscope itemtype="https://schema.org/Article">
+						<div class="item-pagehide-component-area-spacing" itemscope itemtype="#">
 							<meta itemprop="inLanguage" content="en-GB" />
 							<div itemprop="articleBody">
 							</div>
@@ -94,13 +113,16 @@
 						<div class="custom">
 							<div class="row align-items-center">
 								<div class="col-lg-5">
+									<a href="{% url 'cycles:college' %}">
+										
 									<img src="{% static 'images/images/houses/img-3.png' %}" alt="img-3">
+
+									</a>
 								</div>
 								<div class="col-lg-7">
 									<div class="description">
-										<h3 class="mb-4">Collège</h3>
-										<h6>Le cycle de collège</h6>
-										<p>Le collège dont ...</p>
+										<h3 class="mb-4"><a href="{% url 'cycles:college' %}">Collège</a> </h3>
+										<p>Du CP au CM2, nous accompagnons votre enfant tout au long de son parcours...</p>
 									</div>
 								</div>
 							</div>
@@ -121,13 +143,15 @@
 						<div class="custom">
 							<div class="row align-items-center">
 								<div class="col-lg-5 order-lg-1">
-								<img src="{% static 'images/images/houses/img-4.png' %}" alt="img-4">
+									<a href="{% url 'cycles:lycee' %}">
+										
+										<img src="{% static 'images/images/houses/img-4.png' %}" alt="img-4">
+									</a>
 								</div>
 								<div class="col-lg-7 order-lg-0">
 								<div class="description">
-									<h3 class="mb-4">Le lycée</h3>
-									<h6>Le cycle de lycée</h6>
-									<p>Le lycée</p>
+									<h3 class="mb-4"><a href="{% url 'cycles:lycee' %}">Le lycée<</a></h3>
+									<p>À l’issue du collège, les élèves peuvent poursuivre leur scolarité dans un lycée d’enseignement général et technologique ou dans un lycée professionnel...</p>
 								</div>
 								</div>
 							</div>
