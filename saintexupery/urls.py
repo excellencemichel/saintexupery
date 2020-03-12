@@ -34,7 +34,6 @@ from .views import home, navs
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
 
 
     path("", home, name="home"),
@@ -80,6 +79,14 @@ urlpatterns = [
       re_path(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm, name="password_reset_confirm"),
       path('reset-password/complete', password_reset_complete, name="password_reset_complete"), 
 
+
+
+    #Configuration de l'administration personnalisé
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
+
+
+    path('admin/', admin.site.urls),
 
 
 
