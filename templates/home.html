@@ -107,6 +107,7 @@
 
 <!-- ================Start Presentation========================== -->
 
+
 <section id='section-2-1529739392758' class='astroid-section section' style='' data-animation='' data-animation-delay=''>
     <div class='container'>
         <div id="astroid-row-1529739392758" class="row astroid-row">
@@ -116,18 +117,24 @@
                         <div class="custom">
                             <div class="home-about">
                                 <div class="row align-items-center">
+
                                     <div class="col-lg-5 d-lg-flex">
                                         <div>
-                                            <h2 class="pre-title"><a href="{% url 'presentation:presentation' %}">Qui sommes-nous ?</a></h2>
+                                            <h2 class="pre-title">Qui sommes-nous</h2>
                                             <p>
                                                 {% autoescape off %}
                                                     {{ presentation.content }}
                                                 {% endautoescape %}
                                             </p>
-
                                         </div>
                                     </div>
-                                
+
+                                    <div class="col-lg-6 offset-lg-1 d-lg-flex mt-lg-0 mt-5 d-none d-lg-block">
+                                        <div class="img-box">
+                                            <img src="{{ presentation.image.url }}" alt="Notre établissement">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div> 
@@ -137,6 +144,19 @@
         </div>
     </div>
 </section>
+
+
+
+
+<!--  -->
+
+
+
+
+<!--  -->
+
+
+
 
 <!-- ================End Presentation========================== -->
 
