@@ -20,8 +20,6 @@ def home(request):
 		"instance_evenements" : instance_articles,
 		"partenaires":partenaires,
 		"presentation": presentation,
-		"infobules": infobules,
-
 	}
 	return render(request, "home.html", context)
 
