@@ -30,14 +30,14 @@ from django.contrib.auth.views import (
 from django.urls import include, path, re_path
 
 
-from .views import home, navs
+from .views import home, map
 
 
 urlpatterns = [
 
 
     path("", home, name="home"),
-    path("navs", navs, name="navs"),
+    path("map", map, name="map"),
 
 
 
@@ -45,8 +45,6 @@ urlpatterns = [
     path('account/', include("accounts.urls", namespace="accounts")),
 
     path('contacts/', include("contacts.urls", namespace="contacts")),
-
-    path('commens/', include("comments.urls", namespace="comments")),
 
     path('evenements/', include("evenements.urls", namespace="evenements")),
 

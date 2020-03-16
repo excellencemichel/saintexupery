@@ -4,6 +4,7 @@ from evenements.models import Article
 from presentation.models import  Partenaire, Generale
 
 
+
 # Create your views here.
 
 
@@ -19,14 +20,16 @@ def home(request):
 		"instance_evenements" : instance_articles,
 		"partenaires":partenaires,
 		"presentation": presentation,
+		"infobules": infobules,
+
 	}
-	return render(request, "home_.html", context)
+	return render(request, "home.html", context)
 
 
 
 
-def navs(request):
+def map(request):
 
 	context = {}
 
-	return render(request, "navs.html", context)
+	return render(request, "map.html", context)

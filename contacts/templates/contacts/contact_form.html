@@ -6,6 +6,7 @@
 
 {% block css %}
   <link rel="stylesheet" type="text/css" href="{% static 'profile/register.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/plan_map.css' %}">
 
 {% endblock %}
 
@@ -45,8 +46,8 @@
                      <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-6">
                         <div class="form-group">
-                          {{ form.profession.label_tag }}
-                          {{ form.profession }}
+                          {{ form.telephone.label_tag }}
+                          {{ form.telephone }}
                         </div>
 
                       </div>
@@ -105,16 +106,46 @@
 
 
         <div class="col-4 col-md-4 col-lg-4">
-          <div>
-            <img src="{% static 'images/contacts/formulaire_01.png' %}">
-          </div>
+                    <div class="moduletable ">
+                        <h5 class="module-title">Contactez-nous</h5>
+                        <div class="custom">
+                            <div class="address">
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-phone fa-rotate-90"></i>
+                                    </div>
 
-          <div>
-            <p>
-              N'hésitez surtout pas à nous rendre visite si vous voulez bien. Nous vous accueillons à bras ouverts
-            </p>
-          </div>
+                                    <div class="content">+212 626 609 678</div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-phone fa-rotate-90"></i>
+                                    </div>
+                                    <div class="content">+212 524 304 798</div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">ecfsaintexupery@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="content">Avenue Abou Oubaida - Daoudiate 40 000 Marrakech (Derrière l'imprimérie El Watanya et l'école HEEC)</div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    {% include "map.html" %}
         </div>
+
+
       </div>
 
      </div>

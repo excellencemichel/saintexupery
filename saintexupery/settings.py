@@ -53,8 +53,6 @@ INSTALLED_APPS = [
     'profile',
     'accounts',
 
-    'comments',
-
     'contacts',
 
     'cycles',
@@ -113,6 +111,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 "django.template.context_processors.i18n",
+                "fonctionnements.context_processors.get_infobules",
 
             ],
         },

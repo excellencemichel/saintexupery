@@ -1,10 +1,11 @@
 from django.urls import re_path, path
 
 from .views import (
-			fonctionnement,
+
+	
 			horaires,
 
-			vacances,
+			calendrier_scolaire,
 
 						
 					)
@@ -16,12 +17,11 @@ app_name = "fonctionnements"
 urlpatterns = [
 
 
-				path("fonctionnement", fonctionnement, name="fonctionnement"),
 				
 				path("horaires", horaires, name="horaires"),
 
 
-				path("vacances", vacances, name="vacances"),
+				path("calendrier_scolaire", calendrier_scolaire, name="calendrier_scolaire"),
 
 
 				]

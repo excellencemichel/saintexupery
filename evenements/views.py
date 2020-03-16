@@ -15,8 +15,6 @@ from django.contrib import messages
 # local
 from .forms import ArticleForm
 from .models import Article, ArticleMedia
-from comments.models import Comment
-from comments.forms import CommentForm
 
 
 # Create your views here.
@@ -59,57 +57,18 @@ def articles(request):
         "instances": instances,
     }
 
-    return render(request, "evenements/articles_.html", context)
+    return render(request, "evenements/articles.html", context)
 
 
 def detail(request, id=None, slug=None):
     instance = get_object_or_404(Article, id=id, slug=slug)
 
     share_string = quote_plus(instance.content)
-
-    initial_data = {
-        "content_type": instance.get_content_type,
-        "object_id": instance.id,
-    }
-
-    form = CommentForm(request.POST or None, initial=initial_data)
-    if form.is_valid() and request.user.is_authenticated:
-        c_type = form.cleaned_data.get("content_type")
-        content_type = ContentType.objects.get(model=c_type)
-        obj_id = form.cleaned_data.get("object_id")
-        content_date = form.cleaned_data.get("content")
-
-        parent_obj = None
-        try:
-            parent_id = int(request.POST.get("parent_id"))
-
-        except:
-            parent_id = None
-
-        if parent_id:
-            parent_qs = Comment.objects.filter(id=parent_id)
-
-            if parent_qs.exists() and parent_qs.count() == 1:
-                parent_obj = parent_qs.first()
-
-        new_comment, created = Comment.objects.get_or_create(
-            user=request.user,
-            content_type=content_type,
-            object_id=obj_id,
-            content=content_date,
-            parent=parent_obj,
-        )
-
-        return HttpResponseRedirect(new_comment.content_object.get_absolute_url())
-
-    comments = instance.comments
     photos = ArticleMedia.objects.filter(article_id=instance.id)
 
     context = {
         "instance": instance,
         "photos": photos,
-        "comments": comments,
-        "form": form,
         "share_string": share_string,
     }
 
@@ -168,18 +127,3 @@ def delete(request, id, slug):
     }
 
     return render(request, "evenements/confirme_delete.html", context)
-
-def galerie_photo(request):
-
-    context = {}
-
-    return render(request, "evenements/gallery.html", context)
-
-
-def lesliens(request):
-
-    context = {}
-
-
-
-    return render(request, "evenements/lesliens_.html", context)

@@ -12,7 +12,6 @@ from django.utils import timezone
 from saintexupery.utils import unique_slug_generator
 
 
-from comments.models import Comment
 
 
 
@@ -70,17 +69,6 @@ class Article(models.Model):
     def get_absolute_url(self):
         return reverse("evenements:detail", kwargs={"id": self.id, "slug": self.slug})
 
-    @property
-    def comments(self):
-        instance = self
-        qs = Comment.objects.filter_by_instance(instance)
-        return qs
-
-    @property
-    def get_content_type(self):
-        instance = self
-        content_type = ContentType.objects.get_for_model(instance.__class__)
-        return content_type
 
     class Meta:
         ordering = ["-created", "-updated"]

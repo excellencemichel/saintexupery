@@ -1,30 +1,10 @@
-{% extends "base.html" %}
-
-
+{% extends "base_.html" %}
+{% load static %}
 
 
 {% block content %}
-<div class="container">
-
-	<div class="row">
-		<div class="col-md-4">
-			<h2>Du lundi au vendredi</h2>
-		</div>
-
-		<div class="col-md-4">
-			<h2>Pendant le carême</h2>
-			
-		</div>
-
-		<div class="col-md-4">
-			<h2>Pendant les examens</h2>
-			
-		</div>
 
 
-	</div>
-
-</div>
-
+	{% include "fonctionnements/snnipets/interne.html" with title="Les Horraires" lien="Horraires" %}
 
 {% endblock content %}

@@ -58,12 +58,6 @@
 
                     <ul class="nav-child list-group navbar-subnav level-1">
                         <li class="nav-item-submenu nav-item-id-172 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                            <a href="javascript:void(0);" title="Le centre" class=" nav-link item-link-heading item-level-2" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-flask"></i>
-                                Centre </span>
-                            </a>
-
                             <ul class="nav-child list-group navbar-subnav level-2">
                                 <li class="nav-item-submenu nav-item-id-175 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                     <a href="{% url 'presentation:presentation' %}" title="La présentation" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
@@ -73,14 +67,7 @@
                                     </a>
 
                                 </li>
-                                <li class="nav-item-submenu nav-item-id-176 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                <a href="{% url 'presentation:programme' %}" title="Le programme" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-flask"></i>
-                                Programme </span>
-                                </a>
-
-                                </li><li class="nav-item-submenu nav-item-id-177 nav-item-level-3 nav-item-parent nav-item-megamenu">
+                                <li class="nav-item-submenu nav-item-id-177 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                 <a href="{% url 'presentation:mot_directeur' %}" title="Mot de la direction" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                 <span class="nav-title">
                                 <i class="fas fa-atom"></i>
@@ -91,11 +78,6 @@
                             </ul>
                         </li>
                         <li class="nav-item-submenu nav-item-id-173 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                            <a href="javascript:void(0);" title="Équipe" class=" nav-link item-link-heading item-level-2" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-columns"></i>
-                                Equipe </span>
-                            </a>
 
                             <ul class="nav-child list-group navbar-subnav level-2">
                                 <li class="nav-item-submenu nav-item-id-179 nav-item-level-3 nav-item-parent nav-item-megamenu">
@@ -114,22 +96,9 @@
                                     </a>
 
                                 </li>
-                                <li class="nav-item-submenu nav-item-id-182 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'fonctionnements:fonctionnement' %}" title="Le fonctionnement " class=" nav-link item-link-component item-level-3" data-drop-action="hover">
-                                        <span class="nav-title">
-                                        <i class="fas fa-tablet-alt"></i>
-                                        Fonctionnement </span>
-                                    </a>
-
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item-submenu nav-item-id-174 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                            <a href="javascript:void(0);" title="Le fonctionnement interne" class=" nav-link item-link-heading item-level-2" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-hiking"></i>
-                                Interne </span>
-                            </a>
 
                             <ul class="nav-child list-group navbar-subnav level-2">
                                 <li class="nav-item-submenu nav-item-id-184 nav-item-level-3 nav-item-parent nav-item-megamenu">
@@ -141,10 +110,10 @@
 
                                 </li>
                                 <li class="nav-item-submenu nav-item-id-185 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'fonctionnements:vacances' %}" title="Vacances" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
+                                    <a href="{% url 'fonctionnements:calendrier_scolaire' %}" title="calendrier scolaire" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                         <span class="nav-title">
                                         <i class="fas fa-book-reader"></i>
-                                        Vacances </span>
+                                        Calendrier scolaire </span>
                                     </a>
 
                                 </li>
@@ -189,84 +158,16 @@
                         <span class="nav-title">
                         Événements </span>
                     </a>
-
-                    <ul class="nav-child list-group navbar-subnav level-1">
-                        <li class="nav-item-submenu nav-item-id-136 nav-item-level-2">
-                        <a href="{% url 'evenements:galerie_photo' %}" title="Galérie" class=" nav-link item-link-component item-level-2" data-drop-action="hover">
-                        <span class="nav-title">
-                        Galérie </span>
-                        </a>
-
-                        </li><li class="nav-item-submenu nav-item-id-142 nav-item-level-2">
-                        <a href="{% url 'evenements:lesliens' %}" title="Liens externes" class=" nav-link item-link-component item-level-2" data-drop-action="hover">
-                        <span class="nav-title">
-                        Liens externes </span>
-                        </a>
-
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item nav-item-id-138 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
                     <a href="{% url 'inscriptions:inscriptions' %}" title="Inscriptions" class=" nav-link item-link-alias item-level-1" data-drop-action="hover">
-                        <span class="nav-title">
-                        Inscriptions</span>
+                        <span class="nav-title">Inscriptions</span>
                     </a>
                 </li>
                 <li class="nav-item nav-item-id-171 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-megamenu">
                     <a href="{% url 'contacts:formulaire' %}" title="Contacts" class=" nav-link item-link-alias item-level-1" data-drop-action="hover">
-                        <span class="nav-title">
-                        Contacts 
-
-                    </span>
+                        <span class="nav-title">Contacter</span>
                     </a>
-
-                    <ul class="nav-child list-group navbar-subnav level-1">
-                        <li class="nav-item-submenu nav-item-id-172 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                            <a href="javascript:void(0);" title="Labs" class=" nav-link item-link-heading item-level-2" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-flask"></i>
-                                Contacter </span>
-                            </a>
-
-                            <ul class="nav-child list-group navbar-subnav level-2">
-                                <li class="nav-item-submenu nav-item-id-175 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'contacts:formulaire' %}" title="Formulaire" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
-                                        <span class="nav-title">
-                                        <i class="fas fa-luggage-cart"></i>
-                                        Formulaire </span>
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item-submenu nav-item-id-173 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                            <a href="javascript:void(0);" title="Plan" class=" nav-link item-link-heading item-level-2" data-drop-action="hover">
-                                <span class="nav-title">
-                                <i class="fas fa-columns"></i>
-                                Plan </span>
-                            </a>
-
-                            <ul class="nav-child list-group navbar-subnav level-2">
-                                <li class="nav-item-submenu nav-item-id-179 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'contacts:coordonnees' %}" title="Plan" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
-                                    <span class="nav-title">
-                                    <i class="fas fa-music"></i>
-                                    Plan </span>
-                                    </a>
-
-                                </li>
-                                <li class="nav-item-submenu nav-item-id-180 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'contacts:coordonnees' %}" title="Liens externes" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
-                                        <span class="nav-title">
-                                        <i class="fas fa-street-view"></i>
-                                        Liens de réseaux sociaux </span>
-                                    </a>
-
-                                </li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -288,16 +189,28 @@
                                             <p class="newsticker-label">Dernières nouvelles:</p>
 
                                                 <div class="carousel-inner">
+                                                    {% if infobules %}
+                                                    {% for infobule in infobules %}
+                                                    <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                                                        <div class="title">
+                                                        <a href="#">{{ infobule.info }}</a>
+                                                        </div>
+                                                    </div>
+                                                    {% endfor %}
+
+
+                                                    {% else %}
                                                     <div class="carousel-item active">
                                                         <div class="title">
-                                                        <a href="#">La quantine a ouvert</a>
+                                                        <a href="#">Le menu de la cantine : Haricot</a>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item ">
                                                         <div class="title">
-                                                        <a href="#">Sports repend</a>
+                                                        <a href="#">Ouverture des inscription 2020/2021</a>
                                                         </div>
                                                     </div>
+                                                    {% endif %}
                                                 </div>
 
                                                 <div class="navigation">
@@ -324,54 +237,15 @@
                                                 </li>
                                                 <li>
                                                     <ul class="nav navVerticalView astroid-social-icons">
-                                                        <li>
-                                                            <a style="color:inherit;" href="https://www.facebook.com/ecf.saintexupery/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                                                        <li style="font-weight: 300">
+                                                            <a style="color:inherit; color: blue; background-color: unset;" href="https://www.facebook.com/ecf.saintexupery/" target="_blank" rel="noopener"><i class="fab fa-facebook-f" style="font-size: 30px; color: blue; background-color: white"></i></a>
                                                         </li>
-                                                        <li>
-                                                            <a style="color:inherit;" href="https://www.instagram.com/ecf.saintex/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                                                        <li style="font-weight: 300">
+                                                            <a style="color:inherit; background-color: unset;" href="https://www.instagram.com/ecf.saintex/" target="_blank" rel="noopener"><i class="fab fa-instagram" style="color: #f2f0ed; font-size: 30px;background-color: #e2480e; font-weight: 700"></i></a>
                                                         </li>
 
                                                     </ul>
                                                 </li>
-
-
-        <!--                                         <li class="item-108" style="border: 2px solid #068fec;
-                                                                            /* padding: 7px; */
-                                                                            border-radius: 50%;
-                                                                            width: 45px;
-                                                                            height: 45px;
-                                                                            text-align: center;
-                                                                            line-height: 45px;
-                                                                            /* margin: 0 7px; */
-                                                                            list-style: none;">
-                                                    <a href="https://www.facebook.com/ecf.saintexupery/" target="_blank" title="Lien Facebook">
-                                                        <i class="fa fa-facebook" aria-hidden="true" style="    width: 100%;
-                                                                height: 100%;
-                                                                font-size: 23px;
-                                                                font-weight: 1000;">
-                                                            
-                                                        </i>
-                                                    </a>
-                                                </li> -->
- <!--                                                <li class="item-109" style="border: 2px solid #068fec;
-                                                                            /* padding: 7px; */
-                                                                            border-radius: 50%;
-                                                                            width: 45px;
-                                                                            height: 45px;
-                                                                            text-align: center;
-                                                                            line-height: 45px;
-                                                                            /* margin: 0 7px; */
-                                                                            list-style: none;">
-                                                    <a href="https://www.instagram.com/ecf.saintex/" target="_blank" title="Lien Instagram">
-                                                        <i class="fa fa-instagram" aria-hidden="true" style="      width: 100%;
-                                                                height: 100%;
-                                                                font-size: 23px;
-                                                                font-weight: 1000;"
-                                                        >
-                                                            
-                                                        </i>
-                                                    </a>
-                                                </li> -->
                                                 <li class="item-110">
                                                     <i class="fa fa-phone"></i>
                                                     <div style="display: inline-block; margin-left: 10px;">
@@ -423,14 +297,14 @@
                                                     <div class=" align-self-center px-2 d-none d-lg-block">
                                                         <ul class="nav astroid-nav d-none d-lg-flex">
                                                             <li data-position="left" class="nav-item nav-item-id-102 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="{% url 'home' %}" title="About" class=" nav-link megamenu-item-link item-link-component item-level-1" data-drop-action="hover">
-                                                                    <span class="nav-title" style="margin-right: 40px;">
+                                                                <a href="{% url 'home' %}" title="Accueil" class=" nav-link megamenu-item-link item-link-component item-level-1" data-drop-action="hover">
+                                                                    <span class="nav-title">
                                                                     Accueil
                                                                     </span>
                                                                 </a>
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-104 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="#" title="Our Programs" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                                <a href="#" title="Le centre" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Centre   <i class="fa fa-chevron-down nav-item-caret"></i></span>
                                                                 </a>
@@ -440,12 +314,6 @@
                                                                         <div class="col col-md-">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-172 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="javascript:void(0);" title="Le centre" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                        <span class="nav-title">
-                                                                                        <i class="fas fa-flask"></i>
-                                                                                        Le centre </span>
-                                                                                    </a>
-
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-182 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:presentation' %}" title="Présentation du centre" class=" item-link-component item-level-3" data-drop-action="hover">
@@ -455,14 +323,6 @@
                                                                                             </a>
 
                                                                                         </li>                
-                                                                                        <li class="nav-item-submenu nav-item-id-175 nav-item-level-3" style="width: max-content;">
-                                                                                            <a href="{% url 'presentation:programme' %}" title="Le programme du centre" class=" item-link-component item-level-3" data-drop-action="hover">
-                                                                                                <span class="nav-title">
-                                                                                                <i class="fas fa-luggage-cart"></i>
-                                                                                                Le programme </span>
-                                                                                            </a>
-
-                                                                                        </li>
                                                                                         <li class="nav-item-submenu nav-item-id-176 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:mot_directeur' %}" title="Mot de la direction" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
@@ -478,13 +338,6 @@
                                                                         <div class="col col-md-4">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-173 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="{% url 'presentation:equipe_pedagogique' %}" title="L'équipe pédagogique" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                        <span class="nav-title">
-                                                                                        <i class="fas fa-columns"></i>
-                                                                                        L'équipe
-                                                                                         </span>
-                                                                                    </a>
-
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-179 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:equipe_pedagogique' %}" title="L'équipe pédagogique" class=" item-link-component item-level-3" data-drop-action="hover">
@@ -502,14 +355,6 @@
                                                                                             </a>
 
                                                                                         </li>
-                                                                                        <li class="nav-item-submenu nav-item-id-182 nav-item-level-3" style="width: max-content;">
-                                                                                            <a href="{% url 'fonctionnements:fonctionnement' %}" title="Le fonctionnement du centre" class=" item-link-component item-level-3" data-drop-action="hover">
-                                                                                                <span class="nav-title">
-                                                                                                <i class="fas fa-tablet-alt"></i>
-                                                                                                Fonctionnement </span>
-                                                                                            </a>
-
-                                                                                        </li>
                                                                                     </ul>
                                                                                 </li>
 
@@ -519,12 +364,6 @@
                                                                         <div class="col col-md-4">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-174 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="javascript:void(0);" title="Fonctionnement à l'interne" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                    <span class="nav-title">
-                                                                                    <i class="fas fa-hiking"></i>
-                                                                                    Interne </span>
-                                                                                    </a>
-
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-184 nav-item-level-3">
                                                                                             <a href="{% url 'fonctionnements:horaires' %}" title="Les horaires" class=" item-link-component item-level-3" data-drop-action="hover">
@@ -536,10 +375,10 @@
 
                                                                                         </li>
                                                                                         <li class="nav-item-submenu nav-item-id-185 nav-item-level-3">
-                                                                                            <a href="{% url 'fonctionnements:vacances' %}" title="Les vacances" class=" item-link-component item-level-3" data-drop-action="hover">
+                                                                                            <a href="{% url 'fonctionnements:calendrier_scolaire' %}" title="Le calendrier scolaire" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
                                                                                                     <i class="fas fa-book-reader"></i>
-                                                                                                    Vancances 
+                                                                                                    Calendrier scolaire 
                                                                                                 </span>
                                                                                             </a>
 
@@ -596,32 +435,13 @@
 
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-135 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="{% url 'evenements:articles' %}" title="Pages" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
+                                                                <a href="{% url 'evenements:articles' %}" title="Les événements et articles" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Événements
-                                                                    <i class="fa fa-chevron-down nav-item-caret"></i>
                                                                     </span>
                                                                 </a>
-
-                                                                <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
-                                                                    <ul class="nav-submenu">
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-136 nav-item-level-2">
-                                                                            <a href="{% url 'evenements:galerie_photo' %}" title="Galérie" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                 Galerie</span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-142 nav-item-level-2">
-                                                                            <a href="{% url 'evenements:lesliens' %}" title="Liens externes" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Liens externes</span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                       
-                                                                    </ul>
                                                             </li>
+
                                                             <li data-position="left" class="nav-item nav-item-id-138 nav-item-level-1">
                                                                 <a href="{% url 'inscriptions:inscriptions' %}" title="Inscription" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
@@ -633,36 +453,8 @@
                                                                 <a href="{% url 'contacts:formulaire' %}" title="Contacts" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Contacts
-                                                                    <i class="fa fa-chevron-down nav-item-caret"></i>
                                                                     </span>
                                                                 </a>
-
-                                                                <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
-                                                                    <ul class="nav-submenu">
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-128 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:formulaire' %}" title="Bell Schedule" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Formulaire </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-105 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:plan' %}" title="Plan" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Plan </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-105 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:coordonnees' %}" title="Coordonnées" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Liens de réseaux sociaux </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-
                                                             </li>
                                                         </ul>
                                                     </div> 
@@ -695,9 +487,7 @@
                                                         <ul class="nav astroid-nav d-none d-lg-flex">
                                                             <li data-position="left" class="nav-item nav-item-id-102 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
                                                                 <a href="index.php/about.html" title="About" class=" nav-link megamenu-item-link item-link-component item-level-1" data-drop-action="hover">
-                                                                    <span class="nav-title">
-                                                                    Accueil
-                                                                    </span>
+                                                                    <span class="nav-title">Accueil</span>
                                                                 </a>
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-104 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
@@ -711,26 +501,12 @@
                                                                         <div class="col col-md-4">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-172 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="javascript:void(0);" title="Le centre" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                        <span class="nav-title">
-                                                                                        <i class="fas fa-flask"></i>
-                                                                                        Centre </span>
-                                                                                    </a>
-
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-182 nav-item-level-3">
                                                                                             <a href="{% url 'presentation:presentation' %}" title="Présentation du centre" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
                                                                                                 <i class="fas fa-tablet-alt"></i>
                                                                                                 Présentation </span>
-                                                                                            </a>
-
-                                                                                        </li>                
-                                                                                        <li class="nav-item-submenu nav-item-id-175 nav-item-level-3">
-                                                                                            <a href="{% url 'presentation:programme' %}" title="Le programme du centre" class=" item-link-component item-level-3" data-drop-action="hover">
-                                                                                                <span class="nav-title">
-                                                                                                <i class="fas fa-luggage-cart"></i>
-                                                                                                Programme </span>
                                                                                             </a>
 
                                                                                         </li>
@@ -749,12 +525,6 @@
                                                                         <div class="col col-md-4">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-173 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="javascript:void(0);" title="L'équipe pédagogique" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                        <span class="nav-title">
-                                                                                        <i class="fas fa-columns"></i>
-                                                                                        Équipe
-                                                                                         </span>
-                                                                                    </a>
 
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-179 nav-item-level-3">
@@ -773,14 +543,6 @@
                                                                                             </a>
 
                                                                                         </li>
-                                                                                        <li class="nav-item-submenu nav-item-id-182 nav-item-level-3">
-                                                                                            <a href="{% url 'fonctionnements:fonctionnement' %}" title="Le fonctionnement du centre" class=" item-link-component item-level-3" data-drop-action="hover">
-                                                                                                <span class="nav-title">
-                                                                                                <i class="fas fa-tablet-alt"></i>
-                                                                                                Fonctionnement </span>
-                                                                                            </a>
-
-                                                                                        </li>
                                                                                     </ul>
                                                                                 </li>
                                                                             </ul>
@@ -789,12 +551,6 @@
                                                                         <div class="col col-md-4">
                                                                             <ul class="nav-submenu megamenu-submenu-level-1">
                                                                                 <li class="megamenu-menu-item nav-item-submenu nav-item-id-174 nav-item-level-2 nav-item-deeper nav-item-parent nav-item-megamenu">
-                                                                                    <a href="javascript:void(0);" title="Le fonctionnement à l'interne" class="megamenu-title megamenu-item-link item-link-heading item-level-2" data-drop-action="hover">
-                                                                                        <span class="nav-title">
-                                                                                            <i class="fas fa-hiking"></i>
-                                                                                        Interne</span>
-                                                                                    </a>
-
                                                                                     <ul class="nav-submenu-static d-block">
                                                                                         <li class="nav-item-submenu nav-item-id-184 nav-item-level-3">
                                                                                             <a href="{% url 'fonctionnements:horaires' %}" title="Les horaires" class=" item-link-component item-level-3" data-drop-action="hover">
@@ -805,10 +561,10 @@
 
                                                                                         </li>
                                                                                         <li class="nav-item-submenu nav-item-id-185 nav-item-level-3">
-                                                                                            <a href="{% url 'fonctionnements:vacances' %}" title="Les vacances" class=" item-link-component item-level-3" data-drop-action="hover">
+                                                                                            <a href="{% url 'fonctionnements:calendrier_scolaire' %}" title="Le calendrier scolaire" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
                                                                                                     <i class="fas fa-book-reader"></i>
-                                                                                                Vancances </span>
+                                                                                                Calendrier scolaire </span>
                                                                                             </a>
 
                                                                                         </li>
@@ -866,74 +622,21 @@
 
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-135 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="{% url 'evenements:articles' %}" title="Pages" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
-                                                                    <span class="nav-title">
-                                                                    Événements
-                                                                    <i class="fa fa-chevron-down nav-item-caret"></i>
-                                                                    </span>
+                                                                <a href="{% url 'evenements:articles' %}" title="Événements et articles" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
+                                                                    <span class="nav-title">Événements</span>
                                                                 </a>
-
-                                                                <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
-                                                                    <ul class="nav-submenu">
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-136 nav-item-level-2">
-                                                                            <a href="{% url 'evenements:galerie_photo' %}" title="Galérie" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                 Galerie</span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-142 nav-item-level-2">
-                                                                            <a href="{% url 'evenements:lesliens' %}" title="Liens externes" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Liens externes</span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                       
-                                                                    </ul>
+   
                                                             </li>
 
                                                            <li data-position="left" class="nav-item nav-item-id-138 nav-item-level-1">
                                                                 <a href="{% url 'inscriptions:inscriptions' %}" title="Inscription" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
-                                                                    <span class="nav-title">
-                                                                    Inscription
-                                                                    </span>
+                                                                    <span class="nav-title">Inscription</span>
                                                                 </a>
                                                             </li>
                                                             <li data-position="right" class="nav-item nav-item-id-171 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-megamenu">
-                                                                <a href="{% url 'contacts:formulaire' %}" title="Contacts" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
-                                                                    <span class="nav-title">
-                                                                    Contacts
-                                                                    <i class="fa fa-chevron-down nav-item-caret"></i>
-                                                                    </span>
+                                                                <a href="{% url 'contacts:formulaire' %}" title="Contacter" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
+                                                                    <span class="nav-title">Contacter</span>
                                                                 </a>
-
-                                                                <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
-                                                                    <ul class="nav-submenu">
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-128 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:formulaire' %}" title="Bell Schedule" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Formulaire </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-105 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:plan' %}" title="Plan" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Plan </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                        <li data-position="right" class="nav-item-submenu nav-item-id-105 nav-item-level-2">
-                                                                            <a href="{% url 'contacts:coordonnees' %}" title="Coordonnées" class=" item-link-component item-level-2" data-drop-action="hover">
-                                                                                <span class="nav-title">
-                                                                                Liens de réseaux sociaux </span>
-                                                                            </a>
-
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-
                                                             </li>
                                                         </ul>
                                                     </div> 

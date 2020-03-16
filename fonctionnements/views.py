@@ -3,20 +3,15 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def fonctionnement(request):
-	context = {}
-
-	return render(request, "fonctionnements/fonctionnement_.html", context)
-
 def horaires(request):
 
     context = {}
 
-    return  render(request, "fonctionnements/horaires_.html", context)
+    return  render(request, "fonctionnements/horaires.html", context)
 
 
-def vacances(request):
+def calendrier_scolaire(request):
 
     context = {}
 
-    return  render(request, "fonctionnements/vacances_.html")
+    return  render(request, "fonctionnements/calendrier_scolaire.html")

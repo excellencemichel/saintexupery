@@ -1,162 +1,80 @@
+
 {% extends "base_.html" %}
 
 {% load  crispy_forms_tags %}
 {% load static %}
 
 
-{% block css %}
-
-		<style type="text/css">
-		img{
-			width: 100%;
-		}
-
-		li{
-			list-style: initial;
-		}
-	</style>
-
-{% endblock css %}
-
-
-
-
-
 {% block content %}
 
 
-	<div class="container">
+<section id='banner-section-1532936603488' class='astroid-section banner-section' style='' data-animation='' data-animation-delay=''>
+	<div id="astroid-row-1532936603488" class="row no-gutters astroid-row"><div id="astroid-column-1532936603488" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-banner text-center text-white" id="banner-1532936878566" style="" data-animation="" data-animation-delay="500"> <div style="background-image: url({{ instance.image.url }})" class="astroid-banner-inner ">
+	<h1 class="astroid-banner-title" style="color:">{{ instance.title }}</h1> </div>
+	</div></div>
+	</div>
+</section>
 
-		<br><br>
-		<h3 class="text-center lead">{{ instance.title }}</h3>
-		<hr>
-		<div class="row">
-			<div class="col-10 col-md-10 col-sm-12 col-xs-12">
-				{{ instance.content }}
+<section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''><div class='container'><div id="astroid-row-1061544185584130" class="row astroid-row"><div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> <div class="moduletable ">
+<div class="breadcrumb-wraper">
+<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+<li class="active">
+<span class="divider icon-location"></span>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#">
+<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
+<span class="divider">
+&gt; </span>
+<meta itemprop="position" content="1">
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#">
+<a itemprop="item" href="{% url 'evenements:articles' %}" class="pathway"><span itemprop="name">Detail article</span></a>
+<span class="divider">
+&gt; </span>
+<meta itemprop="position" content="2">
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#" class="active">
+<span itemprop="name">
+{{ instance.title|truncatewords:12 }} </span>
+<meta itemprop="position" content="3">
+</li>
+</ul>
+</div> </div>
+</div></div></div></div>
+</section>
+
+
+<section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1528971561366" class="row astroid-row">
+			<div id="astroid-column-1528971561366" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="">
+				<div class="astroid-message" id="messages-1528971711775" style="" data-animation="" data-animation-delay="">
+					<div id="system-message-container">
+					</div>
+				</div>
+
+
+				<div class="astroid-module-position" id="content-top-381539181673929" style="" data-animation="" data-animation-delay="">
+					<div class="moduletable split-title-module text-center">
+						<h2 class="module-title split-title page-header">
+							<span class="split-1">{{ instance.title }} </span><span class="split-2">{{ instance.content }} </span>
+						</h2>
+						<div class="custom text-center">
+								<small>
+									<span class="djev_time_icon fa fa-clock-o"></span>
+									<span class="djev_time_from">
+										{{ instance.publish }}
+									</span>
+								</small>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<hr>
-
-
-
-		<div class="row">
-
-
-			{% for image in photos %}
-
-    	  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"><img src="{{ image.photos.url }}"></div> <br>
-			
-			{% endfor %}
-		</div>
-
-
-
-		<br><br>
-
-
-
-		<div class="row">
-			<!-- <div class="col-offset-3 col-sm-offset-1 col-md-offset-3 col-lg-offset-3"></div> -->
-			<div class="col text-center">			
-				{% if request.user.is_authenticated %}
-					<div class="row">
-						  <div class="col-sm-8 col-sm-offset-2">
-
-							  <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" 	data-numposts="5">
-						  	
-							  </div>
-								<a href="" class="toggle text-center"  style="color: blue"><span class="glyphicon glyphicon-comment" ></span>Commenter</a>
-								<form method="POST" action="{% url 'evenements:detail' id=instance.id slug=instance.slug %}" class="form hide" >
-									{% csrf_token %}
-
-									{{ form|crispy }}
-
-									<input type="submit" value="Commenter">
-
-								</form>
-				{% else %}
-								<p>
-									Vous devez etre connectés pour commenter
-								</p>
-				{% endif %}
-								 <br>
-								 {% for comment in comments %}
-									<blockquote>
-									 	<p>
-								  			  {{ comment.content|linebreaks }}
-								  		</p>
-
-									   <!--
-									   <div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5"></div>
-									   -->
-									   <div class="container">
-									 	<div class=" row">
-									 	<div class="col">
-										 	Par {{ comment.user }}
-										 	<br>
-											 	Il y a {{ comment.timestamp|timesince }} <br>
-										</div>
-										<div class="pull-rigth">
-											<a href="{% url 'comments:delete' comment.id %}" style="color: blue">Modifier</a>|
-
-									  		<a href="{% url 'comments:delete' comment.id %}" style="color: blue">Supprimer</a>
-									  	</div>
-								  		</div>
-									   </div>
-									 	<br>
-
-									 	<div class="container">
-									 	{% if comment.children.count > 0 %}
-									 	{% if comment.children.count == 1 %} Une {% else %}
-									 	{{ comment.children.count}} {% endif %} Réponse{% if comment.children.count > 1 %}s{% endif %} | | {% endif %}
-									 	</div>
-
-									 	{% for child_comment in comment.children %}
-										 	<blockquote>
-										 		<p>
-										 			 {{ child_comment.content }}
-										     	 </p>
-										 		 <div>
-										 			Par {{ child_comment.user }}
-										 			| {{ child_comment.timestamp|timesince }}
-										 		 </div>
-									 		</blockquote>
-
-								 		{% endfor %}
-
-								 		{% if request.user.is_authenticated %}
-									 		<a href="" class="toggle" style="color: blue"> <span class="glyphicon glyphicon-comment" ></span>Répondre</a>
-									 		<form  method="POST" action="." class="form hide">
-									 			{% csrf_token %}
-
-									 			{{ form|crispy }}
-
-									 			<input type="hidden" name="parent_id" value="{{ comment.id }}">
-									 			<input type="submit" value="Répondre">
-									 		 </form>
-								 		{% else %}
-
-								 			<p>Connectez-vous pour répondre aux commentaire</p>
-
-								 		{% endif %}
-								 	</blockquote>
-								 	<br>
-								 </div>
-								{% endfor %}
-
-							</div>
-					</div>
-
 	</div>
-</div>
-</div>
+</section>
+
+
 
 
 {% endblock content %}
-
-	{% block js %}
-
-    <script src="{% static 'js/form.js' %}"></script>
-
-
-	{% endblock js %}

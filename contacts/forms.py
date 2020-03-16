@@ -33,8 +33,8 @@ class ContactForm(forms.Form):
     	                        
 		                     )
 
-	profession = forms.CharField(
-								widget =forms.TextInput(attrs={"class": "form-control input-sm", "placeholder":"Entrepreneur"}),
+	telephone = forms.CharField(label=_("Téléphone avec indicatif"),
+								widget =forms.TextInput(attrs={"class": "form-control input-sm", "placeholder":"+212..."}),
     	                       )
 
 
@@ -71,7 +71,7 @@ class ContactForm(forms.Form):
 		email_message.send()
 
 
-	def save(self, domaine_override=None, subject_template_name="contacts/contact_email_subject.html",email_template_name="contacts/contact_email.html", use_https=False,from_email=None, to_email="bnvnmmnl@gmail.com", request=None, html_email_template_name="contacts/contact_email_html.html", extra_email_context=None):
+	def save(self, domaine_override=None, subject_template_name="contacts/contact_email_subject.html",email_template_name="contacts/contact_email.html", use_https=False,from_email=None, to_email="ecf.saintexpery@gmail.com", request=None, html_email_template_name="contacts/contact_email_html.html", extra_email_context=None):
 
 		"""
 		Generate a one-use only link for resettint passord and send to the user
@@ -79,7 +79,7 @@ class ContactForm(forms.Form):
 
 		nom = self.cleaned_data["nom"]
 		prenom = self.cleaned_data["prenom"]
-		profession = self.cleaned_data["profession"]
+		telephone = self.cleaned_data["telephone"]
 		email = self.cleaned_data["email"]
 		subject = self.cleaned_data["subject"]
 		message = self.cleaned_data["message"]
@@ -95,7 +95,7 @@ class ContactForm(forms.Form):
 		context = {
 			"nom": nom,
 			"prenom":prenom,
-			"profession": profession,
+			"telephone": telephone,
 			"email": email,
 			"subject" : subject,
 			"message" :message,

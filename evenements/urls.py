@@ -10,9 +10,6 @@ from .views import (
     update,
 
     delete,
-    galerie_photo,
-    lesliens,
-
 )
 
 
@@ -34,9 +31,4 @@ urlpatterns = [
 
 
     re_path(r'^delete/(?P<id>\d+)-(?P<slug>[\w-]+)/$',delete, name="delete"),
-
-    path("galerie_photo", galerie_photo, name="galerie_photo"),
-
-    path("lesliens", lesliens, name="lesliens")
-
 ]
