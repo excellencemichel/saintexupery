@@ -14,7 +14,7 @@ class Contact(models.Model):
 
 	nom = models.CharField(max_length=250)
 	prenom = models.CharField(max_length=250)
-	telephone = models.CharField(max_length=250)
+	# telephone = models.CharField(max_length=250)
 	email = models.EmailField()
 
 	subject = models.CharField(max_length=250)

@@ -42,13 +42,13 @@ def formulaire(request, template_name="contacts/contact_form.html",
 
 			nom = form.cleaned_data["nom"]
 			prenom = form.cleaned_data["prenom"]
-			telephone = form.cleaned_data["telephone"]
+			# telephone = form.cleaned_data["telephone"]
 			email = form.cleaned_data["email"]
 			subject = form.cleaned_data["subject"]
 			message = form.cleaned_data["message"]
 
 
-			nouveau_contact = Contact(nom=nom, prenom=prenom, telephone=telephone, email=email, subject=subject, message=message).save()
+			nouveau_contact = Contact(nom=nom, prenom=prenom, email=email, subject=subject, message=message).save()
 
 
 			return redirect(reverse("home"))
