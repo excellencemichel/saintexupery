@@ -11,13 +11,6 @@ def presentation_cycles(request):
 
 
 
-def maternelle(request):
-
-    context = {}
-
-    return render(request, "cycles/maternelle_.html", context)
-
-
 def primaire(request):
 
     context = {}

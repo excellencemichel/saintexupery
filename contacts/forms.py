@@ -1,12 +1,10 @@
 
 
-from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMultiAlternatives
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
-from django.utils.text import capfirst
 from django.template import loader
 from django.template.loader import get_template
 
@@ -71,7 +69,7 @@ class ContactForm(forms.Form):
 		email_message.send()
 
 
-	def save(self, domaine_override=None, subject_template_name="contacts/contact_email_subject.html",email_template_name="contacts/contact_email.html", use_https=False,from_email=None, to_email="ecf.saintexpery@gmail.com", request=None, html_email_template_name="contacts/contact_email_html.html", extra_email_context=None):
+	def save(self, domaine_override=None, subject_template_name="contacts/contact_email_subject.html",email_template_name="contacts/contact_email.html", use_https=False,from_email=None, to_email="bnvnmmnl@gmail.com", request=None, html_email_template_name="contacts/contact_email_html.html", extra_email_context=None):
 
 		"""
 		Generate a one-use only link for resettint passord and send to the user

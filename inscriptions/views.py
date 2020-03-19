@@ -7,7 +7,7 @@ from time import strftime
 
 from django.conf import settings
 
-from django.core.mail import EmailMultiAlternatives, EmailMessage
+from django.core.mail import  EmailMessage
 
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404

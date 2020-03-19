@@ -30,14 +30,13 @@ from django.contrib.auth.views import (
 from django.urls import include, path, re_path
 
 
-from .views import home, map
+from .views import home
 
 
 urlpatterns = [
 
 
     path("", home, name="home"),
-    path("map", map, name="map"),
 
 
 

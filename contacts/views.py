@@ -1,21 +1,7 @@
-import datetime
-from django.conf import settings
-from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 
-
-from django.http import HttpResponseRedirect, QueryDict
-
-from django.core.mail import send_mail, EmailMultiAlternatives
-from django.template.loader import get_template
-from django.http import HttpResponse
-from django.views.generic import View
-
-
-
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.tokens import default_token_generator
 from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_protect
 
@@ -31,22 +17,18 @@ def formulaire(request, template_name="contacts/contact_form.html",
 	           email_template_name="contacts/contact_email.html" ,
 	           subject_template_name="contacts/contact_email_subject.txt",
 	           form=ContactForm,
-	           # token_generator=default_token_generator,
-	           # post_redirect="home",
 	           from_email=None,
 	           extra_context=None,
 	           html_email_template_name="contacts/contact_email_html.html" ,
 	           extra_email_context=None):
 
 
-	# form = ContactForm(request.POST or None)
 
 	if request.method == "POST":
 		form = form(request.POST, request.FILES)
 		if form.is_valid():
 			opts = {
 				"use_https": request.is_secure(),
-				# "token_generator": token_generator,
 				"from_email": from_email,
 				"email_template_name": email_template_name,
 				"subject_template_name":subject_template_name,

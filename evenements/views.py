@@ -1,12 +1,9 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from urllib.parse import quote_plus
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Q
 
 from django.urls import reverse, reverse_lazy
 
-from django.contrib.contenttypes.models import ContentType
 
 from django.contrib.auth.decorators import login_required
 

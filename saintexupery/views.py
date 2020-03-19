@@ -22,12 +22,3 @@ def home(request):
 		"presentation": presentation,
 	}
 	return render(request, "home.html", context)
-
-
-
-
-def map(request):
-
-	context = {}
-
-	return render(request, "map.html", context)
