@@ -29,6 +29,9 @@
                         <div class="form-group">
                           {{ form.nom.label_tag }}
                           {{ form.nom }}
+                           {% if form.nom.errors %}
+                                 <small style="color: red">{{ form.nom.errors }}</small>
+                          {% endif %}
                           
                         </div>
 
@@ -38,6 +41,9 @@
                         <div class="form-group">
                           {{ form.prenom.label_tag }}
                           {{ form.prenom }}
+                           {% if form.prenom.errors %}
+                                 <small style="color: red">{{ form.prenom.errors }}</small>
+                          {% endif %}
                         </div>
 
                       </div>
@@ -48,6 +54,9 @@
                         <div class="form-group">
                           {{ form.telephone.label_tag }}
                           {{ form.telephone }}
+                           {% if form.telephone.errors %}
+                                 <small style="color: red">{{ form.telephone.errors }}</small>
+                          {% endif %}
                         </div>
 
                       </div>
@@ -72,6 +81,9 @@
                         <div class="form-group">
                           {{ form.subject.label_tag }}
                           {{ form.subject }}
+                           {% if form.subject.errors %}
+                                 <small style="color: red">{{ form.subject.errors }}</small>
+                          {% endif %}
                         </div>
 
                       </div>
