@@ -89,30 +89,6 @@ def formulaire(request, template_name="contacts/contact_form.html",
 
 
 
-def plan(request):
-
-	context = {}
-
-	return render(request, "contacts/plan.html", context)
-
-
-
-
-def coordonnees(request):
-
-	context = {}
-
-	return render(request, "contacts/coordonnees.html", context)
-
-
-
-
-def lien_reseaux_sociaux(request):
-
-	context = {}
-
-	return render(request, "contacts/liens_externes.html", context)
-
 
 
 @login_required
