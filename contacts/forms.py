@@ -99,8 +99,6 @@ class ContactForm(forms.Form):
 			"message" :message,
 			"domain":domain,
 			"site_name":site_name,
-			# "uid": urlsafe_base64_encode(force_bytes(user.pk)).decode(),
-			# "token": token_generator.make_token(nom),
 			"protocol": "https" if use_https else "http",
 		}
 

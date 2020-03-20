@@ -12,16 +12,16 @@ from django.db import models
 
 class Contact(models.Model):
 
-	nom = models.CharField(max_length=250)
-	prenom = models.CharField(max_length=250)
-	telephone = models.CharField(max_length=250)
-	email = models.EmailField()
+	nom 			= models.CharField(max_length=250)
+	prenom 			= models.CharField(max_length=250)
+	telephone 		= models.CharField(max_length=250)
+	email 			= models.EmailField()
 
-	subject = models.CharField(max_length=250)
+	subject 		= models.CharField(max_length=250)
 
-	message = models.TextField()
+	message 		= models.TextField()
 
-	created = models.DateTimeField(default = timezone.now)
+	created 		= models.DateTimeField(default = timezone.now)
 
 
 
