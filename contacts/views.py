@@ -13,7 +13,7 @@ from .forms import ContactForm
 # Create your views here.
 
 @csrf_protect
-def formulaire(request, template_name="contacts/contact_form.html",
+def formulaire(request, template_name="contacts/formulaire.html",
 	           email_template_name="contacts/contact_email.html" ,
 	           subject_template_name="contacts/contact_email_subject.txt",
 	           form=ContactForm,
