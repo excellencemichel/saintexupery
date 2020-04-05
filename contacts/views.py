@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.template.response import TemplateResponse
 from django.views.decorators.csrf import csrf_protect
+from django.conf import settings
+
 
 
 from .models import Contact
@@ -17,7 +19,7 @@ def formulaire(request, template_name="contacts/formulaire.html",
 	           email_template_name="contacts/contact_email.html" ,
 	           subject_template_name="contacts/contact_email_subject.txt",
 	           form=ContactForm,
-	           from_email=None,
+	           from_email = settings.EMAIL_HOST_USER,
 	           extra_context=None,
 	           html_email_template_name="contacts/contact_email_html.html" ,
 	           extra_email_context=None):
