@@ -173,14 +173,14 @@ class InscriptionModelForm(forms.ModelForm):
 			"nom": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Loua",
+						
 					}
 			),
 
 						"prenom": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Michel",
+						
 					}
 			),
 
@@ -197,7 +197,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"lieu_naissance": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -206,7 +206,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nationalite": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... Française",
+						
 					}
 			),
 
@@ -215,7 +215,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212...",
 					}
 			),
 
@@ -232,7 +232,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nom_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Dupond",
+						
 					}
 			),
 
@@ -240,7 +240,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"prenom_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Patrice",
+						
 					}
 			),
 
@@ -255,7 +255,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"lieu_naissance_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+					
 					}
 			),
 
@@ -263,7 +263,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"code_postal_naissance_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+				
 					}
 			),
 
@@ -271,7 +271,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nationalite_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -279,7 +279,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"adresse_domicile_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -287,7 +287,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"ville_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -296,7 +296,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_domicile_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212...",
 					}
 			),
 
@@ -304,7 +304,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_personnel_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212...",
 					}
 			),
 
@@ -312,7 +312,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_professionnel_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212..",
 					}
 			),
 
@@ -329,7 +329,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"profession_parent_un": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... Entrepreneur...",
+						
 					}
 			),
 
@@ -338,7 +338,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nom_jeune_fille_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -346,7 +346,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nom_marial_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... Cathérine...",
+						
 					}
 			),
 
@@ -354,7 +354,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"prenom_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... Cathérine...",
+						
 					}
 			),
 
@@ -370,7 +370,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"lieu_naissance_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
@@ -386,7 +386,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"nationalite_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+					
 					}
 			),
 
@@ -394,7 +394,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_domicile_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212...",
 					}
 			),
 
@@ -402,7 +402,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_personnel_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212...",
 					}
 			),
 
@@ -410,7 +410,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"telephone_professionnel_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... 06 33 77 12 40",
+						"placeholder":"+212",
 					}
 			),
 
@@ -426,7 +426,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"profession_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"Ex... Entrepreneur...",
+						
 					}
 			),
 
@@ -434,7 +434,7 @@ class InscriptionModelForm(forms.ModelForm):
 						"adresse_domicile_parent_deux": forms.TextInput(
 					attrs = {
 						"class": "form-control input-sm",
-						"placeholder":"",
+						
 					}
 			),
 
