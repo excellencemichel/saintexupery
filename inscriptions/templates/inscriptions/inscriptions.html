@@ -7,20 +7,28 @@
 
 {% block content %}
 <div class="container">
-		<div class="row">
-			<div class="col col-xs-12">
-				<div>
-				<img src="{% static 'images/inscriptions/ministere.png' %}" class="responsive" style="width: 100%">
-					
-				</div>
 
-				<div class="col">
-					<img src="{% static 'images/inscriptions/se.jpeg' %}" style="width: 100%">
-					<h3>INSCRIPTIONS {% now "Y" %} </h3>
-				</div>
+
+
+		<div class="row">
+			<div class=" col guide_inscription">
+				<h2 style="display: inline-block;">Pour ouvrir un dossier:</h2> <a href="{% url 'inscriptions:inscription' %}" style="font-size: 40px;"><strong>Cliquez ici</strong></a>
+				<p>
+					Pour être à l'aise voici un guide d'inscription pour vous faciliter la vie <a href="{% url 'pdfapp:guide_inscription_pdf' %}" target="_blank" style="color: blue">( Cliquez ici )</a>
+				</p>
+			
 			</div>
 
 
+		</div>
+
+		<hr>
+		<br>
+		<br>
+
+
+
+		<div class="row">
 
 			<div class="col col-xs-12">
 				<h2>Pourquoi Saint-Exupéry ?</h2>
@@ -56,20 +64,6 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-
-		<br>
-
-		<div class="row">
-			<div class=" col guide_inscription">
-				<h6 style="display: inline-block;">Pour ouvrir un dossier:</h6> <a href="{% url 'inscriptions:inscription' %}" style="font-size: 20px;"><strong>Cliquez ici</strong></a>
-				<p>
-					Pour être à l'aise voici un guide d'inscription pour vous faciliter la vie <a href="{% url 'pdfapp:guide_inscription_pdf' %}" target="_blank" style="color: blue">( Cliquez ici )</a>
-				</p>
-			
-			</div>
-
-
 		</div>
 
 

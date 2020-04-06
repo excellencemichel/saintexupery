@@ -62,7 +62,7 @@
                                 <li class="nav-item-submenu nav-item-id-175 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                     <a href="{% url 'presentation:presentation' %}" title="La présentation" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                         <span class="nav-title">
-                                        <i class="fas fa-luggage-cart"></i>
+                                        <i class="fas fa-users-class"></i>
                                         Présentation </span>
                                     </a>
 
@@ -70,7 +70,7 @@
                                 <li class="nav-item-submenu nav-item-id-177 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                 <a href="{% url 'presentation:mot_directeur' %}" title="Mot de la direction" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                 <span class="nav-title">
-                                <i class="fas fa-atom"></i>
+                                <i class="fas fa-file-word"></i>
                                 Mot de la direction</span>
                                 </a>
 
@@ -83,7 +83,7 @@
                                 <li class="nav-item-submenu nav-item-id-179 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                     <a href="{% url 'presentation:equipe_pedagogique' %}" title="Équipe pédagogique" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                     <span class="nav-title">
-                                    <i class="fas fa-music"></i>
+                                    <i class="fas fa-users"></i>
                                     Équipe pédagogique </span>
                                     </a>
 
@@ -104,7 +104,7 @@
                                 <li class="nav-item-submenu nav-item-id-184 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                     <a href="{% url 'fonctionnements:horaires' %}" title="Horraires" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                         <span class="nav-title">
-                                        <i class="fas fa-swimmer"></i>
+                                        <i class="fab fa-algolia"></i>
                                         Horraires </span>
                                     </a>
 
@@ -112,7 +112,7 @@
                                 <li class="nav-item-submenu nav-item-id-185 nav-item-level-3 nav-item-parent nav-item-megamenu">
                                     <a href="{% url 'fonctionnements:calendrier_scolaire' %}" title="calendrier scolaire" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                         <span class="nav-title">
-                                        <i class="fas fa-book-reader"></i>
+                                        <i class="far fa-calendar-alt"></i>
                                         Calendrier scolaire </span>
                                     </a>
 
@@ -188,7 +188,7 @@
                                             <div id="jd-newsticker178" class="jd-newsticker carousel slide" data-ride="carousel">
                                             <p class="newsticker-label">Dernières nouvelles:</p>
 
-                                                <div class="carousel-inner">
+                                                <div class="carousel-inner" style="max-width: 270px">
                                                     {% if infobules %}
                                                     {% for infobule in infobules %}
                                                     <div class="carousel-item {% if forloop.first %} active {% endif %}">
@@ -230,11 +230,7 @@
                                 <div id="astroid-column-691543823754722" class="astroid-column col-md-6 col-lg-6" style="" data-animation="" data-animation-delay="">
                                     <div class="astroid-module-position float-lg-right" id="topbar-2-1071543823764546" style="" data-animation="" data-animation-delay=""> 
                                         <div class="moduletable ">
-                                            <ul class="nav menu menu-module list-inline d-block secondary-menu">
-                                                <li class="item-107"><a href="https://e212075r.index-education.net/pronote" target="_blank">
-                                                    <img src="{% static 'images/logos/pronote.png' %}" alt="Le portail de pronote" style="width: 77px; height: 40px; margin-top: -20px; margin-right: 40px;">
-                                                </a>
-                                                </li>
+                                            <ul class="nav menu menu-module list-inline d-block secondary-menu">                                                
                                                 <li>
                                                     <ul class="nav navVerticalView astroid-social-icons">
                                                         <li style="font-weight: 300">
@@ -253,6 +249,12 @@
                                                         <span style="font-size: 20px; font-weight: 1000;"> +212 05 24 30 47 98
                                                         </span>
                                                     </di>
+                                                </li>
+
+
+                                                <li class="item-107" style="margin-left: 50px"><a href="https://e212075r.index-education.net/pronote" target="_blank">
+                                                    <img src="{% static 'images/logos/pronote.png' %}" alt="Le portail de pronote" style="width: 77px; height: 60px; margin-top: -40px;">
+                                                </a>
                                                 </li>
 
                                             </ul> 
@@ -318,7 +320,7 @@
                                                                                         <li class="nav-item-submenu nav-item-id-182 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:presentation' %}" title="Présentation du centre" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
-                                                                                                <i class="fas fa-tablet-alt"></i>
+                                                                                                <i class="fas fa-newspaper"></i>
                                                                                                 Présentation </span>
                                                                                             </a>
 
@@ -326,7 +328,7 @@
                                                                                         <li class="nav-item-submenu nav-item-id-176 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:mot_directeur' %}" title="Mot de la direction" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
-                                                                                                <i class="fas fa-flask"></i>
+                                                                                                <i class="fas fa-file-word"></i>
                                                                                                 Mot de la direction </span>
                                                                                             </a>
 
@@ -342,7 +344,7 @@
                                                                                         <li class="nav-item-submenu nav-item-id-179 nav-item-level-3" style="width: max-content;">
                                                                                             <a href="{% url 'presentation:equipe_pedagogique' %}" title="L'équipe pédagogique" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
-                                                                                                <i class="fas fa-music"></i>
+                                                                                                <i class="fas fa-users"></i>
                                                                                                 Equipe pédagogique </span>
                                                                                             </a>
 
@@ -368,8 +370,7 @@
                                                                                         <li class="nav-item-submenu nav-item-id-184 nav-item-level-3">
                                                                                             <a href="{% url 'fonctionnements:horaires' %}" title="Les horaires" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
-                                                                                                    <i class="fas fa-swimmer">
-                                                                                                    </i>
+                                                                                                    <i class="fab fa-algolia"></i>
                                                                                                 Horraires </span>
                                                                                             </a>
 
@@ -377,7 +378,7 @@
                                                                                         <li class="nav-item-submenu nav-item-id-185 nav-item-level-3">
                                                                                             <a href="{% url 'fonctionnements:calendrier_scolaire' %}" title="Le calendrier scolaire" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
-                                                                                                    <i class="fas fa-book-reader"></i>
+                                                                                                    <i class="far fa-calendar-alt"></i>
                                                                                                     Calendrier scolaire 
                                                                                                 </span>
                                                                                             </a>

@@ -22,12 +22,12 @@ from django import forms
 
 class ContactForm(forms.Form):
 	nom = forms.CharField(label=_("Votre nom"),
-	    						widget =forms.TextInput(attrs={"class": "form-control input-sm", "placeholder":"Dupont"}),
+	    						widget =forms.TextInput(attrs={"class": "form-control input-sm"}),
     	                        )
 
 	prenom = forms.CharField( label=_("Votre prénom"),
 
-		                      widget =forms.TextInput(attrs={"class": "form-control input-sm", "placeholder":"Michel"}),
+		                      widget =forms.TextInput(attrs={"class": "form-control input-sm"}),
     	                        
 		                     )
 
