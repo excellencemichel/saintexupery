@@ -181,7 +181,7 @@ class Inscription(models.Model):
 	################################""""""""" Situation matrimoniale """"""""""""####################
 	situation_familiale 				= models.CharField(max_length=250, null=True, choices=SITUATION_FAMILIALE)
 
-	##############################""""""" Entrée du pdf """"""""""""""""""""""#####################
+	##############################""""""" Document d'entrée du pdf """"""""""""""""""""""#####################
 
 
 	pdf_inscription		= models.FileField(upload_to="pdfs", null=True, blank=True)
