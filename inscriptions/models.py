@@ -132,7 +132,7 @@ class Inscription(models.Model):
 
 	prenom_parent_un 					= models.CharField(max_length=250)
 
-	date_naissance_parent_un 			= models.DateField()
+	date_naissance_parent_un 			= models.CharField(max_length=250)
 
 	lieu_naissance_parent_un			= models.CharField(max_length=250)
 
@@ -181,7 +181,7 @@ class Inscription(models.Model):
 	################################""""""""" Situation matrimoniale """"""""""""####################
 	situation_familiale 				= models.CharField(max_length=250, null=True, choices=SITUATION_FAMILIALE)
 
-	##############################""""""" Document d'entrée du pdf """"""""""""""""""""""#####################
+	##############################""""""" Entrée du pdf """"""""""""""""""""""#####################
 
 
 	pdf_inscription		= models.FileField(upload_to="pdfs", null=True, blank=True)
