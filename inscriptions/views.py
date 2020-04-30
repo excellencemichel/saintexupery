@@ -71,7 +71,7 @@ def inscription(request):
 		filename = "mypdf_{}.pdf".format(matricule)
 		instance.pdf_inscription.save(filename, BytesIO(pdf_inscription.content))
 
-		subject = """"Dossier d'inscription à l'école Saint Exupéry"""
+		subject = """"Dossier d'inscription à l'école ECF Saint-Exupéry"""
 
 
 		with open(settings.BASE_DIR + "/inscriptions/templates/inscriptions/inscription_email_message.txt") as f:

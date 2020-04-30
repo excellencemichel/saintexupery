@@ -1,0 +1,97 @@
+{% extends "base_.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+
+<section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1528971561366" class="row astroid-row">
+			<div id="astroid-column-1528971561366" class="astroid-column col-lg-9" style="" data-animation="" data-animation-delay="">
+				<div class="astroid-message" id="messages-1528971711775" style="" data-animation="" data-animation-delay="">
+					<div id="system-message-container">
+					</div>
+				</div>
+				<div class="astroid-component" id="component-area-1529739248826" style="" data-animation="" data-animation-delay="">
+					<div class="astroid-component-area">
+						<div class="item-page  blog-view" itemscope itemtype="https://schema.org/Article">
+							<meta itemprop="inLanguage" content="fr-FR" />
+							<div class="item-title">
+								<h2 itemprop="headline">
+									Export des données dans des fichiers excels
+								</h2>
+							</div>
+
+
+							<div itemprop="articleBody">
+								<h4 class="mb-3 mt-5" style="text-align: center;">Inscriptions</h4>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr style="text-align: center;">
+												<th scope="col">Classes de données</th>
+												<th scope="col">Liens d'exportation</th>
+											</tr>
+										</thead>
+										<tbody style="color: black; font-weight: 300;">
+											<tr>
+												<td>pour exporter en documents excels</td>
+												<td><a href="{% url 'excels:export_inscription_data_custom' 'custom' %}">Télélchargez</a></td>
+
+											</tr>
+											<tr>
+												<td>Pour exporter en feuille excels simple</td>
+												<!-- <td><a href="#">Téléchargez</a></td> -->
+											</tr>
+
+										</tbody>
+									</table>
+
+
+								</div> 
+							</div>
+
+							<div itemprop="articleBody">
+								<h4 class="mb-3 mt-5" style="text-align: center;">Visualisation des données</h4>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr style="text-align: center;">
+												<th scope="col">Données</th>
+												<th scope="col">Liens de visualisation</th>
+											</tr>
+										</thead>
+										<tbody style="color: black; font-weight: 300;">
+											<tr>
+												<td>Visualiser les inscriptions en ligne</td>
+												<!-- <td><a href="#" target="_blank">Visualiser</a></td> -->
+
+											</tr>
+<!-- 											<tr>
+												<td>Pour exporter en feuille excels simple</td>
+												<td><a href="{% url 'excels:export_inscription_data_sheet' 'sheet' %}">Téléchargez</a></td>
+											</tr>
+ -->
+										</tbody>
+									</table>
+
+
+								</div> 
+							</div>
+
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% endblock content %}

@@ -12,6 +12,12 @@
         <div class="col-lg-3 mt-4 mt-lg-0">
         <a href="{% url 'inscriptions:inscription' %}" class="btn btn-secondary btn-lg btn-block">Inscription</a>
         </div>
+        {% if request.user.is_authenticated %}
+        <div class="col-lg-3 mt-4 mt-lg-0">
+        <a href="{% url 'excels:exports' %}" class="btn btn-secondary btn-lg btn-block">Exporter les données </a>
+        </div>
+        {% endif %}     
+
         </div></div> </div>
         </div></div></div>
     </div>

@@ -60,6 +60,8 @@ INSTALLED_APPS = [
     'evenements',
     'espaces',
 
+    "excels",
+
     'fonctionnements',
 
     'presentation',
@@ -88,6 +90,11 @@ MIDDLEWARE = [
 
 
 ]
+
+FILE_UPLOAD_HANDLERS = ("django_excel.ExcelMemoryFileUploadHandler",
+"django_excel.TemporaryExcelFileUploadHandler")
+
+
 
 ROOT_URLCONF = 'saintexupery.urls'
 

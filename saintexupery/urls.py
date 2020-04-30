@@ -60,6 +60,8 @@ urlpatterns = [
     path('inscriptions/', include("inscriptions.urls", namespace="inscriptions")),
     path('pdfapp/', include("pdfapp.urls", namespace="pdfapp")),
     path('espaces/', include("espaces.urls", namespace="espaces")),
+    path('excels/', include("excels.urls", namespace="excels")),
+
 
 
 

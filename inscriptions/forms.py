@@ -1,4 +1,6 @@
 
+from datetime import date
+
 from django.utils.translation import ugettext_lazy as _
 from re import match
 
@@ -14,56 +16,6 @@ from .models import Inscription
 
 
 
-FREQUENCE = (
-			("premiere","1ère inscription"),
-			("renouvellment", "Renouvellement")
-	)
-
-SEXE = (
-			("masculin", "Masculin"),
-			("feminin", "Féminin"),
-		)
-
-
-REPRESENTANT_PARENT_UN = (
-				("pere", "Père"),
-				("personne_morale", "Personne morale "),
-			)
-
-
-REPRESENTANT_PARENT_DEUX = (
-				("mere", "Mère"),
-				("personne_morale", "Personne morale "),
-			)
-
-SITUATION_FAMILIALE = (
-				("marie", "Marié"),
-				("vie_mariale_ou_PACS", "Vie Mariale ou PACS"),
-				("divorce_ou_separe", "Divorcé(e) ou séparé(e)"),
-				("celibataire", "Célibataire"),
-				("veuf", "Veuf(ve)"),
-	)
-
-
-NIVEAU = (
-			("maternelle", "Maternelle"),
-			("cp1", "1ère Année ou CP1"),
-			("cp2", "2ème Année ou CP2"),
-			("ce1", "3ème Année ou CE1"),
-			("ce2", "4ème Année ou CE2"),
-			("cm1", "5ème Année ou CM1"),
-			("cm2", "1ère Année ou CM2"),
-			("sixieme", "Classe de 6ème"),
-			("cinquième", "Classe de 5ème"),
-			("quatrieme", "Classe de 4ème"),
-			("troisiem", "Classe de 3ème"),
-
-			("deuxieme", "Classe de 2ème"),
-			("premiere", "class de 1ère lycée"),
-			("terminale", "Classe de terminale"),
-
-
-	)
 
 
 
@@ -72,17 +24,19 @@ NIVEAU = (
 
 class InscriptionModelForm(forms.ModelForm):
 
-	niveau 									= forms.ChoiceField(choices=NIVEAU, required=True
+	date_naissance 		= forms.DateField(widget=forms.SelectDateWidget(years=range(1985, date.today().year+10)))
+
+	niveau 									= forms.ChoiceField(choices=Inscription.NIVEAU, required=True
 																)
 
 	frequence 								= forms.ChoiceField(
 
-														widget=forms.RadioSelect, choices=FREQUENCE, required=True
+														widget=forms.RadioSelect, choices=Inscription.FREQUENCE, required=True
 														)
 
 
 
-	sexe 									= forms.ChoiceField(widget=forms.RadioSelect, choices=SEXE, required=True
+	sexe 									= forms.ChoiceField(widget=forms.RadioSelect, choices=Inscription.SEXE, required=True
 													)
 
 
@@ -90,21 +44,25 @@ class InscriptionModelForm(forms.ModelForm):
 
 	#############################"""""""""""" Représentant parent 1 #########################################""
 
-	representant_parent_un 					= forms.ChoiceField(widget=forms.RadioSelect, choices=REPRESENTANT_PARENT_UN, required=True)
+	representant_parent_un 					= forms.ChoiceField(widget=forms.RadioSelect, choices=Inscription.REPRESENTANT_PARENT_UN, required=True)
+	date_naissance_parent_un 				= forms.DateField(widget=forms.SelectDateWidget(years=range(1910, date.today().year+10)))
+
 
 
 
 	#############################"""""""""""" Représentant parent 2 #########################################""
 
 
-	representant_parent_deux 				= forms.ChoiceField(widget=forms.RadioSelect, choices=REPRESENTANT_PARENT_DEUX, required=True)
+	representant_parent_deux 				= forms.ChoiceField(widget=forms.RadioSelect, choices=Inscription.REPRESENTANT_PARENT_DEUX, required=True)
+	date_naissance_parent_deux 				= forms.DateField(widget=forms.SelectDateWidget(years=range(1910, date.today().year+10)))
+
 
 
 
 
 	################################""""""""" Situation Familiale """"""""""""####################
 	situation_familiale 					= forms.ChoiceField( label = _("Situation familiale"),
-																	widget=forms.RadioSelect, choices=SITUATION_FAMILIALE, required=True)
+																	widget=forms.RadioSelect, choices=Inscription.SITUATION_FAMILIALE, required=True)
 
 
 	class Meta:
