@@ -162,7 +162,7 @@ class Inscription(models.Model):
 
 	prenom_parent_deux 					= models.CharField(max_length=250)
 
-	date_naissance_parent_deux 			= models.DateField()
+	date_naissance_parent_deux 			= models.CharField(max_length=250)
 	lieu_naissance_parent_deux			= models.CharField(max_length=250)
 
 	code_postal_naissance_parent_deux 	= models.CharField(max_length=250)
