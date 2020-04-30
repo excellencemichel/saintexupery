@@ -105,7 +105,7 @@ class Inscription(models.Model):
 	nom 				= models.CharField(max_length=250)
 
 	prenom 				= models.CharField(max_length=250)
-	date_naissance 		= models.CharField(max_length=250)
+	date_naissance 		= models.DateField()
 	lieu_naissance 		= models.CharField(max_length=250)
 
 	niveau 				= models.CharField(max_length=250, choices=NIVEAU)
