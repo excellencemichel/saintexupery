@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseBadRequest, HttpResponse
+from django.contrib.auth.decorators import login_required
+
 import django_excel as excel
 
 
@@ -11,12 +13,13 @@ from inscriptions.models import Inscription
 # Create your views here.
 
 
-
+@login_required
 def exports_data(request):
 	context = {}
 
 	return render(request, "excels/exports_data.html", context)
 
+@login_required
 def export_inscription_data(request, atype):
 	if atype == "sheet":
 		return excel.make_response_from_a_table(
@@ -55,7 +58,7 @@ def export_inscription_data(request, atype):
 
 
 
-
+@login_required
 def embed_handson_inscription_table(request):
     """
     Renders one table in a handsontable
