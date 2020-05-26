@@ -178,7 +178,7 @@ class Inscription(models.Model):
 
 	email_parent_deux 					= models.EmailField()
 	profession_parent_deux 				= models.CharField(max_length=250)
-	adresse_domicile_parent_deux			= models.CharField(max_length=250, null=True, blank=True)
+	adresse_domicile_parent_deux		= models.CharField(max_length=250, null=True, blank=True)
 
 
 	################################""""""""" Situation matrimoniale """"""""""""####################
@@ -187,12 +187,12 @@ class Inscription(models.Model):
 	##############################""""""" Entrée du pdf """"""""""""""""""""""#####################
 
 
-	pdf_inscription		= models.FileField(upload_to="pdfs", null=True, blank=True)
+	pdf_inscription						= models.FileField(upload_to="pdfs", null=True, blank=True)
 	matricule 							= models.CharField(max_length=255)
-	image_enfant		= models.ImageField(null=True, blank=True)
+	image_enfant						= models.ImageField(null=True, blank=True)
 
-	date_inscription 				= models.DateTimeField(auto_now=False, auto_now_add=True)
-	date_modification_inscription 	= models.DateTimeField(auto_now=True, auto_now_add=False)
+	date_inscription 					= models.DateTimeField(auto_now=False, auto_now_add=True)
+	date_modification_inscription 		= models.DateTimeField(auto_now=True, auto_now_add=False)
 
 
 	def __str__(self):

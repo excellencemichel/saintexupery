@@ -4,6 +4,9 @@ env
 env/
 .vscode
 
+fixtures/
+inscriptions/fixtures/
+
 saintexupery.sublime-workspace
 staticfiles
 
