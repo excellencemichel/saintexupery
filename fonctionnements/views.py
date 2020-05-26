@@ -10,7 +10,6 @@ from .models import Infobule, Calendrier, Horaire
 
 def horaires(request):
     instance = Horaire.objects.all().last()
-    print("Le titre l'instance est >:", instance.titre)
 
     context = {
         "instance" : instance,
@@ -21,7 +20,6 @@ def horaires(request):
 
 def calendrier_scolaire(request):
     instance = Calendrier.objects.last()
-    print("Le titre de l'instance est >:", instance.titre)
 
     context = {
         "instance" : instance,
