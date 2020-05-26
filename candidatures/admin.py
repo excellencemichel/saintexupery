@@ -7,4 +7,4 @@ from .models import Candidature
 
 @admin.register(Candidature)
 class CandidatureAdmin(admin.ModelAdmin):
-	list_filter = ("civilite", "poste", "created") #Pour les champs qui vont s'afficher dans l'admin
+	list_filter = ("civilite", "poste", "created",) #Pour les champs qui vont s'afficher dans l'admin

@@ -6,7 +6,7 @@ from .models import Contact
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-	list_filter = ("created", "created",) #Pour les champs qui vont s'afficher dans l'admin
+	list_filter = ("created",) #Pour les champs qui vont s'afficher dans l'admin
 
 
 
