@@ -144,26 +144,30 @@
                             <div class="col-lg-6 offset-lg-1 d-lg-flex mt-lg-0 mt-5 d-none d-lg-block">
                                 <div class="img-box">
                                     <img src="{{ presentation.image.url }}" alt="Notre centre">
-                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
-                                    <span><i class="fas fa-play icon"></i></span>
-                                    </a>
-                                    <div class="module">
-                                    <div class="custom">
-                                    <div class="video-modal modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
-                                    <div class="modal-dialog modal-dialog-centered" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-body">
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                        {% if presentation.capsule_video %}
-                                            <iframe width="560" height="315" src="{{ presentation.capsule_video.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                                        {% endif %}
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
+                                    {% if presentation.capsule_video %}
+
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                                        <span><i class="fas fa-play icon"></i></span>
+                                        </a>
+
+                                        <div class="module">
+                                            <div class="custom">
+                                                <div class="video-modal modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <div class="embed-responsive embed-responsive-16by9">
+                                                                    <iframe width="560" height="315" src="{{ presentation.capsule_video.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="">
+                                                                        
+                                                                    </iframe>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </div>
                             </div>
 
