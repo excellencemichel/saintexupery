@@ -28,6 +28,7 @@ urlpatterns = [
 
 
 				path("infos", infobules, name="infobules"),
+				
 				re_path(r'^(?P<id>\d+)-(?P<slug>[\w-]+)/info/$', infobule, name="infobule"),			
 
 

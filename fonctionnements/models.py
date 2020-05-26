@@ -13,6 +13,9 @@ from saintexupery.utils import unique_slug_generator_for_null, upload_file_locat
 
 
 class Infobule(models.Model):
+    """
+    Class pour afficher les dernières nouvells
+    """
 	slug 			= models.SlugField(max_length=1000, blank=True )
 	info 			= models.CharField(max_length=1000)
 	contenu 		= MDTextField()

@@ -46,4 +46,3 @@ def infobule(request, id=None, slug=None):
     }
 
     return render(request, "fonctionnements/infobule.html", context)
-
