@@ -154,7 +154,9 @@
                                     <div class="modal-content">
                                     <div class="modal-body">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe width="560" height="315" src="{{ presentation.capsule_video.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                        {% if presentation.capsule_video %}
+                                            <iframe width="560" height="315" src="{{ presentation.capsule_video.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                                        {% endif %}
                                     </div>
                                     </div>
                                     </div>
