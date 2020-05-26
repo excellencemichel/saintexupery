@@ -1,10 +1,18 @@
 {% extends "base_.html" %}
+
+
 {% load static %}
 
 
+
+
 {% block content %}
+{% static 'images/images/slider/img-2.jpg' as image_url %}
+
+{% include "base/entete.html" with title=instance.titre lien="Horaires" image=image_url %}
 
 
-	{% include "fonctionnements/snnipets/interne.html" with title="Les Horraires de notre établissement" lien="Horraires" %}
+{% include "fonctionnements/snnipets/interne.html" with instance=instance %}
+
 
 {% endblock content %}

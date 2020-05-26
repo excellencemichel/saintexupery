@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 import presentation.models
+import saintexupery.utils
 
 
 class Migration(migrations.Migration):
@@ -18,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255)),
                 ('content', models.TextField()),
-                ('image', models.FileField(blank=True, null=True, upload_to=presentation.models.upload_file_location_with)),
+                ('image', models.FileField(blank=True, null=True, upload_to=saintexupery.utils.upload_file_location)),
                 ('presentation_type', models.CharField(choices=[('presentation', 'Présentation'), ('mot_directrice', 'Mot du directeur'), ('programme', 'Programe du CNED'), ('equipe_pedagogique', 'Equipe pédagogique')], max_length=250)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
@@ -35,7 +36,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=250)),
                 ('slug', models.SlugField()),
                 ('contenu', models.TextField()),
-                ('logo', models.ImageField(blank=True, null=True, upload_to=presentation.models.upload_file_location_with)),
+                ('logo', models.ImageField(blank=True, null=True, upload_to=saintexupery.utils.upload_file_location)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
             ],

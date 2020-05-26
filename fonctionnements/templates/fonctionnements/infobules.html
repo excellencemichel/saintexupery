@@ -1,0 +1,124 @@
+
+{% extends "base_.html" %}
+
+{% load static martortags %}
+
+{% block content %}
+
+<section id='banner-section-1532936603488' class='astroid-section banner-section' style='' data-animation='' data-animation-delay=''>
+	<div id="astroid-row-1532936603488" class="row no-gutters astroid-row">
+		<div id="astroid-column-1532936603488" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
+			<div class="astroid-banner text-center text-white" id="banner-1532936878566" style="" data-animation="" data-animation-delay="500"> 
+				<div style="background-image: url({% static 'images/images/slider/img-2.jpg' %})" class="astroid-banner-inner ">
+				<h2 class="astroid-banner-title" style="color:">Infos dernières minutes</h2> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1061544185584130" class="row astroid-row">
+			<div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500">
+				<div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> 
+					<div class="moduletable ">
+						<div class="breadcrumb-wraper">
+							<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+								<li class="active">
+								<span class="divider icon-location"></span>
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="{% url 'home' %}">
+								<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
+								<span class="divider">
+								&gt; </span>
+								<meta itemprop="position" content="1">
+								</li>
+								<li itemprop="itemListElement" itemscope itemtype="{% url 'fonctionnements:infobules' %}" class="active">
+								<span itemprop="name">
+								Infos dernières minutes </span>
+								<meta itemprop="position" content="2">
+							</li>
+							</ul>
+						</div> 
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1528971561366" class="row astroid-row">
+			<div id="astroid-column-1528971561366" class="astroid-column col-lg-9" style="" data-animation="" data-animation-delay="">
+				<div class="astroid-message" id="messages-1528971711775" style="" data-animation="" data-animation-delay="">
+					<div id="system-message-container">
+					</div>
+				</div>
+				<div class="astroid-component" id="component-area-1529739248826" style="" data-animation="" data-animation-delay="">
+					<div class="astroid-component-area">
+						<div class="blog" itemscope itemtype="#">
+							<div class="items-row row-0 row clearfix">
+
+
+							<!-- Start forloop -->
+
+							{% if instances %}
+								{% for instance in instances %}
+									<div class="col-lg-6 p-3">
+										<div class="card h-100">
+											<article class="item column-1" itemprop="blogPost" itemscope itemtype="#">
+												<div class="card-body has-badge has-image">
+												 	<div class="article-badge article-badge-6">{{ instance.info }}</div>
+													<div class="article-title item-title">
+															<div class="page-header">
+															<h2 itemprop="name">
+															<a href="{{ instance.get_absolute_url }}" itemprop="url">
+															{{ instance.info }} </a>
+															</h2>
+														</div>
+													</div>
+													<dl class="article-info muted">
+														<dd class="published">
+															<i class="far fa-calendar-check"></i>
+															<time datetime="{{ instance.created }}" itemprop="datePublished">
+															{{ instance.updated }} </time>
+														</dd>
+													</dl> 
+													<div class="article-intro-text">
+														<p>{{ instance.contenu|safe_markdown|truncatewords:80 }} </p>
+													</div>
+													<div class="readmore mb-0">
+														<a class="btn btn-link rea#" itemprop="url" aria-label="Lire plus" href="{{ instance.get_absolute_url }}">
+														Lire plus 
+														</a>
+													</div>
+												</div>
+											</article>
+										</div>
+									</div>
+
+									{% endfor %}
+								{% endif %}
+								<!-- End forloop -->
+
+
+							</div>
+						<div class="cat-children">
+						</div>
+							<!-- <p class="counter d-flex justify-content-center"> Page 1/1 </p> -->
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+{% endblock content %}

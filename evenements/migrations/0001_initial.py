@@ -4,6 +4,7 @@ from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
 import evenements.models
+import saintexupery.utils
 
 
 class Migration(migrations.Migration):
@@ -20,7 +21,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255)),
                 ('slug', models.SlugField()),
-                ('image', models.FileField(upload_to=evenements.models.upload_file_location_with)),
+                ('image', models.FileField(upload_to=saintexupery.utils.upload_file_location)),
                 ('content', models.TextField()),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('publish', models.DateTimeField(default=django.utils.timezone.now)),
@@ -34,7 +35,7 @@ class Migration(migrations.Migration):
             name='ArticleMedia',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('photos', models.FileField(upload_to=evenements.models.upload_file_location_with)),
+                ('photos', models.FileField(upload_to=saintexupery.utils.upload_file_location)),
                 ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='evenements.Article')),
             ],
         ),

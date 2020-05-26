@@ -1,7 +1,6 @@
-{% load static %}
+{% load static martortags %}
 
 
-{% static 'images/images/slider/img-3.jpg' as image_url %}
 
 {% include "base/entete.html" with title=title lien=lien image=image_url %}
 
@@ -23,7 +22,7 @@
 									<div class="description">
 										<h3 class="mb-4">{{ instance.title }}</h3>
 															{% autoescape off %}
-										    				{{ instance.content }}
+										    				{{ instance.content|safe_markdown }}
 															{% endautoescape %}
 									</div>
 								</div>

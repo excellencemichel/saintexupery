@@ -8,7 +8,13 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils import timezone
 
-from saintexupery.utils import unique_slug_generator
+
+from mdeditor.fields import MDTextField
+
+
+
+from saintexupery.utils import unique_slug_generator, upload_file_location
+
 
 
 
@@ -18,28 +24,21 @@ from saintexupery.utils import unique_slug_generator
 # Create your models here.
 
 
-def get_filename(filepath):
-    base_name = path.basename(filepath)
-    name_file, extension_file = path.splitext(base_name)
-    return name_file, extension_file
+class ArticleQuerySet(models.query.QuerySet):
+    def permettre(self):
+        return self.filter(permettre=True)
 
 
 
-def upload_file_location_with(instance, filename):
-    id_ = instance.id
-    if id_ is None:
-        Klass = instance.__class__
-        qs = Klass.objects.all().order_by("-pk")
-        if qs.exists():
-            id_ = qs.first().id + 1
-        else:
-            id_ = 0
-    name_file, extension_file =get_filename(filename)
 
-    final_filename = "{name_file}_{id_}{extension_file}".format(name_file=name_file, id_=id_, extension_file=extension_file)
-    
 
-    return "evenements/{final_filename}".format(final_filename=final_filename)
+
+
+class ArticleManager(models.Manager):
+
+    def permettre(self):
+        return self.filter(permettre=True)
+
 
 
 
@@ -50,7 +49,8 @@ class Article(models.Model):
     slug = models.SlugField()
 
 
-    image = models.FileField(upload_to=upload_file_location_with)
+    image = models.FileField(upload_to=upload_file_location)
+    permettre  = models.BooleanField(default=True)
     content = models.TextField()
 
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -58,6 +58,10 @@ class Article(models.Model):
     publish = models.DateTimeField(auto_now=False, auto_now_add=False, default=timezone.now)
 
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+
+
+    objects = ArticleManager()
+
 
 
 
@@ -84,7 +88,7 @@ pre_save.connect(article_pre_save_receiver, sender=Article)
 
 class ArticleMedia(models.Model):
     article = models.ForeignKey(Article, on_delete=models.CASCADE)
-    photos = models.FileField(upload_to=upload_file_location_with)
+    photos = models.FileField(upload_to=upload_file_location)
 
 
 

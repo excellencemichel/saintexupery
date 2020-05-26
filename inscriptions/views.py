@@ -17,7 +17,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 
 #Local
-from .models import Inscription 
+from .models import Inscription, Information
 from .forms import InscriptionModelForm
 
 from pdfapp.utils import render_to_pdf
@@ -27,8 +27,11 @@ from pdfapp.utils import render_to_pdf
 
 
 def inscriptions(request):
+	instance = Information.objects.last()
 
-	context = {}
+	context = {
+		"instance": instance,
+	}
 	return render(request, "inscriptions/inscriptions.html", context)
 
 
@@ -39,6 +42,7 @@ def inscription(request):
 	form = InscriptionModelForm(request.POST or None, request.FILES or None)
 
 	if form.is_valid():
+		human = True
 		instance = form.save(commit=False)
 
 		annee = strftime("%y")
@@ -71,8 +75,12 @@ def inscription(request):
 		filename = "mypdf_{}.pdf".format(matricule)
 		instance.pdf_inscription.save(filename, BytesIO(pdf_inscription.content))
 
-		subject = """"Dossier d'inscription à l'école ECF Saint-Exupéry"""
+		subject = """"Confirmation de l'accusé de reception de l'inscription de {nom} {prenom}""".format(nom=instance.nom, prenom=instance.prenom)
+		subject_direction = """Une incription vient d'être faite depuis le site internet"""
 
+
+		with open(settings.BASE_DIR + "/inscriptions/templates/inscriptions/inscription_email_message_to_direction.txt") as f_to_direction:
+				inscription_message_to_direction = f_to_direction.read()
 
 		with open(settings.BASE_DIR + "/inscriptions/templates/inscriptions/inscription_email_message.txt") as f:
 				inscription_message = f.read()
@@ -80,6 +88,7 @@ def inscription(request):
 
 		from_email = settings.EMAIL_HOST_USER
 		to_email = [instance.email, instance.email_parent_un, instance.email_parent_deux]
+		to_email_direction = ["contact@ecf-saintex.com"]
 
 		email_pdf = EmailMessage(
 
@@ -87,6 +96,13 @@ def inscription(request):
 			body =inscription_message,
 			from_email = from_email,
 			to=to_email,	
+			)
+
+		email_to_direction = EmailMessage(
+			subject = subject_direction,
+			body = inscription_message_to_direction,
+			from_email= from_email,
+			to= to_email_direction,
 			)
 
 		# instance_attach = instance.pdf_inscription.read()
@@ -97,9 +113,10 @@ def inscription(request):
 
 		# print(instance.pdf.name, instance.pdf.size)
 		email_pdf.attach(instance_attach)
-		# import pdb;pdb.set_trace()
+		email_to_direction.attach(instance_attach)
 
 		email_pdf.send()
+		email_to_direction.send()
 
 
 		return redirect(reverse("home"))

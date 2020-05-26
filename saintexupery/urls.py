@@ -30,10 +30,22 @@ from django.contrib.auth.views import (
 from django.urls import include, path, re_path
 
 
-from .views import home
+from .views import home, markdown_uploader
 
 
 urlpatterns = [
+
+
+
+    path('martor/', include('martor.urls')),
+    path('mdeditor/', include('mdeditor.urls')),
+    path('captcha/', include('captcha.urls')),
+    
+
+
+    path(
+        'api/uploader/', markdown_uploader, name='markdown_uploader_page'
+    ),
 
 
     path("", home, name="home"),
@@ -43,7 +55,10 @@ urlpatterns = [
     path('profile/', include("profile.urls", namespace="profile")),
     path('account/', include("accounts.urls", namespace="accounts")),
 
+    path('candidatures/', include("candidatures.urls", namespace="candidatures")),
     path('contacts/', include("contacts.urls", namespace="contacts")),
+
+
 
     path('evenements/', include("evenements.urls", namespace="evenements")),
 

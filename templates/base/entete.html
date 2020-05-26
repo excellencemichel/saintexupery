@@ -20,17 +20,17 @@
 				<div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> 
 					<div class="moduletable ">
 						<div class="breadcrumb-wraper">
-							<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+							<ul itemscope itemtype="{% url 'home' %}" class="breadcrumb">
 								<li class="active">
 									<span class="divider icon-location"></span>
 								</li>
-								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+								<li itemprop="itemListElement" itemscope itemtype="{% url 'home' %}">
 									<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
 									<span class="divider">
 									&gt; </span>
 									<meta itemprop="position" content="1">
 								</li>
-								<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="active">
+								<li itemprop="itemListElement" itemscope itemtype="#" class="active">
 									<span itemprop="name">
 									{{ lien }} </span>
 									<meta itemprop="position" content="3">

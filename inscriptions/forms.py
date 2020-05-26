@@ -4,6 +4,8 @@ from datetime import date
 from django.utils.translation import ugettext_lazy as _
 from re import match
 
+from captcha.fields import CaptchaField
+
 
 
 from django import forms
@@ -24,7 +26,7 @@ from .models import Inscription
 
 class InscriptionModelForm(forms.ModelForm):
 
-	date_naissance 		= forms.DateField(widget=forms.SelectDateWidget(years=range(1985, date.today().year+10)))
+	date_naissance 		= forms.DateField(widget=forms.SelectDateWidget(years=range(date.today().year-23, date.today().year)))
 
 	niveau 									= forms.ChoiceField(choices=Inscription.NIVEAU, required=True
 																)
@@ -45,7 +47,7 @@ class InscriptionModelForm(forms.ModelForm):
 	#############################"""""""""""" Représentant parent 1 #########################################""
 
 	representant_parent_un 					= forms.ChoiceField(widget=forms.RadioSelect, choices=Inscription.REPRESENTANT_PARENT_UN, required=True)
-	date_naissance_parent_un 				= forms.DateField(widget=forms.SelectDateWidget(years=range(1910, date.today().year+10)))
+	date_naissance_parent_un 				= forms.DateField(widget=forms.SelectDateWidget(years=range(date.today().year-85, date.today().year)))
 
 
 
@@ -54,7 +56,7 @@ class InscriptionModelForm(forms.ModelForm):
 
 
 	representant_parent_deux 				= forms.ChoiceField(widget=forms.RadioSelect, choices=Inscription.REPRESENTANT_PARENT_DEUX, required=True)
-	date_naissance_parent_deux 				= forms.DateField(widget=forms.SelectDateWidget(years=range(1910, date.today().year+10)))
+	date_naissance_parent_deux 				= forms.DateField(widget=forms.SelectDateWidget(years=range(date.today().year-85, date.today().year)))
 
 
 
@@ -63,6 +65,9 @@ class InscriptionModelForm(forms.ModelForm):
 	################################""""""""" Situation Familiale """"""""""""####################
 	situation_familiale 					= forms.ChoiceField( label = _("Situation familiale"),
 																	widget=forms.RadioSelect, choices=Inscription.SITUATION_FAMILIALE, required=True)
+
+	captcha = CaptchaField()
+
 
 
 	class Meta:

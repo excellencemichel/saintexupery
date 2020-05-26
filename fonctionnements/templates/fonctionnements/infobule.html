@@ -1,0 +1,74 @@
+
+{% extends "base_.html" %}
+
+{% load  crispy_forms_tags %}
+{% load static martortags %}
+
+
+{% block content %}
+
+
+
+<section id='breadcrumbs-section-1031544185584130' class='astroid-section breadcrumbs-section' style='' data-animation='' data-animation-delay=''><div class='container'><div id="astroid-row-1061544185584130" class="row astroid-row"><div id="astroid-column-281544185584130" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="500"><div class="astroid-module-position" id="breadcrumbs-951544185587659" style="" data-animation="" data-animation-delay=""> <div class="moduletable ">
+<div class="breadcrumb-wraper">
+<ul itemscope itemtype="https://schema.org/BreadcrumbList" class="breadcrumb">
+<li class="active">
+<span class="divider icon-location"></span>
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#">
+<a itemprop="item" href="{% url 'home' %}" class="pathway"><span itemprop="name">Accueil</span></a>
+<span class="divider">
+&gt; </span>
+<meta itemprop="position" content="1">
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#">
+<a itemprop="item" href="{% url 'fonctionnements:infobules' %}" class="pathway"><span itemprop="name">Info</span></a>
+<span class="divider">
+&gt; </span>
+<meta itemprop="position" content="2">
+</li>
+<li itemprop="itemListElement" itemscope itemtype="#" class="active">
+<span itemprop="name">
+{{ instance.info|truncatewords:12 }} </span>
+<meta itemprop="position" content="3">
+</li>
+</ul>
+</div> </div>
+</div></div></div></div>
+</section>
+
+
+<section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
+	<div class='container'>
+		<div id="astroid-row-1528971561366" class="row astroid-row">
+			<div id="astroid-column-1528971561366" class="astroid-column col-lg-12" style="" data-animation="" data-animation-delay="">
+				<div class="astroid-message" id="messages-1528971711775" style="" data-animation="" data-animation-delay="">
+					<div id="system-message-container">
+					</div>
+				</div>
+
+
+				<div class="astroid-module-position" id="content-top-381539181673929" style="" data-animation="" data-animation-delay="">
+					<div class="moduletable split-title-module text-center">
+						<h2 class="module-title split-title page-header">
+							<span class="split-1">{{ instance.info }} </span><span class="split-2">{{ instance.contenu|safe_markdown }} </span>
+						</h2>
+						<div class="custom text-center">
+								<small>
+									<span class="djev_time_icon fa fa-clock-o"></span>
+									<span class="djev_time_from">
+										{{ instance.updated }}
+									</span>
+								</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+{% endblock content %}

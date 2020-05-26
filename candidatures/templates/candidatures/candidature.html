@@ -1,0 +1,328 @@
+{% extends "base_.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'profile/register.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/plan_map.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="row centered-form">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8 col-sm-offset-1 col-md-offset-2 col-lg-offset-2">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Postuler au centre</h3>
+            </div>
+
+            <div class="panel-body">
+                  <form action="" method="post" role="form" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.nom.label_tag }}
+                          {{ form.nom }}
+                           {% if form.nom.errors %}
+                                 <small style="color: red">{{ form.nom.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.prenom.label_tag }}
+                          {{ form.prenom }}
+                           {% if form.prenom.errors %}
+                                 <small style="color: red">{{ form.prenom.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+                    </div>
+
+                     <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          <label style="display: block;
+                          font-weight: initial;
+                          width: -webkit-fill-available; ">N° de Téléphone</label>
+                          <input id="phone" type="tel" class="form-control input-xs" name="phone" required>
+                          <span id="valid-msg" class="hide">✓ Valid</span>
+                          <span id="error-msg" class="hide"></span>
+                          <input  name="phone_number[phone_input]" type="hidden">
+
+
+
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.email.label_tag }}
+                          {{ form.email }}
+                          {% if form.email.errors %}
+                                <small style="color: red">{{ form.email.errors }}</small>
+                          {% endif %}
+                          
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                          {{ form.civilite.label_tag }}
+                          {{ form.civilite }}
+                           {% if form.civilite.errors %}
+                                 <small style="color: red">{{ form.civilite.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          {{ form.poste.label_tag }}
+                          {{ form.poste }}
+                           {% if form.poste.errors %}
+                                 <small style="color: red">{{ form.poste.errors }}</small>
+                          {% endif %}
+                        </div>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <div class="file-field">
+                            <div class="btn btn-primary btn-sm float-left">
+                              <span>Votre CV</span>
+                              {{ form.cv }}
+                            </div>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+
+
+                    </div>
+
+
+                     <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-md-offset-1">
+                        <div class="form-group">
+                          {{ form.message.label_tag }}
+                          {{ form.message }}
+                              {% if form.message.errors %}
+                                 <small style="color: red">{{ form.message.errors }}</small>
+                              {% endif %}
+                          <small style="display: none">{{ form.message.help_text }}</small>
+                          
+                        </div>
+
+                        <div class="form-group">
+                          <small><strong>Je ne suis pas un robot</strong></small>
+                          {{ form.captcha }}
+                              {% if form.captcha.errors %}
+                                 <small style="color: red">{{ form.captcha.errors }}</small>
+                              {% endif %}
+                          <small style="display: none">{{ form.captcha.help_text }}</small>
+                          
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                    <input type="submit" value="Envoyer" name="" class="btn btn-info btn-block">
+
+
+
+
+                  </form>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-4 col-md-4 col-lg-4">
+                    <div class="moduletable ">
+                        <h5 class="module-title">Contactez-nous</h5>
+                        <div class="custom">
+                            <div class="address">
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-phone fa-rotate-90"></i>
+                                    </div>
+
+                                    <div class="content">+212 626 609 678</div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-phone fa-rotate-90"></i>
+                                    </div>
+                                    <div class="content">+212 524 304 798</div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">contact@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">direction@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">servicecned.primaire@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">servicecned.college@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">servicecned.lycee@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                    <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <a href="" class="__cf_email__" data-cfemail="">servicefinancier@ecf-saintex.com</a>
+                                    </div>
+                                </div>
+
+                                <div class="address-info d-flex mt-3">
+                                    <div class="icon mr-2">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="content">Avenue Abou Oubaida - Daoudiate 40 000 Marrakech (Derrière l'imprimérie El Watanya et l'école HEEC)</div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    {% include "map.html" %}
+        </div>
+
+
+      </div>
+
+     </div>
+   </br>
+ </br>
+
+
+{% endblock content %}
+
+
+{% block js_code %}
+
+
+<link rel="stylesheet" href="{% static 'css/intlTelInput.css' %}">
+
+
+<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/intlTelInput.js' %}"></script>
+
+<script type="text/javascript">
+
+
+  
+  $(document).ready(function(){
+
+            var input = document.querySelector("#phone"),
+              errorMsg = document.querySelector("#error-msg"),
+          validMsg = document.querySelector("#valid-msg");
+
+          // here, the index maps to the error code returned from getValidationError - see readme
+      var errorMap = ["Nombre invalide", "Code de pays invalide", "Trop court", "Trop long", "Nombre invalide"];
+
+      // initialise plugin
+      var iti = window.intlTelInput(input, {
+        initialCountry: "ma",
+              separateDialCode: true,
+              hiddenInput: "phone_input",
+              geoIpLookup: function(callback) {
+                $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                  var countryCode = (resp && resp.country) ? resp.country : "";
+                  console.log("le code du pays est :", countryCode)
+                  callback(countryCode);
+                });
+              },
+              utilsScript: "{% static 'js/tel-input-utils.js' %}"
+      });
+
+      var reset = function(){
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide")
+      };
+
+      //on blur: validate
+      input.addEventListener('blur', function() {
+        reset();
+        if(input.value.trim()){
+          if(iti.isValidNumber()){
+            validMsg.classList.remove("hide")
+          }else{
+            input.classList.add("error");
+            var errorCode = iti.getValidationError();
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide")
+          }
+        }
+      });
+      //on keyup /change flag: reset
+      input.addEventListener("change", reset);
+      input.addEventListener("keyup", reset);
+
+
+        })
+
+</script>
+
+{% endblock js_code %}
+
+

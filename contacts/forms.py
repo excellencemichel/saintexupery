@@ -12,7 +12,7 @@ from django.template.loader import get_template
 
 from django.utils.translation import pgettext, ugettext, ugettext_lazy as _
 
-
+from captcha.fields import CaptchaField
 
 from django import forms
 
@@ -45,6 +45,8 @@ class ContactForm(forms.Form):
 	message = forms.CharField(label=_("Message à laisser"),
 		widget=forms.Textarea(attrs={"class": "form-control input-lg", "placeholder":"Mon Message..."}),
 		)
+
+	captcha = CaptchaField()
 
 
 

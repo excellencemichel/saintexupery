@@ -1,5 +1,8 @@
 from django.db import models
 
+
+from mdeditor.fields import MDTextField
+
 # Create your models here.
 
 
@@ -188,6 +191,9 @@ class Inscription(models.Model):
 	matricule 							= models.CharField(max_length=255)
 	image_enfant		= models.ImageField(null=True, blank=True)
 
+	date_inscription 				= models.DateTimeField(auto_now=False, auto_now_add=True)
+	date_modification_inscription 	= models.DateTimeField(auto_now=True, auto_now_add=False)
+
 
 	def __str__(self):
 		return str(self.nom)
@@ -196,5 +202,16 @@ class Inscription(models.Model):
 
 
 
+
+
+
+class Information(models.Model):
+	titre 			= models.CharField(max_length=250, default="Information sur l'inscription")
+	description  	= MDTextField()
+	created 		= models.DateTimeField(auto_now=False, auto_now_add=True)
+	updated 		= models.DateTimeField(auto_now=True, auto_now_add=False)
+
+	def __str__(self):
+		return "{titre}".format(titre=self.titre)
 
 

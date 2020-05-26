@@ -1,9 +1,7 @@
-{% load static %}
 
 
-{% static 'images/images/slider/img-2.jpg' as image_url %}
+{% load static martortags %}
 
-{% include "base/entete.html" with title=title lien=lien image=image_url %}
 
 
 <section id='content-section-1528971561366' class='astroid-section astroid-component-section section' style='background-color:rgb(247, 247, 247)' data-animation='' data-animation-delay=''>
@@ -14,90 +12,31 @@
 					<div id="system-message-container">
 					</div>
 				</div>
+
 				<div class="astroid-component" id="component-area-1529739248826" style="" data-animation="" data-animation-delay="">
 					<div class="astroid-component-area">
-						<div class="item-page  blog-view" itemscope itemtype="https://schema.org/Article">
+						<div class="item-page  blog-view" itemscope itemtype="#">
 							<meta itemprop="inLanguage" content="fr-FR" />
 							<div class="item-title">
 								<h2 itemprop="headline">
-									{{ title }}
+									{{ instance.titre }}
 								</h2>
 							</div>
+
+
+
 							<div itemprop="articleBody">
-								<h4 class="mb-3 mt-5">Du 6 Septembre 2019 au 4 juin 2020</h4>
+
+								<!-- <h4 class="mb-3 mt-5" style="text-align: center;">Calendrier</h4> -->
 								<div class="table-responsive">
 									<table class="table">
-										<thead>
-											<tr>
-												<th scope="col">Jours</th>
-												<th colspan="2" scope="col">Horaires de classe</th>
-												<th colspan="2" scope="col">Horaires de l'administration</th>
-											</tr>
-											<tr>	
-												<th scope="col"></th>
-												<th  scope="col">Début</th>
-												<th scope="col">Fin</th>
-												<th scope="col">Début</th>
-												<th scope="col">Fin</th>
-											</tr>
 
-										</thead>
-										<thead>
-
-										</thead>
-										<tbody>
-											<tr>
-												<td>Lundi</td>
-												<td>8h30</td>
-												<td>16h30</td>
-												<td>8h30</td>
-												<td>17h30</td>
-
-											</tr>
-											<tr>
-												<td>Mardi</td>
-												<td>8h30</td>
-												<td>16h30</td>
-												<td>8h30</td>
-												<td>17h30</td>
-
-											</tr>
-											<tr>
-												<td>Mercredi</td>
-												<td>8h30</td>
-												<td>12h30</td>
-												<td>8h30</td>
-												<td>17h30</td>
-
-											</tr>
-											<tr>
-												<td>Jeudi</td>
-												<td>8h30</td>
-												<td>16h30</td>
-												<td>8h30</td>
-												<td>17h30</td>
-
-											</tr>
-											<tr>
-												<td>Vendredi</td>
-												<td>8h30</td>
-												<td>16h30</td>
-												<td>8h30</td>
-												<td>17h30</td>
-
-											</tr>
-											<tr>
-												<td>Samedi</td>
-												<td>-</td>
-												<td>-</td>
-												<td>9h00</td>
-												<td>12h30</td>
-
-											</tr>
-										</tbody>
+										{{ instance.description|safe_markdown }}
 									</table>
-								</div> 
+
+								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
@@ -105,20 +44,11 @@
 			<div id="astroid-column-1530100662663" class="astroid-column col-lg-3" style="" data-animation="" data-animation-delay="500">
 				<div class="astroid-module-position sidebar-right" id="right-921547012999688" style="" data-animation="" data-animation-delay="">
 					<div class="moduletable ">
-						<h4 class="module-title p-0 mb-3">Suivez-nous sur Facebook!</h4>
-						<div id="fb-root"></div>
-						<script>(function(d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0];
-							if (d.getElementById(id)) return;
-							js = d.createElement(s); js.id = id;
-							js.src = 'https://www.facebook.com/ecf.saintexupery/';
-							fjs.parentNode.insertBefore(js, fjs);
-							}(document, 'script', 'facebook-jssdk'));
-						</script>
-						<div class="dj-likebox">
-							<div class="fb-page" data-href="https://www.facebook.com/ecf.saintexupery/" data-tabs="events" data-hide-cover="false" data-show-facepile="true" data-hide-cta="false" data-small-header="false" data-adapt-container-width="true">
-							</div>
-						</div> 
+						<h4 class="module-title p-0 mb-3">Retrouvez le document en PDF</h4>
+						<a href="{{ instance.doc_pdf.url }}" target="_blank">Télécharger le PDF</a> 
+					</div>
+					<div class="moduletable ">
+						<h4 class="module-title p-0 mb-3"><a href="https://www.facebook.com/ecf.saintexupery/" target="_blanck"> Suivez-nous sur Facebook! </a> </h4>
 					</div>
 
 				</div>
@@ -127,4 +57,3 @@
 		</div>
 	</div>
 </section>
-

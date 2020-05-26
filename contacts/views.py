@@ -29,6 +29,7 @@ def formulaire(request, template_name="contacts/formulaire.html",
 	if request.method == "POST":
 		form = form(request.POST, request.FILES)
 		if form.is_valid():
+			human = True
 			opts = {
 				"use_https": request.is_secure(),
 				"from_email": from_email,

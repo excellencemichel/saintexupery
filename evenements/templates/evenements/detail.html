@@ -2,7 +2,7 @@
 {% extends "base_.html" %}
 
 {% load  crispy_forms_tags %}
-{% load static %}
+{% load static martortags %}
 
 
 {% block content %}
@@ -57,7 +57,7 @@
 				<div class="astroid-module-position" id="content-top-381539181673929" style="" data-animation="" data-animation-delay="">
 					<div class="moduletable split-title-module text-center">
 						<h2 class="module-title split-title page-header">
-							<span class="split-1">{{ instance.title }} </span><span class="split-2">{{ instance.content }} </span>
+							<span class="split-1">{{ instance.title }} </span><span class="split-2">{{ instance.content|safe_markdown }} </span>
 						</h2>
 						<div class="custom text-center">
 								<small>

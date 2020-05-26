@@ -24,7 +24,6 @@
 								<div class="col-lg-7">
 									<div class="description">
 										<h3 class="mb-4">Nos relations avec les partenaires</h3>
-										Nous avons un partenariat
 									</div>
 								</div>
 							</div>
@@ -46,12 +45,17 @@
 						<div class="moduletable ">
 							<div class="custom">
 								<div class="row align-items-center">
+									{% if instance.logo %}
 									<div class="col-lg-5 order-lg-1">
+										<a href="{% if instance.lien_site %} {{ instance.lien_site }}{% else %}#{% endif %}" target="_blank">
 										<img src="{{ instance.logo.url }}" alt="img-2">
+										</a>
 									</div>
+									{% else %}
+									{% endif %}
 									<div class="col-lg-7 order-lg-0">
 										<div class="description">
-											<h3 class="mb-4">{{ instance.title }}</h3>
+											<h3 class="mb-4">{{ instance.nom }}</h3>
 											{{ instance.contenu }}
 										</div>
 									</div>

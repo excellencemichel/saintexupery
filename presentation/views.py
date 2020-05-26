@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Generale,  Partenaire 
+from .models import Generale,  Partenaire
 
 # Create your views here.
 
@@ -12,7 +12,7 @@ def presentation(request):
 	context = {
 	"instance": instance
 	}
-	return render(request, "presentation/pres.html", context)
+	return render(request, "presentation/presentation.html", context)
 
 
 
@@ -36,7 +36,7 @@ def programme(request):
 	"instance": instance
 	}
 
-	return render(request, "presentation/prog.html", context)
+	return render(request, "presentation/programme.html", context)
 
 
 
@@ -49,6 +49,8 @@ def equipe_pedagogique(request):
 
 	return render(request, "presentation/staff.html", context)
 
+	
+
 def partenaires(request):
 	instances = Partenaire.objects.all()
 
@@ -56,4 +58,4 @@ def partenaires(request):
 	"instances":instances
 	}
 
-	return render(request, "presentation/part.html", context)
+	return render(request, "presentation/partenaires.html", context)

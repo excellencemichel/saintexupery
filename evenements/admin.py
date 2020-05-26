@@ -1,4 +1,10 @@
 from django.contrib import admin
+from django.db import models
+
+from mdeditor.widgets import MDEditorWidget
+from martor.widgets import AdminMartorWidget
+
+
 from .models import Article, ArticleMedia
 
 from saintexupery.utils import unique_slug_generator
@@ -13,6 +19,10 @@ class ArticleMediaInline(admin.TabularInline):
 
 
 class ArticleAdmin(admin.ModelAdmin):
+
+	formfield_overrides = {
+        models.TextField: {'widget': MDEditorWidget},
+    }
 	inlines = [ArticleMediaInline]
 	exclude = ["user", "slug"]
 

@@ -1,5 +1,5 @@
 {% extends "base_.html" %}
-{% load static %} 
+{% load static martortags %} 
 
 
 {% block content %}
@@ -33,7 +33,10 @@
                                                     <div {% if forloop.first %} data-first="1" {% endif %} data-slide-duration="0" data-id="7" style="" class=" n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-7">
                                                         <div class="n2-ss-slide-background n2-ow" data-mode="fill">
                                                             <div data-hash="b2976579f91ba9c36ee175dba45fe64f" data-desktop="{{ instance_evenement.image.url }}" class="n2-ss-slide-background-image" data-blur="0" style="opacity:0.7">
+                                                                <a href="{{ instance_evenement.get_absolute_url }}">
                                                                 <img src="{{ instance_evenement.image.url }}" alt="" />
+                                                                    
+                                                                </a>
                                                             </div>
                                                             <div class="n2-ss-slide-background-color" style="background-color: #000000;"></div>
                                                             </div>
@@ -46,13 +49,19 @@
                                                                                         <div class="n2-ss-layer n2-ow" style="width: 100%;margin-right: 20px;margin-top: 20px;overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-pm="default" data-desktopportraitpadding="10|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit" data-desktopportraitorder="0" data-colwidthpercent="100" data-sstype="col" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-plugin="rendered">
                                                                                             <div class="n2-ss-layer-col n2-ss-layer-content" style="padding:0.625em 0.625em 0.625em 0.625em ;" data-verticalalign="flex-start">
                                                                                                 <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-mobileportraitfontsize="100" data-plugin="rendered"><h2 id="n2-ss-1item1" class="n2-font-a9c9cdbcd8c7d8139d2239af9d47cfd6-hover n2-style-23172139031fa90ef1b7eea9a992b8eb-heading   n2-ss-item-content n2-ow" style="display:inline-block;">
+                                    <a href="{{ instance_evenement.get_absolute_url }}">
+                                        
                                     {{ instance_evenement.title }} <br /></h2>
+                                    </a>
                                                                                                 </div>
                                                                                                 <div class="n2-ss-layer n2-ow" style="margin:1.25em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="20|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-plugin="rendered">
                                 <div class="n2-ss-item-content n2-ow">
                                     <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                         <p class="n2-font-6c9c1bb8981b8c29d4c5df59213d87eb-paragraph  n2-style-0ba25571fab7b5c06ea042414d3a7fd7-heading  n2-ow">
-                                            {{ instance_evenement.content|truncatewords:33 }} 
+                                            <a href="{{ instance_evenement.get_absolute_url }}">
+                                                
+                                            {{ instance_evenement.content|safe_markdown|truncatewords:33 }} 
+                                            </a>
                                         </p>
                                     </div>
                                 </div>
@@ -120,20 +129,41 @@
 
                                     <div class="col-lg-5 d-lg-flex">
                                         <div>
+                                            <a href="{% url 'presentation:presentation' %}">
                                             <h2 class="pre-title">Qui sommes-nous</h2>
+                                            </a>
                                             <p>
                                                 {% autoescape off %}
-                                                    {{ presentation.content }}
+                                                    {{ presentation.content|safe_markdown }}
                                                 {% endautoescape %}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6 offset-lg-1 d-lg-flex mt-lg-0 mt-5 d-none d-lg-block">
-                                        <div class="img-box">
-                                            <img src="{{ presentation.image.url }}" alt="Notre établissement">
-                                        </div>
+
+                            <div class="col-lg-6 offset-lg-1 d-lg-flex mt-lg-0 mt-5 d-none d-lg-block">
+                                <div class="img-box">
+                                    <img src="{{ presentation.image.url }}" alt="Notre centre">
+                                    <a href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <span><i class="fas fa-play icon"></i></span>
+                                    </a>
+                                    <div class="module">
+                                    <div class="custom">
+                                    <div class="video-modal modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-body">
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="560" height="315" src="{{ presentation.capsule_video.url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
                                     </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
 
                                 </div>
                             </div>
@@ -170,8 +200,11 @@
                 <div class="astroid-module-position" id="position-3-1529739392463" style="" data-animation="" data-animation-delay="">
                     <div class="moduletable split-title-module text-center">
                         <h2 class="module-title split-title page-header">
+                            <a href="{% url 'cycles:presentation' %}">
+                                
                             <span class="split-1">Nos cycles</span>
                             <span class="split-2"></span>
+                            </a>
                         </h2> 
                         <section class="jd-services-showcase">
                             <div class="jd-container px-0">
@@ -182,7 +215,11 @@
                                                 <div class="image-overlay">
                                                     <a href="{% url 'cycles:primaire' %}">
                                                         <div class="image">
-                                                        <img src="{% static 'images/images/academics/elementory-school.jpg' %}" alt="img" />
+                                                            {% if primaire.image %}
+                                                        <img src="primaire.image.url" alt="{{ primaire.classes }}" />
+                                                        {% else %}
+                                                        <img src="{% static 'images/images/academics/pre-kindergarten.jpg' %}" alt="img" />
+                                                        {% endif %}
                                                         </div>
                                                         <div class="overlay">
                                                         </div>
@@ -190,10 +227,14 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="title">
-                                                        <a href="{% url 'cycles:primaire' %}">Le primaire</a>
+                                                        <a href="{% url 'cycles:primaire' %}">{% if primaire.nom %} {{ primaire.nom }} {% else %}Le primaire{% endif %}</a>
                                                     </div>
                                                     <div class="description">
+                                                        {% if primaire.classes %}
+                                                        {{ primaire.classes }}
+                                                        {% else %}
                                                         <p>Du CP au CM2</p>
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -205,7 +246,13 @@
                                                 <div class="image-overlay">
                                                     <a href="{% url 'cycles:college' %}">
                                                         <div class="image">
-                                                            <img src="{% static 'images/images/academics/pre-kindergarten.jpg' %}" alt="img" />
+                                                            {% if college.image %}
+
+                                                            <img src="{{ college.image.url }}" alt="{{ college.classes }}" />
+                                                            {% else %}
+                                                            <img src="{% static 'images/images/academics/elementory-school.jpg' %}" alt="img" />
+
+                                                            {% endif %}
                                                         </div>
                                                         <div class="overlay">
                                                         </div>
@@ -213,10 +260,14 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="title">
-                                                    <a href="{% url 'cycles:college' %}">Collège</a>
+                                                    <a href="{% url 'cycles:college' %}">{% if college.nom %} {{ college.nom }} {% else %} Collège {% endif %}</a>
                                                     </div>
                                                     <div class="description">
+                                                        {% if college.classes %}
+                                                        {{ college.classes }}
+                                                        {% else %}
                                                         <p>De la 6ème à la 3ème</p> 
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -228,7 +279,16 @@
                                                 <div class="image-overlay">
                                                     <a href="{% url 'cycles:lycee' %}">
                                                         <div class="image">
-                                                            <img src="{% static 'images/images/academics/high-school.jpg' %}" alt="img" />
+                                                            {% if lycee.image %}
+
+                                                            <img src="{{ lycee.image.url }}" alt="{{ lycee.classes }}" />
+                                                            {% else %}
+                                                            <img src="{% static 'images/images/academics/high-school.jpg' %}" alt="Lycée" />
+
+                                                            {% endif %}
+
+
+
                                                         </div>
                                                         <div class="overlay">
                                                         </div>
@@ -236,10 +296,14 @@
                                                 </div>
                                                 <div class="content">
                                                     <div class="title">
-                                                    <a href="{% url 'cycles:lycee' %}">Lycée</a>
+                                                    <a href="{% url 'cycles:lycee' %}">{% if lycee.nom %} lycee.nom {% else %} Lycée {% endif %}</a>
                                                     </div>
                                                     <div class="description">
+                                                        {% if lycee.classes %}
+                                                        {{ lycee.classes }}
+                                                        {% else %}
                                                         <p>De la seconde à la terminale</p> 
+                                                        {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -488,8 +552,14 @@
                                                                         <span class="djev_time_from">{{ instance_evenement.publish }}</span>
                                                                     </h5>
                                                                     <div class="djev_intro">
-                                                                       {{ instance_evenement.content|truncatewords:100 }} 
+                                                                       {{ instance_evenement.content|safe_markdown|truncatewords:30}}
                                                                     </div>
+                                                                    <div class="readmore mb-0">
+                                                                        <a class="btn btn-link rea#" itemprop="url" aria-label="Lire plus" href="{{ instance_evenement.get_absolute_url }}">
+                                                                        Lire plus 
+                                                                        </a>
+                                                                    </div>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -522,8 +592,6 @@
 
 
 
-
-{% comment %}
 
 <!-- Partie concernant les temoignages rester masquer avant de déterminé comment les témoignages vont se faire -->
 <section id='section-6-141539181465905' class='astroid-section section' style='' data-animation='' data-animation-delay=''>
@@ -711,8 +779,6 @@
     </div>
 </div>
 </section>
-
-{% endcomment %}
 
 
 {% endblock content %}

@@ -28,7 +28,7 @@ def export_inscription_data(request, atype):
 			)
 	elif atype =="custom":
 		query_sets = Inscription.objects.all()
-		column_names = ["nom", "prenom", "date_naissance", "lieu_naissance", 
+		column_names = ["nom", "prenom", "date_inscription", "date_naissance", "lieu_naissance", 
 		"niveau", "frequence", "sexe", "nationalite", "telephone", "email", 
 		"representant_parent_un", "nom_parent_un", "prenom_parent_un", 
 		"date_naissance_parent_un", "lieu_naissance_parent_un", 

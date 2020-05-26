@@ -1,7 +1,7 @@
 
 {% extends "base_.html" %}
 
-{% load static %}
+{% load static martortags %}
 
 {% block content %}
 
@@ -94,7 +94,7 @@
 														</dd>
 													</dl> 
 													<div class="article-intro-text">
-														<p>{{ instance.content|truncatewords:80 }} </p>
+														<p>{{ instance.content|safe_markdown|truncatewords:30 }} </p>
 													</div>
 													<div class="readmore mb-0">
 														<a class="btn btn-link rea#" itemprop="url" aria-label="Lire plus" href="{{ instance.get_absolute_url }}">
@@ -114,7 +114,7 @@
 							</div>
 						<div class="cat-children">
 						</div>
-							<p class="counter d-flex justify-content-center"> Page 1/1 </p>
+							<!-- <p class="counter d-flex justify-content-center"> Page 1/1 </p> -->
 							</div>
 						</div>
 

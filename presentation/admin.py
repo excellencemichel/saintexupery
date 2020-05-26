@@ -1,12 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
-from .models import Generale, Partenaire
 from django.utils.safestring import mark_safe
 
+
+from .models import Generale, Partenaire
+
+
 # Register your models here.
-MAX_PARTENAIRES = 3
+MAX_PARTENAIRES = 10
 
 MAX_GENERALE = 4
+MAX_MAX = 1
 
 
 @admin.register(Generale)
@@ -47,7 +51,6 @@ class GeneraleAdmn(admin.ModelAdmin):
 @admin.register(Partenaire)
 class PartenaireAdmin(admin.ModelAdmin):
 	exclude = ["slug"]
-
 	def has_add_permission(self, request):
 		if self.model.objects.count() >= MAX_PARTENAIRES:
 			return False
@@ -58,5 +61,13 @@ class PartenaireAdmin(admin.ModelAdmin):
 
 
 
+
+
+
+
+
+
 admin.site.unregister(Group)
+
+
 

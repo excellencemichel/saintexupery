@@ -17,7 +17,6 @@
 
 <title>Saint-Exupéry</title>
     {% include "base/css.html" %}
-    {% include "base/js.html"  %}
 
 </head>
 <body class="site astroid-framework com-content view-article layout-default itemid-101 home tp-style-11 ltr en-GB">
@@ -103,10 +102,10 @@
 
                             <ul class="nav-child list-group navbar-subnav level-2">
                                 <li class="nav-item-submenu nav-item-id-184 nav-item-level-3 nav-item-parent nav-item-megamenu">
-                                    <a href="{% url 'fonctionnements:horaires' %}" title="Horraires" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
+                                    <a href="{% url 'fonctionnements:horaires' %}" title="Horaires" class=" nav-link item-link-component item-level-3" data-drop-action="hover">
                                         <span class="nav-title">
                                         <i class="fab fa-algolia"></i>
-                                        Horraires </span>
+                                        Horaires </span>
                                     </a>
 
                                 </li>
@@ -126,7 +125,7 @@
 
 
                 <li class="nav-item nav-item-id-135 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                    <a href="{% url 'cycles:presentation_cycles' %}" title="Cycles" class=" nav-link item-link-alias item-level-1" data-drop-action="hover">
+                    <a href="{% url 'cycles:presentation' %}" title="Cycles" class=" nav-link item-link-alias item-level-1" data-drop-action="hover">
                         <span class="nav-title">
                         Cycles </span>
                     </a>
@@ -183,18 +182,23 @@
                     <section id='topbar-section-1101543823753523' class='astroid-section py-2 hideonxs hideonsm hideonmd' style='background-color:rgb(245, 130, 32)' data-animation='' data-animation-delay=''>    
                         <div class='container'>
                             <div id="astroid-row-491543823753523" class="row astroid-row">
-                                <div id="astroid-column-561543823753523" class="astroid-column col-md- col-lg-6" style="" data-animation="" data-animation-delay="">
+                                <div id="astroid-column-561543823753523" class="astroid-column col-md-6 col-lg-6" style="" data-animation="" data-animation-delay="">
                                     <div class="astroid-module-position" id="topbar-1-511543823756330" style="" data-animation="" data-animation-delay=""> 
                                         <div class="moduletable  news-ticker">
                                             <div id="jd-newsticker178" class="jd-newsticker carousel slide" data-ride="carousel">
-                                            <p class="newsticker-label">Dernières nouvelles:</p>
 
-                                                <div class="carousel-inner" style="max-width: 270px">
+                                            <a href="{% url 'fonctionnements:infobules' %}">
+                                                
+                                            <p class="newsticker-label" style="margin-left: -30px;">Infos#:</p>
+                                            </a>
+
+
+                                                <div class="carousel-inner" style="max-width: 3463px">
                                                     {% if infobules %}
                                                     {% for infobule in infobules %}
                                                     <div class="carousel-item {% if forloop.first %} active {% endif %}">
                                                         <div class="title">
-                                                        <a href="#">{{ infobule.info }}</a>
+                                                        <a href="{{ infobule.get_absolute_url }}">{{ infobule.info }}</a>
                                                         </div>
                                                     </div>
                                                     {% endfor %}
@@ -203,7 +207,7 @@
                                                     {% else %}
                                                     <div class="carousel-item active">
                                                         <div class="title">
-                                                        <a href="#">Le menu de la cantine : Haricot</a>
+                                                        <a href="{{ infobule.get_absolute_url }}">Le menu de la cantine : Haricot</a>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item ">
@@ -222,10 +226,12 @@
                                                     <span class="carousel-control-next-icon"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
                                                     </a>
                                                 </div>
+
+
                                             </div>
                                         </div>
-                                        <div class="astroid-contact-info">
-                                        </div>
+<!--                                         <div class="astroid-contact-info">
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div id="astroid-column-691543823754722" class="astroid-column col-md-6 col-lg-6" style="" data-animation="" data-animation-delay="">
@@ -372,7 +378,7 @@
                                                                                             <a href="{% url 'fonctionnements:horaires' %}" title="Les horaires" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
                                                                                                     <i class="fab fa-algolia"></i>
-                                                                                                Horraires </span>
+                                                                                                Horaires </span>
                                                                                             </a>
 
                                                                                         </li>
@@ -394,7 +400,7 @@
 
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-106 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="{% url 'cycles:presentation_cycles' %}" title="Les cycles" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                                <a href="{% url 'cycles:presentation' %}" title="Les cycles" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Cycles  <i class="fa fa-chevron-down nav-item-caret"></i></span>
                                                                 </a>
@@ -402,7 +408,7 @@
                                                                 <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
                                                                     <ul class="nav-submenu">
                                                                         <li data-position="right" class="nav-item-submenu nav-item-id-128 nav-item-level-2">
-                                                                            <a href="{% url 'cycles:presentation_cycles' %}" title="Présentation des cycles" class=" item-link-component item-level-2" data-drop-action="hover">
+                                                                            <a href="{% url 'cycles:presentation' %}" title="Présentation des cycles" class=" item-link-component item-level-2" data-drop-action="hover">
                                                                                 <span class="nav-title">
                                                                                 Présentation des cylces </span>
                                                                             </a>
@@ -448,6 +454,13 @@
                                                                 <a href="{% url 'inscriptions:inscriptions' %}" title="Inscription" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Inscription
+                                                                    </span>
+                                                                </a>
+                                                            </li>
+                                                            <li data-position="left" class="nav-item nav-item-id-138 nav-item-level-1">
+                                                                <a href="{% url 'candidatures:candidature' %}" title="Déposer une candidature" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
+                                                                    <span class="nav-title">
+                                                                    Postuler
                                                                     </span>
                                                                 </a>
                                                             </li>
@@ -558,7 +571,7 @@
                                                                                             <a href="{% url 'fonctionnements:horaires' %}" title="Les horaires" class=" item-link-component item-level-3" data-drop-action="hover">
                                                                                                 <span class="nav-title">
                                                                                                     <i class="fas fa-swimmer"></i>
-                                                                                                Horraires</span>
+                                                                                                Horaires</span>
                                                                                             </a>
 
                                                                                         </li>
@@ -581,7 +594,7 @@
 
                                                             </li>
                                                             <li data-position="left" class="nav-item nav-item-id-106 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-dropdown">
-                                                                <a href="{% url 'cycles:presentation_cycles' %}" title="Les cycles" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
+                                                                <a href="{% url 'cycles:presentation' %}" title="Les cycles" class=" nav-link item-link-component item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">
                                                                     Cycles  <i class="fa fa-chevron-down nav-item-caret"></i></span>
                                                                 </a>
@@ -589,7 +602,7 @@
                                                                 <div style="width:280px" class="megamenu-container nav-submenu-container nav-item-level-1">
                                                                     <ul class="nav-submenu">
                                                                         <li data-position="right" class="nav-item-submenu nav-item-id-128 nav-item-level-2">
-                                                                            <a href="{% url 'cycles:presentation_cycles' %}" title="Présentation des cycles" class=" item-link-component item-level-2" data-drop-action="hover">
+                                                                            <a href="{% url 'cycles:presentation' %}" title="Présentation des cycles" class=" item-link-component item-level-2" data-drop-action="hover">
                                                                                 <span class="nav-title">
                                                                                 Présentation des cylces </span>
                                                                             </a>
@@ -633,6 +646,11 @@
                                                            <li data-position="left" class="nav-item nav-item-id-138 nav-item-level-1">
                                                                 <a href="{% url 'inscriptions:inscriptions' %}" title="Inscription" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
                                                                     <span class="nav-title">Inscription</span>
+                                                                </a>
+                                                            </li>
+                                                           <li data-position="left" class="nav-item nav-item-id-138 nav-item-level-1">
+                                                                <a href="{% url 'candidatures:candidature' %}" title="Déposer une candidature" class=" nav-link megamenu-item-link item-link-alias item-level-1" data-drop-action="hover">
+                                                                    <span class="nav-title">Postuler</span>
                                                                 </a>
                                                             </li>
                                                             <li data-position="right" class="nav-item nav-item-id-171 nav-item-level-1 nav-item-deeper nav-item-parent has-megamenu nav-item-megamenu">
@@ -680,5 +698,10 @@
         </div>
 
     </div>
+
+    {% include "base/js.html"  %}
+
+{% block js_code %}
+{% endblock js_code %}
 </body>
 </html>
