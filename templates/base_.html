@@ -207,12 +207,12 @@
                                                     {% else %}
                                                     <div class="carousel-item active">
                                                         <div class="title">
-                                                        <a href="{{ infobule.get_absolute_url }}">Le menu de la cantine : Haricot</a>
+                                                        <a href="{% url 'fonctionnements:infobules' %}">Le menu de la cantine : Haricot</a>
                                                         </div>
                                                     </div>
                                                     <div class="carousel-item ">
                                                         <div class="title">
-                                                        <a href="#">Ouverture des inscription 2020/2021</a>
+                                                        <a href="{% url 'fonctionnements:infobules' %}">Ouverture des inscription 2020/2021</a>
                                                         </div>
                                                     </div>
                                                     {% endif %}
