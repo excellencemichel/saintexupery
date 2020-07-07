@@ -28,7 +28,7 @@ def upload_file_location(instance, filename):
 			id_ = 0
 	name_file, extension_file =get_filename(filename)
 
-	salt_path = datetime.now().strftime('instance.__class__/%Y/%m/%d')
+	salt_path = datetime.now().strftime('instance.__class__.__name__/%Y/%m/%d')
 
 	final_filename = "{name_file}_{id_}{extension_file}".format(name_file=name_file, id_=id_, extension_file=extension_file)
 
