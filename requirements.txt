@@ -24,7 +24,7 @@ Jinja2==2.11.2
 jmespath==0.9.3
 lazy-object-proxy==1.4.3
 lml==0.0.9
-lxml==4.5.0
+lxml==4.6.5
 Markdown==3.2.2
 MarkupSafe==1.1.1
 martor==1.4.9
