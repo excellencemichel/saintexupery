@@ -50,7 +50,7 @@ pyexcel-xlsxr==0.5.2
 pyexcel-xlsxw==0.4.2
 pygal==2.4.0
 pylint==2.4.4
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-dateutil==2.7.3
 pytz==2018.3
 pyxlsb==1.0.6
